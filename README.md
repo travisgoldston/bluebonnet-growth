@@ -30,7 +30,7 @@ bluebonnet-growth/
 The contact form uses [Formspree](https://formspree.io/) to send submissions to your email.
 
 1. Sign up at [formspree.io](https://formspree.io/) (free tier available)
-2. Create a new form and use your email: `travisneilgoldston@gmail.com`
+2. Create a new form and use your email: `bluebonnetgrowth@gmail.com`
 3. Copy your form ID from the Formspree dashboard
 4. Open `contact.html` and replace `YOUR_FORMSPREE_FORM_ID` in the form `action` attribute:
 
