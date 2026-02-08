@@ -163,11 +163,15 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
   text-decoration: none;
   color: var(--color-slate-700);
   font-weight: 500;
-  transition: color 0.2s;
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.5rem;
+  background: rgba(79, 70, 229, 0.04);
+  transition: color 0.2s, background 0.2s;
 }
 
 .nav-menu a:hover {
   color: var(--color-indigo-600);
+  background: rgba(79, 70, 229, 0.12);
 }
 
 .nav-menu a:visited {
