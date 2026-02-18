@@ -12,16 +12,21 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": "LocalBusiness",
     "name": "Bluebonnet Growth",
     "description": "Local SEO and marketing consultant for McKinney, Texas businesses. We help local businesses get found on Google with SEO, Google Business Profile optimization, and growth strategy.",
     "url": "https://www.bluebonnetgrowth.com",
-    "areaServed": {
-      "@type": "City",
-      "name": "McKinney",
-      "containedInPlace": { "@type": "State", "name": "Texas" }
-    },
-    "serviceType": "Local SEO and Marketing Consultant"
+    "serviceType": "Local SEO and Marketing Consultant",
+    "areaServed": [
+      { "@type": "City", "name": "McKinney", "containedInPlace": { "@type": "State", "name": "Texas" } },
+      { "@type": "City", "name": "Melissa", "containedInPlace": { "@type": "State", "name": "Texas" } },
+      { "@type": "City", "name": "Anna", "containedInPlace": { "@type": "State", "name": "Texas" } },
+      { "@type": "City", "name": "Frisco", "containedInPlace": { "@type": "State", "name": "Texas" } },
+      { "@type": "City", "name": "Plano", "containedInPlace": { "@type": "State", "name": "Texas" } },
+      { "@type": "City", "name": "Prosper", "containedInPlace": { "@type": "State", "name": "Texas" } },
+      { "@type": "City", "name": "Celina", "containedInPlace": { "@type": "State", "name": "Texas" } }
+    ],
+    "containedInPlace": { "@type": "City", "name": "McKinney", "containedInPlace": { "@type": "State", "name": "Texas" } }
   }
   </script>
 </head>
@@ -50,7 +55,7 @@
       <div class="hero-content">
         <span class="hero-badge">Proudly Serving McKinney, Texas</span>
         <h1>McKinney Businesses Bloom Here</h1>
-        <p class="hero-subtitle">Bluebonnet Growth provides professional consulting and growth strategies tailored for businesses in McKinney. Local expertise, real results.</p>
+        <p class="hero-subtitle">Helping businesses in McKinney and nearby North Texas communities get found and grow. Bluebonnet Growth provides professional consulting and growth strategies tailored for local markets. Local expertise, real results.</p>
         <div class="hero-cta">
           <a href="contact.html" class="btn btn-primary">Get a Free Quote</a>
           <a href="services.html" class="btn btn-secondary">Explore Our Services</a>
@@ -149,10 +154,11 @@
       </div>
     </section>
 
-    <section class="section" style="background: var(--color-white);">
+    <section class="section" style="background: var(--color-white);" aria-labelledby="areas-heading">
       <div class="container">
-        <h2 style="text-align: center; margin-bottom: 0.5rem;">Areas We Work</h2>
-        <p style="text-align: center; color: var(--color-text-muted); max-width: 560px; margin: 0 auto;">We specialize in <strong>McKinney, Texas</strong>. It's our home and where we focus our local SEO and growth work. If you're a McKinney business or serve McKinney from a nearby community, we'd love to help you get found. Read more about <a href="mckinney-tx-seo-for-home-services.html">McKinney TX SEO for home services</a> or <a href="contact.html">reach out</a> to see if we're a fit.</p>
+        <h2 id="areas-heading" style="text-align: center; margin-bottom: 0.5rem;">Areas We Serve</h2>
+        <p style="text-align: center; color: var(--color-text-muted); max-width: 640px; margin: 0 auto;">We're based in <strong>McKinney, Texas</strong>—our anchor and home. We also serve surrounding Collin County communities: Melissa, Anna, Frisco, Plano, Prosper, and Celina. If you're in McKinney or one of these nearby cities and want to get found online, see our <a href="areas-we-serve.html">areas we serve</a> page, read why <a href="resources/north-texas-small-business-online-growth.html">North Texas small business online growth</a> matters, or <a href="contact.html">reach out</a> to see if we're a fit.</p>
+        <p style="text-align: center; margin-top: 1rem;"><a href="areas-we-serve.html" class="btn btn-secondary">View All Areas</a></p>
       </div>
     </section>
 
@@ -170,13 +176,14 @@
       <div class="footer-grid">
         <div>
           <h3>Bluebonnet Growth</h3>
-          <p>Serving McKinney, Texas and the greater North Texas community with professional growth solutions.</p>
+          <p>Based in McKinney, Texas. We help local businesses in McKinney and nearby North Texas communities—including Melissa, Anna, Frisco, Plano, Prosper, and Celina—get found on Google and grow with clear, measurable strategy.</p>
         </div>
         <div>
           <h3>Quick Links</h3>
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
+            <li><a href="areas-we-serve.html">Areas We Serve</a></li>
             <li><a href="pricing.html">Pricing</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="blog.html">Blog</a></li>
