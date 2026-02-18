@@ -1,6 +1,6 @@
 # Bluebonnet Growth
 
-A professional website for Bluebonnet Growth, serving McKinney, Texas and the greater North Texas community with business growth, marketing, and community outreach services.
+A professional website for Bluebonnet Growth, serving McKinney, Texas with business growth, marketing, and community outreach services.
 
 ## Project Structure
 
