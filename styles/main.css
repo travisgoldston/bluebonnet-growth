@@ -313,6 +313,22 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
   color: var(--color-slate-400);
 }
 
+.footer-grown {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.footer-bluebonnet {
+  height: 1em;
+  width: auto;
+  vertical-align: middle;
+  mix-blend-mode: lighten;
+  flex-shrink: 0;
+}
+
 /* Container */
 .container {
   max-width: var(--max-width);
