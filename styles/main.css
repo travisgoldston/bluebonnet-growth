@@ -409,14 +409,27 @@ h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
   min-height: 0;
 }
 
+.contact-bluebonnet-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 100%;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.contact-bluebonnet-link:hover .contact-bluebonnet {
+  opacity: 0.9;
+}
+
 .contact-bluebonnet {
   max-height: 100%;
   max-width: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
-  opacity: 0.6;
-  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.2s ease;
 }
 
 /* Container */
