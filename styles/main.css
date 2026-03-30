@@ -135,6 +135,12 @@ p {
   text-decoration: none;
 }
 
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible {
+  outline: 3px solid rgba(245, 158, 11, 0.55);
+  outline-offset: 2px;
+}
+
 .btn-secondary {
   background: var(--color-white);
   color: var(--color-slate-900);
@@ -834,13 +840,13 @@ p {
 
 .cta-band-actions .btn-primary {
   box-shadow: none;
-  background: var(--color-accent);
-  color: #111827;
+  background: linear-gradient(180deg, var(--color-indigo-650) 0%, var(--color-indigo-700) 100%);
+  color: var(--color-white);
 }
 
 .cta-band-actions .btn-primary:hover {
   transform: translateY(-1px);
-  background: var(--color-amber-600);
+  background: linear-gradient(180deg, var(--color-indigo-700) 0%, var(--color-indigo-800) 100%);
 }
 
 /* Simple vertical stack helper */
@@ -860,6 +866,14 @@ p {
   margin: 1rem 0 0;
   font-size: 0.95rem;
   color: var(--color-text-muted);
+}
+
+.not-emphasis {
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
 }
 
 .hero-texas {
