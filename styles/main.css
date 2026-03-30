@@ -293,6 +293,12 @@ p {
   color: var(--color-white);
 }
 
+/* When the header turns indigo, match hero CTA styling */
+.site-header--scrolled .nav-cta .btn-primary,
+.site-header--scrolled .nav-cta .btn-primary:visited {
+  color: var(--brand-deep-indigo);
+}
+
 .nav-cta {
   margin-left: 0.5rem;
 }
