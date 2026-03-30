@@ -718,6 +718,26 @@ p {
   border-color: rgba(255, 255, 255, 0.14);
 }
 
+.section-indigo .search-mock__query,
+.section-indigo .search-mock__name {
+  color: var(--color-white);
+}
+
+.section-indigo .search-mock__meta,
+.section-indigo .search-mock__note {
+  color: rgba(247, 246, 240, 0.78);
+}
+
+.section-indigo .search-mock__item {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.section-indigo .search-mock__item--yourbiz {
+  background: rgba(140, 160, 140, 0.18);
+  border-color: rgba(140, 160, 140, 0.32);
+}
+
 .section-indigo .card:hover {
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
 }
