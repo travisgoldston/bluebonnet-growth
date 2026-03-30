@@ -1,10 +1,11 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [{ "type": "host", "value": "www.bluebonnetgrowth.com" }],
-      "destination": "https://bluebonnetgrowth.com/:path*",
+      "destination": "https://bluebonnetgrowth.com/$1",
       "permanent": true
     },
     { "source": "/pricing", "destination": "/contact", "permanent": true },
