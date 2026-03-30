@@ -1,26 +1,27 @@
 # Bluebonnet Growth
 
-A professional website for Bluebonnet Growth, serving McKinney, Texas with business growth, marketing, and community outreach services.
+A conversion-focused website for Bluebonnet Growth.
+
+Bluebonnet Growth helps home service companies get more booked jobs by turning their website into a consistent source of calls and customers.
 
 ## Project Structure
 
 ```
 bluebonnet-growth/
 ├── assets/              # Images, logos
-│   └── bluebonnet-banner-logo.png
+│   ├── bluebonnet-icon.png
+│   └── travis-and-victoria.png
 ├── components/          # Reusable UI components
 │   ├── header.html
 │   ├── footer.html
 │   └── nav.js
-├── pages/               # Additional pages
-│   └── services/        # Individual service pages
+├── pages/               # Additional pages (optional)
 ├── styles/
 │   └── main.css         # Global styles
 ├── index.html           # Homepage
-├── services.html        # Services overview
+├── how-it-works.html    # How it works
 ├── about.html           # About page
-├── contact.html         # Contact form
-└── blog.html            # Blog placeholder
+└── contact.html         # Contact form
 ```
 
 ## Setup
@@ -30,7 +31,7 @@ bluebonnet-growth/
 The contact form uses [Formspree](https://formspree.io/) to send submissions to your email.
 
 1. Sign up at [formspree.io](https://formspree.io/) (free tier available)
-2. Create a new form and use your email: `bluebonnetgrowth@gmail.com`
+2. Create a new form and use your email (e.g. `hello@bluebonnetgrowth.com`)
 3. Copy your form ID from the Formspree dashboard
 4. Open `contact.html` and replace `YOUR_FORMSPREE_FORM_ID` in the form `action` attribute:
 
