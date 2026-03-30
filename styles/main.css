@@ -241,11 +241,12 @@ p {
 }
 
 .logo-img {
-  height: 40px;
-  width: auto;
+  height: 32px;
+  width: 46px;
   display: block;
   flex-shrink: 0;
   object-fit: contain;
+  object-position: center;
 }
 
 .logo-text {
@@ -526,30 +527,31 @@ p {
   }
 }
 
-.footer h3 {
+.site-footer h3 {
   color: var(--color-white);
   font-size: 1rem;
   margin-bottom: 0.75rem;
 }
 
-.footer ul {
+.site-footer .footer-grid ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer a {
-  color: var(--color-slate-300);
+/* Match footer body text; exclude social circle buttons */
+.site-footer a:not(.footer-social-icon) {
+  color: rgba(247, 246, 240, 0.95);
   text-decoration: none;
   transition: color 0.2s;
 }
 
-.footer a:visited {
-  color: var(--color-slate-300);
+.site-footer a:not(.footer-social-icon):visited {
+  color: rgba(247, 246, 240, 0.95);
 }
 
-.footer a:hover {
-  color: var(--color-slate-100);
+.site-footer a:not(.footer-social-icon):hover {
+  color: var(--color-white);
 }
 
 .footer-social {
