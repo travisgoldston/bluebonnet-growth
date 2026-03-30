@@ -684,6 +684,82 @@ p {
   background: linear-gradient(180deg, rgba(140, 160, 140, 0.08) 0%, rgba(247, 246, 240, 0.95) 100%);
 }
 
+.section-cream {
+  background: var(--brand-cream);
+}
+
+.section-indigo {
+  background: linear-gradient(180deg, var(--brand-deep-indigo) 0%, #1a1a5c 100%);
+  color: rgba(247, 246, 240, 0.92);
+}
+
+.section-indigo h1,
+.section-indigo h2,
+.section-indigo h3 {
+  color: var(--color-white);
+}
+
+.section-indigo .muted {
+  color: rgba(247, 246, 240, 0.78);
+}
+
+.section-indigo .lead {
+  color: rgba(247, 246, 240, 0.96);
+}
+
+.section-indigo .tech-label {
+  color: rgba(247, 246, 240, 0.75);
+}
+
+.section-indigo .card,
+.section-indigo .photo-card,
+.section-indigo .search-mock {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.section-indigo .card:hover {
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+}
+
+.section-indigo a:not(.btn):not(.footer-social-icon) {
+  color: rgba(247, 246, 240, 0.95);
+  text-decoration-color: rgba(247, 246, 240, 0.55);
+}
+
+.section-indigo a:not(.btn):not(.footer-social-icon):hover {
+  color: var(--color-white);
+}
+
+.section-indigo .btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: var(--color-white);
+}
+
+.section-indigo .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.section-indigo .btn-primary {
+  background: var(--brand-sage);
+  color: var(--brand-deep-indigo);
+}
+
+.section-indigo .btn-primary:hover {
+  background: #9bad9b;
+  color: var(--brand-deep-indigo);
+}
+
+.split--reverse {
+  direction: rtl;
+}
+
+.split--reverse > * {
+  direction: ltr;
+}
+
 .section-organic {
   position: relative;
   overflow: hidden;
