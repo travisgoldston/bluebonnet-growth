@@ -316,12 +316,12 @@ p {
 /* Hero */
 .hero {
   background:
-    radial-gradient(900px 380px at 12% 0%, rgba(80, 120, 180, 0.12), rgba(247, 246, 240, 0) 55%),
-    radial-gradient(600px 280px at 92% 20%, rgba(140, 160, 140, 0.14), rgba(247, 246, 240, 0) 50%),
-    linear-gradient(180deg, #ffffff 0%, var(--brand-cream) 100%);
+    radial-gradient(900px 420px at 18% 0%, rgba(80, 120, 180, 0.35), rgba(40, 40, 140, 0) 58%),
+    radial-gradient(700px 360px at 92% 20%, rgba(140, 160, 140, 0.22), rgba(40, 40, 140, 0) 55%),
+    linear-gradient(180deg, var(--brand-deep-indigo) 0%, #1a1a5c 100%);
   padding: 4.75rem 1.5rem 4.25rem;
   text-align: center;
-  border-bottom: 1px solid rgba(226, 220, 200, 0.65);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .hero-content {
@@ -332,7 +332,7 @@ p {
 .hero-badge {
   display: inline-block;
   background: rgba(140, 160, 140, 0.22);
-  color: var(--brand-deep-indigo);
+  color: rgba(247, 246, 240, 0.95);
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
   font-size: 0.875rem;
@@ -341,13 +341,13 @@ p {
 }
 
 .hero h1 {
-  color: var(--color-slate-900);
+  color: var(--color-white);
   margin-bottom: 1rem;
 }
 
 .hero-subtitle {
   font-size: clamp(1.05rem, 2.2vw, 1.25rem);
-  color: var(--color-text-muted);
+  color: rgba(247, 246, 240, 0.82);
   max-width: 760px;
   margin: 0 auto 2rem;
 }
@@ -362,14 +362,45 @@ p {
 .hero-kicker {
   margin: 0 0 0.75rem;
   font-weight: 600;
-  color: var(--color-slate-700);
+  color: rgba(247, 246, 240, 0.86);
 }
 
 .hero-fineprint {
   margin: 1.25rem auto 0;
   max-width: 680px;
-  color: var(--color-text-muted);
+  color: rgba(247, 246, 240, 0.78);
   font-size: 0.9375rem;
+}
+
+.hero a:not(.btn) {
+  color: rgba(247, 246, 240, 0.95);
+  text-decoration-color: rgba(247, 246, 240, 0.55);
+}
+
+.hero a:not(.btn):hover {
+  color: var(--color-white);
+}
+
+.hero .btn-primary {
+  background: var(--brand-sage);
+  color: var(--brand-deep-indigo);
+  box-shadow: none;
+}
+
+.hero .btn-primary:hover {
+  background: #9bad9b;
+  color: var(--brand-deep-indigo);
+}
+
+.hero .btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: var(--color-white);
+}
+
+.hero .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.28);
 }
 
 .hero-home .hero-subtitle {
@@ -459,6 +490,26 @@ p {
   border-radius: var(--radius-lg);
   padding: 1.25rem 1.25rem 1.1rem;
   box-shadow: var(--shadow-lg);
+}
+
+/* Hero side card on indigo hero */
+.hero .hero-side-card {
+  background: rgba(247, 246, 240, 0.96);
+  border-color: rgba(247, 246, 240, 0.45);
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.22);
+}
+
+.hero .hero-side-label {
+  color: rgba(40, 40, 140, 0.92);
+}
+
+.hero .hero-outcomes li strong {
+  color: var(--brand-deep-indigo);
+}
+
+.hero .hero-outcomes li span,
+.hero .hero-side-note {
+  color: rgba(61, 59, 54, 0.82);
 }
 
 .hero-side-label {
@@ -714,28 +765,32 @@ p {
 .section-indigo .card,
 .section-indigo .photo-card,
 .section-indigo .search-mock {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(247, 246, 240, 0.96);
+  border-color: rgba(247, 246, 240, 0.22);
 }
 
 .section-indigo .search-mock__query,
 .section-indigo .search-mock__name {
-  color: var(--color-white);
+  color: var(--brand-deep-indigo);
 }
 
 .section-indigo .search-mock__meta,
 .section-indigo .search-mock__note {
-  color: rgba(247, 246, 240, 0.78);
+  color: rgba(61, 59, 54, 0.82);
 }
 
 .section-indigo .search-mock__item {
-  border-color: rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(40, 40, 140, 0.12);
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .section-indigo .search-mock__item--yourbiz {
   background: rgba(140, 160, 140, 0.18);
-  border-color: rgba(140, 160, 140, 0.32);
+  border-color: rgba(40, 40, 140, 0.22);
+}
+
+.section-indigo .search-mock__top {
+  background: linear-gradient(180deg, #ffffff 0%, rgba(247, 246, 240, 0.9) 100%);
 }
 
 .section-indigo .card:hover {
@@ -920,6 +975,12 @@ p {
   font-size: 0.9375rem;
 }
 
+.hero .pill {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: rgba(247, 246, 240, 0.95);
+}
+
 .filter-line {
   margin-top: 1.25rem;
 }
@@ -1008,7 +1069,7 @@ p {
 .hero-reassure {
   margin: 1rem 0 0;
   font-size: 0.95rem;
-  color: var(--color-text-muted);
+  color: rgba(247, 246, 240, 0.78);
 }
 
 .not-emphasis {
@@ -1022,7 +1083,7 @@ p {
 .hero-texas {
   margin: 0.75rem 0 0;
   font-size: 0.95rem;
-  color: var(--color-slate-700);
+  color: rgba(247, 246, 240, 0.86);
   font-weight: 600;
 }
 
