@@ -17,7 +17,7 @@
     const a = document.createElement('a');
     a.className = 'btn btn-primary sticky-cta__button';
     a.href = 'contact';
-    a.textContent = 'Get a Free Growth Plan';
+    a.textContent = 'Start a Conversation';
 
     inner.appendChild(a);
     root.appendChild(inner);
