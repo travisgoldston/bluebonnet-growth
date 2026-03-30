@@ -207,13 +207,13 @@ p {
 }
 
 .site-header--scrolled .nav-cta .btn-primary {
-  background: var(--brand-sage);
+  background: rgba(247, 246, 240, 0.95);
   color: var(--brand-deep-indigo);
   box-shadow: none;
 }
 
 .site-header--scrolled .nav-cta .btn-primary:hover {
-  background: #9bad9b;
+  background: var(--color-white);
   color: var(--brand-deep-indigo);
   transform: translateY(-1px);
 }
@@ -382,13 +382,13 @@ p {
 }
 
 .hero .btn-primary {
-  background: var(--brand-sage);
+  background: rgba(247, 246, 240, 0.95);
   color: var(--brand-deep-indigo);
   box-shadow: none;
 }
 
 .hero .btn-primary:hover {
-  background: #9bad9b;
+  background: var(--color-white);
   color: var(--brand-deep-indigo);
 }
 
@@ -818,12 +818,12 @@ p {
 }
 
 .section-indigo .btn-primary {
-  background: var(--brand-sage);
+  background: rgba(247, 246, 240, 0.95);
   color: var(--brand-deep-indigo);
 }
 
 .section-indigo .btn-primary:hover {
-  background: #9bad9b;
+  background: var(--color-white);
   color: var(--brand-deep-indigo);
 }
 
@@ -1043,13 +1043,13 @@ p {
 
 .cta-band-actions .btn-primary {
   box-shadow: none;
-  background: var(--brand-sage);
+  background: rgba(247, 246, 240, 0.95);
   color: var(--brand-deep-indigo);
 }
 
 .cta-band-actions .btn-primary:hover {
   transform: translateY(-1px);
-  background: #9bad9b;
+  background: var(--color-white);
   color: var(--brand-deep-indigo);
 }
 
@@ -1430,6 +1430,19 @@ section[id] {
   border-color: rgba(80, 120, 180, 0.45);
   box-shadow: var(--shadow-sm);
   text-decoration: none;
+}
+
+/* Jump pills on indigo hero */
+.hero .hiw-jump a {
+  background: rgba(247, 246, 240, 0.92);
+  border-color: rgba(247, 246, 240, 0.35);
+  color: var(--brand-deep-indigo);
+}
+
+.hero .hiw-jump a:hover {
+  background: var(--color-white);
+  border-color: rgba(247, 246, 240, 0.55);
+  box-shadow: none;
 }
 
 .text-bridge {
