@@ -1,6 +1,12 @@
 {
   "cleanUrls": true,
   "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.bluebonnetgrowth.com" }],
+      "destination": "https://bluebonnetgrowth.com/:path*",
+      "permanent": true
+    },
     { "source": "/pricing", "destination": "/contact", "permanent": true },
     { "source": "/pricing.html", "destination": "/contact", "permanent": true },
     { "source": "/services", "destination": "/contact", "permanent": true },
