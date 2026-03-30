@@ -856,6 +856,152 @@ p {
   opacity: 0.92;
 }
 
+.hero-reassure {
+  margin: 1rem 0 0;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.hero-texas {
+  margin: 0.75rem 0 0;
+  font-size: 0.95rem;
+  color: var(--color-slate-700);
+  font-weight: 600;
+}
+
+.hero-metros {
+  margin-top: 0.75rem;
+}
+
+/* “Why this feels hard” moments */
+.moments {
+  width: 100%;
+  max-width: 520px;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.moment {
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: var(--shadow-sm);
+  padding: 1rem 1rem 0.95rem;
+}
+
+.moment-time {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--color-slate-900);
+  font-size: 0.95rem;
+}
+
+.moment-title {
+  margin-top: 0.25rem;
+  font-weight: 700;
+  color: var(--color-slate-800);
+}
+
+.moment-body {
+  margin-top: 0.35rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+/* Search mock (pattern interrupt) */
+.search-mock {
+  width: 100%;
+  max-width: 520px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.search-mock__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.95rem 1rem;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbff 100%);
+}
+
+.search-mock__query {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--color-slate-900);
+}
+
+.search-mock__chip {
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.25rem 0.55rem;
+  border-radius: 9999px;
+  background: rgba(245, 158, 11, 0.18);
+  color: #7c4a00;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  white-space: nowrap;
+}
+
+.search-mock__list {
+  padding: 0.9rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.search-mock__item {
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  padding: 0.85rem 0.9rem;
+  background: rgba(248, 250, 252, 0.55);
+}
+
+.search-mock__item--yourbiz {
+  background: rgba(67, 56, 202, 0.06);
+  border-color: rgba(67, 56, 202, 0.18);
+}
+
+.search-mock__name {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--color-slate-900);
+}
+
+.search-mock__meta {
+  margin-top: 0.2rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.search-mock__actions {
+  margin-top: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.search-mock__call {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.7rem;
+  border-radius: 10px;
+  background: linear-gradient(180deg, var(--color-indigo-650) 0%, var(--color-indigo-700) 100%);
+  color: white;
+  font-weight: 800;
+  box-shadow: var(--shadow-sm);
+  min-width: 74px;
+}
+
+.search-mock__note {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
 /* Interior page rhythm */
 .with-dividers .section {
   border-top: 1px solid rgba(226, 232, 240, 0.85);
