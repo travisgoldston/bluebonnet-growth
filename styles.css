@@ -5,7 +5,10 @@
   /* Accent tokens (layout unchanged; brand feel updated) */
   --accent-underline: #F7F6F0; /* parchment */
   --accent-sage: #8CA08C;      /* hill sage */
-  --color-yellow: var(--accent-sage); /* keep legacy uses readable */
+  --accent-highlight: #b9b6ff; /* bluebonnet bloom */
+  --accent-highlight-strong: #8b84ff;
+  --bar-gradient: linear-gradient(90deg, rgba(185, 182, 255, 0), rgba(185, 182, 255, 0.95), rgba(40, 40, 140, 0.95));
+  --color-yellow: var(--accent-highlight); /* legacy token now indigo (no yellow warmth) */
   --color-navy: #1c1b18;
   --color-bg: #ffffff;
   --color-bg-soft: #f7f6f0;
@@ -163,6 +166,10 @@ body.page-inner .header-inner {
   color: var(--color-primary);
 }
 
+.hero .eyebrow {
+  color: #d7daf7;
+}
+
 .section-dark .eyebrow {
   color: var(--accent-underline);
 }
@@ -258,7 +265,7 @@ ul {
   bottom: -6px;
   width: 0;
   height: 2px;
-  background: var(--color-yellow);
+  background: var(--bar-gradient);
   border-radius: 999px;
   transition: width var(--transition-fast);
 }
@@ -1149,7 +1156,7 @@ ul {
 }
 
 .pricing-tier-card--featured {
-  border-color: rgba(255, 211, 0, 0.5);
+  border-color: rgba(185, 182, 255, 0.55);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
 }
 

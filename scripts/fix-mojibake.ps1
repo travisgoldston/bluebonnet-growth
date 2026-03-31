@@ -3,7 +3,7 @@ $ErrorActionPreference = "Stop"
 $targets = Get-ChildItem -Recurse -File -Include *.html,*.xml,*.txt
 
 # Fix mojibake by re-interpreting Windows-1252 bytes as UTF-8.
-# This corrects sequences like "Weâ€™re" back to "We’re".
+# This fixes broken punctuation sequences back to normal curly quotes/apostrophes.
 $enc1252 = [Text.Encoding]::GetEncoding(1252)
 $encUtf8 = New-Object Text.UTF8Encoding($false)
 
@@ -13,7 +13,7 @@ foreach ($f in $targets) {
   $text = Get-Content -Raw -Path $p -Encoding UTF8
 
   # Only run the conversion when the file looks "broken".
-  # Mojibake typically introduces Latin-1 characters like Â (U+00C2), â (U+00E2), Ã (U+00C3).
+  # Mojibake typically introduces Latin-1 bytes that show up as characters like U+00C2 / U+00E2 / U+00C3.
   if ($text -notmatch "(\u00C2|\u00E2|\u00C3)") {
     continue
   }
