@@ -986,6 +986,10 @@ ul {
   margin-bottom: 38px;
 }
 
+.why-hard-cards--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .why-hard-card {
   padding: 38px 34px 42px;
   background: rgba(40, 40, 100, 0.55);
@@ -1046,6 +1050,48 @@ ul {
   color: rgba(200, 212, 200, 0.82);
 }
 
+.why-hard-list {
+  margin: 18px 0 0;
+  padding-left: 1.1rem;
+  color: rgba(200, 212, 200, 0.82);
+}
+
+.why-hard-list li {
+  margin-bottom: 10px;
+}
+
+.why-hard-list li:last-child {
+  margin-bottom: 0;
+}
+
+.why-hard-price {
+  margin: 18px 0 14px;
+  font-weight: 700;
+  color: var(--brand-sky-light);
+}
+
+.why-hard-card .btn-full {
+  margin-top: 16px;
+}
+
+.why-hard-card--featured {
+  background: rgba(40, 40, 140, 0.45);
+}
+
+.why-hard-card--featured:hover {
+  background: rgba(40, 40, 140, 0.75);
+}
+
+.why-hard-footer-text a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(200, 212, 200, 0.35);
+}
+
+.why-hard-footer-text a:hover {
+  text-decoration-color: rgba(200, 212, 200, 0.65);
+}
+
 .why-hard-footer {
   display: flex;
   align-items: center;
@@ -1100,6 +1146,9 @@ ul {
 
 @media (max-width: 900px) {
   .why-hard-cards {
+    grid-template-columns: 1fr;
+  }
+  .why-hard-cards--two {
     grid-template-columns: 1fr;
   }
   .why-hard-card:not(:last-child) {
