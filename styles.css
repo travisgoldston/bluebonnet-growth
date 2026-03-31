@@ -85,6 +85,8 @@ main a[href^="/"]:not([class*="btn"]):not(.logo):not(.footer-brand-link) {
 
 .section {
   padding: 96px 0;
+  background: var(--color-bg);
+  color: var(--color-text-main);
 }
 
 .section-light {
