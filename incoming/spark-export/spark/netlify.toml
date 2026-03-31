@@ -1,0 +1,66 @@
+# Clean URLs: serve .html for paths without extension
+[[redirects]]
+  from = "/how-it-works"
+  to = "/how-it-works.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/services"
+  to = "/services.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/pricing"
+  to = "/pricing.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/faq"
+  to = "/faq.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/proof"
+  to = "/proof.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/seo"
+  to = "/seo.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/web-design"
+  to = "/web-design.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/conversion-optimization"
+  to = "/conversion-optimization.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/final-cta"
+  to = "/index.html"
+  status = 200
+  force = true
