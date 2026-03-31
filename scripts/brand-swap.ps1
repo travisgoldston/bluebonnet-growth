@@ -34,7 +34,7 @@ foreach ($path in $files) {
   $c = $c.Replace('href="/favicon.png"', 'href="/assets/favicon-32x32.png"')
   $c = $c.Replace('src="/assets/boldspark-mark.png"', 'src="/assets/bluebonnet-icon.png"')
   $c = $c.Replace('alt="Boldspark"', 'alt="Bluebonnet Growth"')
-  $c = $c.Replace("https://x.com/boldsparkdotco", "https://x.com/bluebonnetdotco")
+  $c = $c.Replace("https://x.com/boldsparkdotco", "https://x.com/bluebonnetgr")
   $c = $c.Replace("https://instagram.com/boldsparkdotco", "https://www.instagram.com/bluebonnetgrowth/")
 
   # Fix prior bad replacements that introduced spaces in URLs/paths
@@ -42,8 +42,8 @@ foreach ($path in $files) {
   $c = $c.Replace("bluebonnet growth-mark.png", "bluebonnet-icon.png")
   $c = $c.Replace("https://instagram.com/bluebonnetdotco", "https://www.instagram.com/bluebonnetgrowth/")
   $c = $c.Replace("https://www.instagram.com/bluebonnetdotco", "https://www.instagram.com/bluebonnetgrowth/")
-  $c = $c.Replace("https://x.com/bluebonnetgrowthdotco", "https://x.com/bluebonnetdotco")
-  $c = $c.Replace("https://x.com/bluebonnetgrowth", "https://x.com/bluebonnetdotco")
+  $c = $c.Replace("https://x.com/bluebonnetgrowthdotco", "https://x.com/bluebonnetgr")
+  $c = $c.Replace("https://x.com/bluebonnetgrowth", "https://x.com/bluebonnetgr")
 
   # Texas roots footer line (keep structure, strengthen trust signal)
   $c = $c.Replace(
