@@ -45,6 +45,12 @@ foreach ($path in $files) {
   $c = $c.Replace("https://x.com/bluebonnetgrowthdotco", "https://x.com/bluebonnetdotco")
   $c = $c.Replace("https://x.com/bluebonnetgrowth", "https://x.com/bluebonnetdotco")
 
+  # Texas roots footer line (keep structure, strengthen trust signal)
+  $c = $c.Replace(
+    '<p class="footer-location">Based in Melissa, Texas and serving North Texas.</p>',
+    '<p class="footer-location">Born and raised Texans. Based in Melissa and serving North Texas.</p>'
+  )
+
   Set-Content -Path $path -Value $c -Encoding utf8
 }
 

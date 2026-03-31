@@ -1,8 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
 
 :root {
   --color-primary: #28288C;
-  --color-yellow: #c4a574;
+  /* Accent tokens (layout unchanged; brand feel updated) */
+  --accent-underline: #F7F6F0; /* parchment */
+  --accent-sage: #8CA08C;      /* hill sage */
+  --color-yellow: var(--accent-sage); /* keep legacy uses readable */
   --color-navy: #1c1b18;
   --color-bg: #ffffff;
   --color-bg-soft: #f7f6f0;
@@ -58,6 +61,16 @@ a {
 main a[href^="/"]:not([class*="btn"]):not(.logo):not(.footer-brand-link) {
   text-decoration: underline;
   text-underline-offset: 3px;
+  text-decoration-color: rgba(28, 27, 24, 0.28);
+}
+
+.section-dark main a[href^="/"]:not([class*="btn"]):not(.logo):not(.footer-brand-link),
+.section-dark a[href^="/"]:not([class*="btn"]):not(.logo):not(.footer-brand-link) {
+  text-decoration-color: rgba(247, 246, 240, 0.85);
+}
+
+.hero-secondary-link {
+  text-decoration-color: rgba(247, 246, 240, 0.85);
 }
 
 .container {
@@ -86,6 +99,7 @@ main a[href^="/"]:not([class*="btn"]):not(.logo):not(.footer-brand-link) {
 }
 
 .section h2 {
+  font-family: 'Lora', serif;
   font-size: clamp(2.1rem, 3vw, 2.7rem);
   line-height: 1.05;
   letter-spacing: -0.03em;
@@ -93,6 +107,7 @@ main a[href^="/"]:not([class*="btn"]):not(.logo):not(.footer-brand-link) {
 }
 
 .section h3 {
+  font-family: 'Lora', serif;
   font-size: 1.25rem;
   margin: 24px 0 10px;
 }
@@ -121,11 +136,12 @@ body.page-inner .header-inner {
 .page-hero {
   padding-top: 140px;
   padding-bottom: 56px;
-  background: radial-gradient(circle at top left, rgba(63, 99, 255, 0.14), transparent 55%);
+  background: radial-gradient(circle at top left, rgba(40, 40, 140, 0.14), transparent 55%);
   border-bottom: 1px solid var(--color-border-subtle);
 }
 
 .page-hero h1 {
+  font-family: 'Lora', serif;
   font-size: clamp(2rem, 4vw, 2.75rem);
   line-height: 1.1;
   letter-spacing: -0.03em;
@@ -140,6 +156,7 @@ body.page-inner .header-inner {
 }
 
 .eyebrow {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.18em;
@@ -147,12 +164,26 @@ body.page-inner .header-inner {
 }
 
 .section-dark .eyebrow {
-  color: var(--color-yellow);
+  color: var(--accent-underline);
 }
 
 p {
   margin: 0 0 14px;
   line-height: 1.6;
+}
+
+/* About page photo (Travis + Victoria) */
+.about-photo {
+  margin: 10px auto 22px;
+  max-width: min(340px, 100%);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.about-photo img {
+  width: 100%;
+  height: auto;
 }
 
 ul {
@@ -270,7 +301,7 @@ ul {
   min-width: 220px;
   padding: 10px;
   border-radius: 14px;
-  background: rgba(10, 10, 35, 0.98);
+  background: rgba(26, 26, 92, 0.98);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 18px 45px rgba(6, 10, 50, 0.52);
   visibility: hidden;
@@ -362,7 +393,7 @@ ul {
   top: 100%;
   left: 0;
   right: 0;
-  background: rgba(10, 10, 35, 0.98);
+  background: rgba(26, 26, 92, 0.98);
   box-shadow: 0 12px 40px rgba(6, 10, 50, 0.52);
   max-height: 0;
   overflow: hidden;
@@ -453,14 +484,14 @@ ul {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-primary), #5b7aff);
+  background: linear-gradient(135deg, var(--color-primary), rgba(79, 70, 229, 0.95));
   color: #ffffff;
-  box-shadow: 0 18px 40px rgba(31, 79, 255, 0.45);
+  box-shadow: 0 18px 40px rgba(40, 40, 140, 0.35);
 }
 
 .btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 24px 50px rgba(17, 50, 200, 0.65);
+  box-shadow: 0 24px 50px rgba(40, 40, 140, 0.45);
 }
 
 .btn-outline {
@@ -479,7 +510,7 @@ ul {
 }
 
 .btn:focus-visible {
-  outline: 2px solid var(--color-yellow);
+  outline: 2px solid var(--accent-underline);
   outline-offset: 2px;
 }
 
@@ -487,8 +518,8 @@ ul {
 
 .hero {
   padding-top: 140px;
-  background: radial-gradient(circle at top left, rgba(63, 99, 255, 0.16), transparent 60%),
-    radial-gradient(circle at top right, rgba(15, 16, 40, 0.95), #050615 65%);
+  background: radial-gradient(circle at top left, rgba(40, 40, 140, 0.16), transparent 60%),
+    radial-gradient(circle at top right, rgba(26, 26, 92, 0.95), rgba(26, 26, 92, 0.98) 65%);
   color: #f7f7ff;
 }
 
@@ -591,7 +622,7 @@ ul {
   top: 50%;
   transform: translateY(-50%);
   min-width: 220px;
-  background: #050616;
+  background: rgba(26, 26, 92, 0.98);
   color: #f2f4ff;
   border-radius: 12px;
   padding: 10px 12px;
@@ -615,13 +646,13 @@ ul {
 }
 
 .hero-search-card {
-  background: radial-gradient(circle at top left, rgba(80, 127, 255, 0.85), rgba(4, 11, 40, 0.98));
+  background: radial-gradient(circle at top left, rgba(40, 40, 140, 0.85), rgba(26, 26, 92, 0.98));
   border-radius: 28px;
   padding: 24px;
   box-shadow: var(--shadow-soft);
   max-width: 420px;
   width: 100%;
-  border: 1px solid rgba(136, 159, 255, 0.4);
+  border: 1px solid rgba(247, 246, 240, 0.18);
   position: relative;
   overflow: hidden;
 }
@@ -1279,7 +1310,7 @@ ul {
 }
 
 .timeline-step.is-active .timeline-step-number {
-  background: #1f4fff;
+  background: var(--color-primary);
   color: #ffffff;
 }
 
@@ -1450,7 +1481,7 @@ ul {
 
 .chat-bubble--spark {
   justify-self: flex-end;
-  background: linear-gradient(135deg, #1f4fff, #4a75ff);
+  background: linear-gradient(135deg, var(--color-primary), rgba(79, 70, 229, 0.92));
   color: #ffffff;
 }
 
@@ -1538,7 +1569,7 @@ ul {
 }
 
 .before-after-side--after {
-  color: #0a0a23;
+  color: var(--color-text-main);
 }
 
 .before-after-label {
@@ -1546,7 +1577,7 @@ ul {
   text-transform: uppercase;
   letter-spacing: 0.16em;
   margin-bottom: 10px;
-  color: #9fa4ff;
+  color: rgba(79, 70, 229, 0.80);
 }
 
 .before-after-overlay .before-after-label {
@@ -1757,7 +1788,7 @@ input[type='range'] {
 
 .chip input:checked + span,
 .chip input[type='radio']:checked + span {
-  color: #0a0a23;
+  color: var(--color-text-main);
 }
 
 .chip input:checked ~ span,
@@ -1830,9 +1861,9 @@ input[type='range'] {
 
 .faq-item.is-open .faq-icon {
   transform: rotate(45deg);
-  background: #1f4fff;
+  background: var(--color-primary);
   color: #ffffff;
-  border-color: #1f4fff;
+  border-color: var(--color-primary);
 }
 
 .faq-answer {
@@ -1888,7 +1919,7 @@ input[type='range'] {
 
 .field-help {
   font-size: 0.8rem;
-  color: #9fa4ff;
+  color: rgba(79, 70, 229, 0.80);
 }
 
 .form-footnote {
@@ -1901,8 +1932,8 @@ input[type='range'] {
   margin-top: 18px;
   padding: 12px 12px 14px;
   border-radius: 16px;
-  background: rgba(16, 96, 255, 0.16);
-  border: 1px dashed rgba(152, 179, 255, 0.7);
+  background: rgba(79, 70, 229, 0.12);
+  border: 1px dashed rgba(79, 70, 229, 0.35);
   display: none;
 }
 
