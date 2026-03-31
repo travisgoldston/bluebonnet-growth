@@ -1,7 +1,4 @@
 User-agent: *
-Disallow: /services/
-Disallow: /pages/services/
-Disallow: /blog/
-Disallow: /seo-company-
+Disallow:
 
-Sitemap: https://www.bluebonnetgrowth.com/sitemap.xml
+Sitemap: https://bluebonnetgrowth.com/sitemap.xml

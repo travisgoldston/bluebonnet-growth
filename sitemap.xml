@@ -1,23 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.bluebonnetgrowth.com/</loc>
-    <lastmod>2026-03-30</lastmod>
+    <loc>https://bluebonnetgrowth.com/</loc>
+    <lastmod>2026-03-31</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://www.bluebonnetgrowth.com/how-it-works</loc>
-    <lastmod>2026-03-30</lastmod>
+    <loc>https://bluebonnetgrowth.com/services</loc>
+    <lastmod>2026-03-31</lastmod>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://bluebonnetgrowth.com/seo</loc>
+    <lastmod>2026-03-31</lastmod>
     <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://www.bluebonnetgrowth.com/about</loc>
-    <lastmod>2026-03-30</lastmod>
+    <loc>https://bluebonnetgrowth.com/web-design</loc>
+    <lastmod>2026-03-31</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://bluebonnetgrowth.com/conversion-optimization</loc>
+    <lastmod>2026-03-31</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://bluebonnetgrowth.com/pricing</loc>
+    <lastmod>2026-03-31</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://bluebonnetgrowth.com/about</loc>
+    <lastmod>2026-03-31</lastmod>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.bluebonnetgrowth.com/contact</loc>
-    <lastmod>2026-03-30</lastmod>
+    <loc>https://bluebonnetgrowth.com/faq</loc>
+    <lastmod>2026-03-31</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bluebonnetgrowth.com/proof</loc>
+    <lastmod>2026-03-31</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bluebonnetgrowth.com/blog</loc>
+    <lastmod>2026-03-31</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bluebonnetgrowth.com/locations</loc>
+    <lastmod>2026-03-31</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bluebonnetgrowth.com/final-cta</loc>
+    <lastmod>2026-03-31</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://bluebonnetgrowth.com/frisco</loc>
+    <lastmod>2026-03-31</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://bluebonnetgrowth.com/allen</loc>
+    <lastmod>2026-03-31</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://bluebonnetgrowth.com/wylie</loc>
+    <lastmod>2026-03-31</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://bluebonnetgrowth.com/van-alstyne</loc>
+    <lastmod>2026-03-31</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://bluebonnetgrowth.com/gunter</loc>
+    <lastmod>2026-03-31</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://bluebonnetgrowth.com/sherman</loc>
+    <lastmod>2026-03-31</lastmod>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://bluebonnetgrowth.com/blog/google-maps-not-showing-up</loc>
+    <lastmod>2026-03-31</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://bluebonnetgrowth.com/blog/what-is-local-seo</loc>
+    <lastmod>2026-03-31</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://bluebonnetgrowth.com/blog/website-traffic-no-calls</loc>
+    <lastmod>2026-03-31</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://bluebonnetgrowth.com/blog/is-your-seo-company-working</loc>
+    <lastmod>2026-03-31</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://bluebonnetgrowth.com/blog/google-business-profile-checklist</loc>
+    <lastmod>2026-03-31</lastmod>
+    <priority>0.70</priority>
   </url>
 </urlset>
