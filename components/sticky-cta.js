@@ -16,7 +16,7 @@
 
     const a = document.createElement('a');
     a.className = 'btn btn-primary sticky-cta__button';
-    a.href = 'contact';
+    a.href = '#get-started';
     a.textContent = 'Book a Strategy Call';
 
     inner.appendChild(a);

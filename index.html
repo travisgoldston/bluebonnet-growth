@@ -76,14 +76,19 @@
     <section class="hero hero-home">
       <div class="hero-content hero-home-grid">
         <div class="reveal-on-scroll">
-          <p class="hero-kicker">Bluebonnet Growth</p>
+          <p class="hero-kicker">Bluebonnet Growth: So people can actually find your business</p>
           <h1>Get found on Google. Get more calls.</h1>
-          <p class="hero-subtitle">We help small businesses across North Texas show up on the map, look legit on a phone, and turn clicks into calls. You work directly with Travis and Victoria in Melissa. No contracts after setup. Month to month.</p>
+          <p class="hero-subtitle">We help local businesses across North Texas show up when people search, so your phone rings and your calendar fills. No marketing degree required.</p>
+          <ul class="check-list" style="margin-top: 0; max-width: 680px;">
+            <li>No long term contract</li>
+            <li>You work directly with Travis &amp; Victoria, not an account manager</li>
+            <li>Free 10 to 15 minute look at where you stand</li>
+          </ul>
           <div class="hero-cta">
             <a href="#get-started" class="btn btn-primary">Book a Strategy Call</a>
             <a href="#get-started" class="btn btn-secondary">Request a free visibility check</a>
           </div>
-          <p class="hero-reassure">If we’re not a fit, we’ll tell you. No pressure.</p>
+          <p class="hero-reassure">No pressure, no hard sell.</p>
           <p class="hero-texas">Born and raised in Texas. Based in Melissa, right off 75.</p>
           <div class="pill-grid hero-metros" role="list" aria-label="North Texas cities we support">
             <span class="pill" role="listitem">McKinney</span>
@@ -96,15 +101,26 @@
           </div>
         </div>
 
-        <aside class="hero-side" aria-label="What changes when you show up">
-          <div class="hero-side-card reveal-on-scroll">
-            <p class="hero-side-label">What you’re buying</p>
-            <ul class="hero-outcomes">
-              <li><strong>Map visibility</strong><span class="muted">so you’re in the running when they search</span></li>
-              <li><strong>A site that converts</strong><span class="muted">fast on phones, easy to call</span></li>
-              <li><strong>Clear priorities</strong><span class="muted">so you know what we’re fixing and why</span></li>
-            </ul>
-            <p class="hero-side-note">This is for local businesses who want steady calls from Google, not another “marketing package” that disappears in 30 days.</p>
+        <aside class="hero-side" aria-label="Example of what customers see on Google">
+          <div class="search-mock reveal-on-scroll" aria-label="Example of what a customer sees">
+            <div class="search-mock__top">
+              <div class="search-mock__query">“plumber near me”</div>
+              <div class="search-mock__chip">Open now</div>
+            </div>
+            <div class="search-mock__list">
+              <div class="search-mock__item">
+                <div class="search-mock__name">Other company</div>
+                <div class="search-mock__meta">“Open now” · 3.1 ★</div>
+              </div>
+              <div class="search-mock__item search-mock__item--yourbiz">
+                <div class="search-mock__name">Your business</div>
+                <div class="search-mock__meta">“Open now” · 4.8 ★</div>
+                <div class="search-mock__actions">
+                  <div class="search-mock__call">Call</div>
+                  <div class="search-mock__note">“Found you on Google.”</div>
+                </div>
+              </div>
+            </div>
           </div>
         </aside>
       </div>
@@ -150,25 +166,14 @@
             <p class="muted">That sounds harsh. It’s also how people behave. They search “roofer near me” or “dentist in Allen” and pick from what shows up first.</p>
             <p class="muted">Your job isn’t to “game Google.” Your job is to make it easy for Google (and real people) to understand: what you do, where you do it, and why you’re the safe call.</p>
           </div>
-          <div class="search-mock reveal-on-scroll" aria-label="Example of what a customer sees">
-            <div class="search-mock__top">
-              <div class="search-mock__query">“[your service] near me”</div>
-              <div class="search-mock__chip">Open now</div>
-            </div>
-            <div class="search-mock__list">
-              <div class="search-mock__item">
-                <div class="search-mock__name">Another name</div>
-                <div class="search-mock__meta">3.1 ★ · “Open now”</div>
-              </div>
-              <div class="search-mock__item search-mock__item--yourbiz">
-                <div class="search-mock__name">Your business</div>
-                <div class="search-mock__meta">4.8 ★ · “Open now”</div>
-                <div class="search-mock__actions">
-                  <div class="search-mock__call">Call</div>
-                  <div class="search-mock__note">“Found you online.”</div>
-                </div>
-              </div>
-            </div>
+          <div class="card reveal-on-scroll">
+            <h3 style="margin-top: 0;">The simple version</h3>
+            <ul class="check-list" style="margin-top: 1rem;">
+              <li>Google needs clear signals (not guesses)</li>
+              <li>People need a fast, easy-to-call website</li>
+              <li>Both need proof that you’re the real deal</li>
+            </ul>
+            <p class="muted" style="margin: 1rem 0 0;">That’s what the visibility check looks for. <a href="#get-started">Request one</a>.</p>
           </div>
         </div>
       </div>
@@ -517,10 +522,8 @@
           <h3>Quick links</h3>
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/#growth-path">Growth path</a></li>
             <li><a href="/#services">Services</a></li>
             <li><a href="/#pricing">Pricing</a></li>
-            <li><a href="how-it-works">How It Works</a></li>
             <li><a href="about">About</a></li>
             <li><a href="contact">Contact</a></li>
           </ul>
@@ -544,5 +547,6 @@
 
   <script src="components/nav.js"></script>
   <script src="components/sticky-cta.js"></script>
+  <script src="components/home.js"></script>
 </body>
 </html>

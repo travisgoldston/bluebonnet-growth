@@ -197,7 +197,16 @@
 
     nextBtn.addEventListener('click', function (e) {
       var mode = nextBtn.getAttribute('data-mode') || 'next';
-      if (mode === 'submit') return; // let native submit happen
+      if (mode === 'submit') {
+        e.preventDefault();
+        if (!validateStep(steps[idx])) return;
+        if (typeof form.requestSubmit === 'function') {
+          form.requestSubmit();
+        } else {
+          form.submit();
+        }
+        return;
+      }
       e.preventDefault();
       if (!validateStep(steps[idx])) return;
       setStep(idx + 1);
