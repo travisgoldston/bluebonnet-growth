@@ -252,6 +252,28 @@ ul {
   gap: 3px;
 }
 
+.logo-wordmark {
+  display: grid;
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  margin-left: 4px;
+}
+
+.logo-wordmark-bluebonnet {
+  font-family: 'Lora', serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--dark-text);
+}
+
+.logo-wordmark-growth {
+  font-family: 'Lora', serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--brand-sky-light);
+}
+
 .site-header.scrolled .header-inner {
   padding-block: 10px;
 }
