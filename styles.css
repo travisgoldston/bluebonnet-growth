@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
 
-/* Bluebonnet overrides for Boldspark layout */
 :root {
   --color-primary: #28288C;
   --color-yellow: #c4a574;
@@ -77,7 +76,7 @@ main a[href^="/"]:not([class*="btn"]):not(.logo):not(.footer-brand-link) {
 }
 
 .section-dark {
-  background: radial-gradient(circle at top left, #1730a1 0, #050614 55%);
+  background: radial-gradient(circle at top left, var(--color-primary) 0, var(--color-navy) 55%);
   color: #f7f7ff;
 }
 
@@ -91,19 +90,6 @@ main a[href^="/"]:not([class*="btn"]):not(.logo):not(.footer-brand-link) {
   line-height: 1.05;
   letter-spacing: -0.03em;
   margin: 16px 0 20px;
-}
-
-.about-photo {
-  margin: 8px auto 28px;
-  max-width: min(420px, 100%);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-soft);
-}
-
-.about-photo img {
-  width: 100%;
-  height: auto;
 }
 
 .section h3 {
@@ -124,8 +110,8 @@ main a[href^="/"]:not([class*="btn"]):not(.logo):not(.footer-brand-link) {
 
 /* Inner page header (no transparent overlay) */
 body.page-inner .site-header {
-  background: rgba(10, 10, 35, 0.96);
-  box-shadow: 0 12px 40px rgba(6, 10, 50, 0.52);
+  background: rgba(15, 23, 42, 0.96);
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.42);
 }
 
 body.page-inner .header-inner {
@@ -181,13 +167,13 @@ ul {
   top: 0;
   z-index: 50;
   backdrop-filter: blur(16px);
-  background: linear-gradient(to bottom, rgba(10, 10, 35, 0.9), transparent);
+  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), transparent);
   transition: background var(--transition-med), box-shadow var(--transition-med), padding var(--transition-med);
 }
 
 .site-header.scrolled {
-  background: rgba(10, 10, 35, 0.96);
-  box-shadow: 0 12px 40px rgba(6, 10, 50, 0.52);
+  background: rgba(15, 23, 42, 0.96);
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.42);
 }
 
 .header-inner {
@@ -1573,7 +1559,7 @@ ul {
   left: 0;
   bottom: 0;
   width: 100%;
-  background: radial-gradient(circle at top left, #51a3ff, #c1e1ff);
+  background: radial-gradient(circle at top left, rgba(49, 46, 129, 0.16), rgba(79, 70, 229, 0.10));
   padding: 26px;
   border-radius: 26px;
   clip-path: inset(0 100% 0 0 round 26px);
@@ -1592,7 +1578,7 @@ ul {
   padding: 10px 18px;
   border-radius: 999px;
   border: 2px solid rgba(255, 255, 255, 0.4);
-  background: rgba(10, 10, 35, 0.85);
+  background: rgba(15, 23, 42, 0.85);
   color: #e3e6ff;
   font-size: 0.9rem;
   font-weight: 500;
@@ -1601,7 +1587,7 @@ ul {
 }
 
 .before-after-toggle:hover {
-  background: rgba(10, 10, 35, 0.95);
+  background: rgba(15, 23, 42, 0.95);
   border-color: rgba(255, 255, 255, 0.6);
   color: #fff;
 }
@@ -2296,5 +2282,4 @@ input[type='range'] {
     justify-content: flex-start;
   }
 }
-
 
