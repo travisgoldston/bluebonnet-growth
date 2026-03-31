@@ -8,15 +8,6 @@
       "destination": "https://bluebonnetgrowth.com/$1",
       "permanent": true
     },
-    { "source": "/pricing", "destination": "/contact", "permanent": true },
-    { "source": "/pricing.html", "destination": "/contact", "permanent": true },
-    { "source": "/services", "destination": "/contact", "permanent": true },
-    { "source": "/services.html", "destination": "/contact", "permanent": true },
-    { "source": "/services/:path*", "destination": "/contact", "permanent": true },
-    { "source": "/pages/services/:path*", "destination": "/contact", "permanent": true },
-    { "source": "/blog", "destination": "/", "permanent": true },
-    { "source": "/blog.html", "destination": "/", "permanent": true },
-    { "source": "/blog/:path*", "destination": "/", "permanent": true },
     { "source": "/seo-company-:city", "destination": "/", "permanent": true },
     { "source": "/seo-company-:city.html", "destination": "/", "permanent": true }
   ]
