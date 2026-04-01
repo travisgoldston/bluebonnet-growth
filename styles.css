@@ -542,6 +542,23 @@ ul {
   box-shadow: 0 24px 50px rgba(40, 40, 140, 0.45);
 }
 
+/* Primary fill matches deep indigo — invisible on hero/header. Sage pill matches “why-hard” CTA. */
+.hero .btn-primary,
+.site-header .btn-primary,
+.nav-drawer .btn-primary {
+  background: var(--brand-sage-light);
+  color: var(--brand-deep-indigo);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.38);
+}
+
+.hero .btn-primary:hover,
+.site-header .btn-primary:hover,
+.nav-drawer .btn-primary:hover {
+  background: #ffffff;
+  color: var(--brand-deep-indigo);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.42);
+}
+
 .btn-outline {
   background: transparent;
   color: var(--dark-text);
@@ -701,16 +718,17 @@ ul {
 .hero-ghost-link {
   font-size: 0.92rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.72);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 6px;
   transition: color var(--transition-fast);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
 }
 
 .hero-ghost-link:hover {
-  color: rgba(255, 255, 255, 0.8);
+  color: #ffffff;
 }
 
 .no-pressure {
@@ -1347,6 +1365,46 @@ ul {
   background: var(--accent-sage);
   margin-bottom: 44px;
   border-radius: 2px;
+}
+
+.why-hard-rule:has(+ .why-hard-lede) {
+  margin-bottom: 22px;
+}
+
+.why-hard-lede {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(200, 212, 200, 0.88);
+  max-width: 720px;
+  margin: 0 0 40px;
+}
+
+.why-hard-lede a {
+  color: var(--brand-sky-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(168, 200, 240, 0.45);
+}
+
+.why-hard-lede a:hover {
+  color: #ffffff;
+  text-decoration-color: rgba(255, 255, 255, 0.55);
+}
+
+.why-hard-lede:has(+ .why-hard-footer) {
+  margin-bottom: 28px;
+}
+
+.why-hard-body a {
+  color: var(--brand-sky-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(168, 200, 240, 0.45);
+}
+
+.why-hard-body a:hover {
+  color: #ffffff;
+  text-decoration-color: rgba(255, 255, 255, 0.55);
 }
 
 .why-hard-cards {
