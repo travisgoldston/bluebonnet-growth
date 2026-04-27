@@ -115,6 +115,138 @@ main a[href^="/"]:not([class*="btn"]):not(.logo):not(.footer-brand-link) {
   color: var(--dark-text);
 }
 
+/* Areas we serve (scrolling cities) */
+.areas-serve {
+  padding-block: 54px;
+}
+
+.areas-serve-inner {
+  display: grid;
+  gap: 18px;
+}
+
+.areas-serve-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.areas-serve-sub {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.city-marquee {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(28, 27, 24, 0.08);
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 18px 45px rgba(28, 27, 24, 0.08);
+}
+
+.city-marquee::before,
+.city-marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.city-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, rgba(247, 246, 240, 1), rgba(247, 246, 240, 0));
+}
+
+.city-marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, rgba(247, 246, 240, 1), rgba(247, 246, 240, 0));
+}
+
+.city-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  width: max-content;
+  animation: cityMarquee 26s linear infinite;
+  will-change: transform;
+}
+
+.city-marquee:hover .city-marquee-track {
+  animation-play-state: paused;
+}
+
+.city-marquee-track--a11y {
+  animation: none;
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.city-marquee-sep {
+  opacity: 0.35;
+  padding-inline: 6px;
+}
+
+.city-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(28, 27, 24, 0.12);
+  background: rgba(247, 246, 240, 0.7);
+  color: var(--color-text-main);
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  transition: transform var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.city-chip:hover {
+  transform: translateY(-1px);
+  background: #ffffff;
+  border-color: rgba(28, 27, 24, 0.2);
+}
+
+.city-chip:focus-visible {
+  outline: 2px solid rgba(40, 40, 140, 0.65);
+  outline-offset: 3px;
+}
+
+@keyframes cityMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .city-marquee-track {
+    animation: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .areas-serve {
+    padding-block: 44px;
+  }
+  .city-marquee::before,
+  .city-marquee::after {
+    width: 40px;
+  }
+}
+
 .section-dark p,
 .section-dark li {
   color: var(--dark-muted);
