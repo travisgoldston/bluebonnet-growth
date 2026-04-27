@@ -542,21 +542,23 @@ ul {
   box-shadow: 0 24px 50px rgba(40, 40, 140, 0.45);
 }
 
-/* Primary fill matches deep indigo — invisible on hero/header. Sage pill matches “why-hard” CTA. */
+/* White CTAs on blue/dark surfaces (navbar + dark sections). */
 .hero .btn-primary,
 .site-header .btn-primary,
-.nav-drawer .btn-primary {
-  background: var(--brand-sage-light);
+.nav-drawer .btn-primary,
+.section-dark .btn-primary {
+  background: #ffffff;
   color: var(--brand-deep-indigo);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.38);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.42);
 }
 
 .hero .btn-primary:hover,
 .site-header .btn-primary:hover,
-.nav-drawer .btn-primary:hover {
-  background: #ffffff;
+.nav-drawer .btn-primary:hover,
+.section-dark .btn-primary:hover {
+  background: rgba(255, 255, 255, 0.92);
   color: var(--brand-deep-indigo);
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.42);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.46);
 }
 
 .btn-outline {
@@ -1555,7 +1557,7 @@ ul {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--brand-deep-indigo);
-  background: var(--brand-sage-light, #C8D4C8);
+  background: #ffffff;
   border: none;
   border-radius: 10px;
   padding: 14px 22px;
@@ -1567,7 +1569,7 @@ ul {
 }
 
 .why-hard-cta:hover {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.92);
   transform: translateY(-1px);
 }
 
@@ -1649,12 +1651,12 @@ ul {
 
 .section-dark .panel .btn-primary,
 .section-dark .pricing-tier-card .btn-primary {
-  color: #ffffff;
+  color: var(--brand-deep-indigo);
 }
 
 .section-dark .panel .btn-primary:hover,
 .section-dark .pricing-tier-card .btn-primary:hover {
-  color: #ffffff;
+  color: var(--brand-deep-indigo);
 }
 
 .section-dark .panel ul {
