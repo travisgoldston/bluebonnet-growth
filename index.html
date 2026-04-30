@@ -3,633 +3,793 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>[Free Audit] Local SEO & Web Design NTX | Bluebonnet Growth</title>
+    <title>Bluebonnet Growth: So people can actually find your business</title>
     <meta
       name="description"
-      content="Not getting enough calls from Google? Get a free local SEO audit + web design fixes for North Texas operators—Melissa to Frisco. Plain-English plan in 24h."
+      content="Bluebonnet Growth helps small, local businesses show up on Google, get more calls, and fill their schedule, without you having to learn marketing."
     />
-    <link rel="canonical" href="https://www.bluebonnetgrowth.com/" />
-    <meta name="robots" content="index, follow" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="[Free Audit] Local SEO & Web Design NTX | Bluebonnet Growth" />
-    <meta
-      property="og:description"
-      content="Not getting enough calls from Google? Get a free audit + plan to win the Map Pack and convert more visitors into leads."
-    />
-
     <link rel="icon" href="/assets/favicon-32x32.png" type="image/png" />
     <link rel="apple-touch-icon" href="/assets/favicon-32x32.png" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
-      rel="stylesheet"
-    />
-
-    <script>
-      // Tailwind config must load before the CDN script.
-      tailwind = {
-        theme: {
-          extend: {
-            colors: {
-              cream: "#faf6f0",
-              bluebonnet: "#3259e8",
-              ink: "#0b1220",
-            },
-            fontFamily: {
-              display: ["Fraunces", "ui-serif", "Georgia", "serif"],
-              body: ["DM Sans", "ui-sans-serif", "system-ui", "Segoe UI", "sans-serif"],
-            },
-            boxShadow: {
-              soft: "0 18px 50px rgba(11, 18, 32, 0.12)",
-            },
-          },
-        },
-      };
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-      @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
-        }
-      }
-      [data-reveal] {
-        opacity: 0;
-        transform: translateY(10px);
-        transition: opacity 600ms ease, transform 600ms ease;
-      }
-      [data-reveal].is-in {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    </style>
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Bluebonnet Growth",
-        "url": "https://www.bluebonnetgrowth.com",
-        "email": "hello@bluebonnetgrowth.com",
-        "areaServed": ["Melissa", "McKinney", "Anna", "Frisco", "Prosper", "Allen"],
-        "serviceType": ["SEO", "Web Design", "Google Business Profile Optimization"]
-      }
-    </script>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QG3FTP7PC3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-QG3FTP7PC3");
-    </script>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="bg-cream font-body text-ink antialiased">
-    <a
-      href="#lead"
-      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:shadow-soft"
-    >
-      Skip to lead form
-    </a>
-
-    <header class="sticky top-0 z-50 border-b border-black/5 bg-cream/80 backdrop-blur">
-      <div aria-hidden="true" class="h-1 w-full bg-gradient-to-r from-bluebonnet/0 via-bluebonnet/70 to-bluebonnet/0"></div>
-      <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
-        <a href="/" class="flex items-center gap-2">
-          <img src="/assets/bluebonnet-icon.png" alt="" width="28" height="28" decoding="async" />
-          <span class="font-display text-lg tracking-tight">Bluebonnet <span class="text-bluebonnet">Growth</span></span>
+  <body>
+    <header class="site-header" data-header>
+      <div class="container header-inner">
+        <a href="/" class="logo">
+          <img
+            src="/assets/bluebonnet-icon.png"
+            alt="Bluebonnet Growth"
+            class="logo-mark"
+            width="26"
+            height="26"
+            loading="eager"
+            decoding="async"
+          />
+          <span class="logo-wordmark" aria-label="Bluebonnet Growth">
+  <span class="logo-wordmark-bluebonnet">Bluebonnet</span>
+  <span class="logo-wordmark-growth">Growth</span>
+</span>
         </a>
-
-        <nav class="hidden items-center gap-7 text-sm font-semibold text-ink/80 md:flex" aria-label="Primary">
-          <a class="hover:text-ink hover:underline hover:decoration-bluebonnet/60 hover:underline-offset-8" href="/seo">Local SEO</a>
-          <a class="hover:text-ink hover:underline hover:decoration-bluebonnet/60 hover:underline-offset-8" href="/web-design">Web Design</a>
-          <a class="hover:text-ink hover:underline hover:decoration-bluebonnet/60 hover:underline-offset-8" href="/proof">Proof</a>
-          <a class="hover:text-ink hover:underline hover:decoration-bluebonnet/60 hover:underline-offset-8" href="/pricing">Pricing</a>
-          <a class="hover:text-ink hover:underline hover:decoration-bluebonnet/60 hover:underline-offset-8" href="/about">About</a>
+        <nav class="nav" aria-label="Primary">
+          <div class="nav-item nav-item--dropdown">
+            <a href="/services" class="nav-link nav-link--dropdown">
+              Services <span class="nav-caret" aria-hidden="true">▾</span>
+            </a>
+            <div class="nav-dropdown" aria-label="Services">
+              <a href="/services" class="nav-dropdown-link">All Services</a>
+              <a href="/seo" class="nav-dropdown-link">SEO</a>
+              <a href="/web-design" class="nav-dropdown-link">Web Design</a>
+              <a href="/conversion-optimization" class="nav-dropdown-link">Conversion Optimization</a>
+            </div>
+          </div>
+          <a href="/about" class="nav-link">About us</a>
+          <a href="/pricing" class="nav-link">Pricing</a>
+          <a href="/proof" class="nav-link">Our Approach</a>
+          <a href="/blog" class="nav-link">Blog</a>
+          <a href="/faq" class="nav-link">FAQ</a>
         </nav>
-
-        <div class="hidden items-center gap-2 md:flex">
-          <a
-            href="#lead"
-            class="inline-flex items-center justify-center rounded-xl bg-bluebonnet px-4 py-2 text-sm font-semibold text-white shadow-soft hover:brightness-110 focus:outline-none focus:ring-4 focus:ring-bluebonnet/20"
-          >
-            Get My Free SEO Audit
-          </a>
-        </div>
+        <a href="/final-cta" class="btn btn-primary header-cta">Book a Strategy Call</a>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer" data-nav-toggle>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+      <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+        <nav class="nav-drawer-inner" aria-label="Mobile navigation">
+          <div class="nav-drawer-group">
+            <a href="/services" class="nav-drawer-link">
+              Services <span class="nav-caret" aria-hidden="true">▾</span>
+            </a>
+            <div class="nav-drawer-sub" aria-label="Services">
+              <a href="/seo" class="nav-drawer-sublink">SEO</a>
+              <a href="/web-design" class="nav-drawer-sublink">Web Design</a>
+              <a href="/conversion-optimization" class="nav-drawer-sublink">Conversion Optimization</a>
+            </div>
+          </div>
+          <a href="/about" class="nav-drawer-link">About us</a>
+          <a href="/pricing" class="nav-drawer-link">Pricing</a>
+          <a href="/proof" class="nav-drawer-link">Our Approach</a>
+          <a href="/blog" class="nav-drawer-link">Blog</a>
+          <a href="/faq" class="nav-drawer-link">FAQ</a>
+          <a href="/final-cta" class="btn btn-primary nav-drawer-cta">Book a Strategy Call</a>
+        </nav>
       </div>
     </header>
 
     <main>
       <!-- HERO -->
-      <section class="relative overflow-hidden bg-gradient-to-b from-bluebonnet/5 via-cream to-cream">
-        <div aria-hidden="true" class="pointer-events-none absolute inset-0">
-          <div class="absolute -left-24 -top-24 h-96 w-96 rounded-full bg-bluebonnet/20 blur-3xl"></div>
-          <div class="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-bluebonnet/15 blur-3xl"></div>
-        </div>
+      <section id="hero" class="section hero">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="container hero-inner">
+          <div class="hero-left">
+            <div class="hero-eyebrow">Texas-built · Operator-led</div>
 
-        <div class="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-12 lg:items-center lg:gap-14">
-          <div class="lg:col-span-7" data-reveal>
-            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-ink/60">
-              <span class="inline-flex items-center gap-2 rounded-full border border-bluebonnet/15 bg-white/70 px-3 py-1">
-                <span class="h-2 w-2 rounded-full bg-bluebonnet"></span>
-                Texas-built · operator-led
-              </span>
-            </p>
-
-            <h1 class="mt-4 font-display text-4xl leading-[1.05] tracking-tight text-ink sm:text-5xl">
-              Stop being invisible on Google.
-              <span class="text-bluebonnet">Start getting more calls.</span>
+            <h1 class="hero-headline">
+              Get found on Google.<br>Get more calls.<br><em>Without the runaround.</em>
             </h1>
-            <p class="mt-5 max-w-xl text-lg leading-relaxed text-ink/75">
-              Texas-built SEO and high-converting web design for local operators who are tired of being buried on page two.
+
+            <div class="hero-rule" aria-hidden="true"></div>
+
+            <p class="hero-body">
+              We help local businesses across North Texas show up when people search, so your phone rings and your calendar fills. Plain English. No fluff.
             </p>
 
-            <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a
-                href="#lead"
-                class="inline-flex items-center justify-center rounded-2xl bg-bluebonnet px-6 py-3 text-base font-semibold text-white shadow-soft hover:-translate-y-0.5 hover:brightness-110 hover:shadow-[0_22px_60px_rgba(50,89,232,0.22)] focus:outline-none focus:ring-4 focus:ring-bluebonnet/25"
-              >
-                Get My Free SEO Audit
-              </a>
-              <a href="/contact" class="text-sm font-semibold text-ink/80 hover:text-bluebonnet">
-                Or book a quick call <span aria-hidden="true">→</span>
-              </a>
+            <div class="proof-list" aria-label="Why work with us">
+              <div class="proof-item">No long-term contracts</div>
+              <div class="proof-item">You work directly with us, not an account manager</div>
+              <div class="proof-item">Free 10–15 min look at where you stand</div>
             </div>
 
-            <dl class="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
-              <div class="rounded-2xl border border-bluebonnet/10 bg-white/80 p-4">
-                <dt class="text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">No lock-ins</dt>
-                <dd class="mt-1 text-sm font-semibold text-ink">Month-to-month</dd>
-              </div>
-              <div class="rounded-2xl border border-bluebonnet/10 bg-white/80 p-4">
-                <dt class="text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">No runaround</dt>
-                <dd class="mt-1 text-sm font-semibold text-ink">You talk to the operator</dd>
-              </div>
-              <div class="rounded-2xl border border-bluebonnet/10 bg-white/80 p-4">
-                <dt class="text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">Fast clarity</dt>
-                <dd class="mt-1 text-sm font-semibold text-ink">Plain-English audit</dd>
-              </div>
-            </dl>
+            <div class="hero-actions">
+              <a href="/final-cta" class="btn btn-primary">Book a Strategy Call</a>
+              <a href="/final-cta" class="hero-ghost-link">Request a free visibility check <span aria-hidden="true">→</span></a>
+            </div>
+            <p class="no-pressure">No pressure. No hard sell.</p>
+
+            <div class="location-strip" aria-label="Serving North Texas">
+              <span class="location-label">Serving</span>
+              <span class="location-tag">McKinney</span>
+              <span class="location-tag">Melissa</span>
+              <span class="location-tag">Anna</span>
+              <span class="location-tag">Sherman</span>
+              <span class="location-tag">Allen</span>
+              <span class="location-tag">Plano</span>
+              <span class="location-tag">Prosper</span>
+              <span class="location-tag">Celina</span>
+              <span class="location-tag">Frisco</span>
+            </div>
           </div>
 
-          <div class="lg:col-span-5" data-reveal>
-            <div class="rounded-3xl border border-bluebonnet/10 bg-white p-6 shadow-soft">
-              <div class="flex items-center justify-between">
-                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">What you want</p>
-                <p class="text-xs font-semibold text-bluebonnet">Map Pack + calls</p>
-              </div>
-              <div class="mt-5 rounded-2xl bg-cream p-5">
-                <p class="font-display text-lg tracking-tight">“I found you on Google…”</p>
-                <p class="mt-2 text-sm leading-relaxed text-ink/75">
-                  That’s the goal: get you into the Local Map Pack and make your website feel safe, credible, and easy to choose.
-                </p>
-              </div>
-
-              <div class="mt-5 grid grid-cols-3 gap-2">
-                <div class="rounded-2xl border border-bluebonnet/10 bg-white p-4 text-center">
-                  <p class="font-display text-2xl tracking-tight text-bluebonnet">+3x</p>
-                  <p class="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">calls</p>
-                </div>
-                <div class="rounded-2xl border border-bluebonnet/10 bg-white p-4 text-center">
-                  <p class="font-display text-2xl tracking-tight text-bluebonnet">Top 3</p>
-                  <p class="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">map</p>
-                </div>
-                <div class="rounded-2xl border border-bluebonnet/10 bg-white p-4 text-center">
-                  <p class="font-display text-2xl tracking-tight text-bluebonnet">&lt;1s</p>
-                  <p class="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">fast</p>
+          <div class="hero-right" aria-label="Example Google search result">
+            <div class="mock-phone">
+              <div class="mock-header">
+                <div class="mock-search-bar">
+                  <span class="mock-search-icon" aria-hidden="true"></span>
+                  <span data-typing>plumber near me</span>
+                  <span class="search-dot" aria-hidden="true"></span>
                 </div>
               </div>
 
-              <p class="mt-5 text-xs leading-relaxed text-ink/60">
-                Built for “impulse” phone searches: clear next steps, high-contrast CTAs, and a mobile-first layout.
-              </p>
+              <div class="mock-map" aria-hidden="true">
+                <div class="map-pin">
+                  <div class="map-pin-dot"></div>
+                  <div class="map-pin-label">Your Business</div>
+                </div>
+              </div>
+
+              <div class="mock-results">
+                <div class="mock-result">
+                  <div class="result-info">
+                    <div class="result-name">Other Company</div>
+                    <div class="result-meta"><span class="result-stars" aria-hidden="true">★</span> 3.1 · Open now</div>
+                  </div>
+                </div>
+                <div class="mock-result highlight">
+                  <div class="result-info">
+                    <div class="result-name">Your Business</div>
+                    <div class="result-meta"><span class="result-stars" aria-hidden="true">★</span> 4.8 · Open now</div>
+                  </div>
+                  <div class="call-btn">Call</div>
+                </div>
+              </div>
+
+              <div class="mock-review">
+                <p>“Found you on Google — booked same day. You were the first result.”</p>
+                <div class="mock-review-attr">— McKinney, TX · Google review</div>
+              </div>
+            </div>
+
+            <div class="stat-strip" aria-label="Example outcomes">
+              <div class="stat">
+                <div class="stat-val">4.8<em aria-hidden="true">★</em></div>
+                <div class="stat-label">Avg rating</div>
+              </div>
+              <div class="stat">
+                <div class="stat-val">#<em>1</em></div>
+                <div class="stat-label">Map position</div>
+              </div>
+              <div class="stat">
+                <div class="stat-val">+<em>3x</em></div>
+                <div class="stat-label">Call volume</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SOCIAL PROOF -->
-      <section class="border-y border-black/5 bg-white/50">
-        <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6">
-          <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-            <div data-reveal>
-              <p class="text-xs font-semibold uppercase tracking-[0.22em] text-ink/60">Trusted by local businesses in North Texas</p>
-              <p class="mt-2 max-w-xl text-sm leading-relaxed text-ink/70">
-                Operators choose Bluebonnet Growth when they want straight answers, clean execution, and a website that feels like a sales rep.
-              </p>
-            </div>
-
-            <div class="grid w-full grid-cols-2 gap-3 md:w-auto md:grid-cols-3" data-reveal aria-label="Logo bar">
-              <div class="rounded-2xl border border-black/5 bg-white px-4 py-3 text-center text-xs font-semibold text-ink/65">Home Services</div>
-              <div class="rounded-2xl border border-black/5 bg-white px-4 py-3 text-center text-xs font-semibold text-ink/65">Medical</div>
-              <div class="rounded-2xl border border-black/5 bg-white px-4 py-3 text-center text-xs font-semibold text-ink/65">Professional</div>
-              <div class="rounded-2xl border border-black/5 bg-white px-4 py-3 text-center text-xs font-semibold text-ink/65">Trades</div>
-              <div class="rounded-2xl border border-black/5 bg-white px-4 py-3 text-center text-xs font-semibold text-ink/65">Local Retail</div>
-              <div class="rounded-2xl border border-black/5 bg-white px-4 py-3 text-center text-xs font-semibold text-ink/65">Services</div>
-            </div>
+      <!-- PROBLEM -->
+      <section id="problem" class="section section-light">
+        <div class="container problem-grid">
+          <div class="problem-copy">
+            <span class="eyebrow">Why this feels so hard</span>
+            <h2>You’re great at your work. Online, you’re invisible.</h2>
+            <p>Most of your business comes from referrals. But the phone is quieter than it used to be. When someone in McKinney, Anna, or Sherman searches for what you do, another business shows up, not because they’re better, just easier to find.</p>
+            <p>Maybe you tried marketing before. Money went out; nothing clear came back. You get calls from companies promising the world. You don’t know who to trust.</p>
+            <p>So you keep doing the real work. Meanwhile, people who need you are calling someone else.</p>
           </div>
-
-          <div class="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
-            <figure class="rounded-3xl border border-black/5 bg-white p-6 shadow-soft" data-reveal>
-              <blockquote class="text-sm leading-relaxed text-ink/80">
-                “Within a week, we were getting calls that started with ‘I found you on Google.’ No fluff—just fixes that worked.”
-              </blockquote>
-              <figcaption class="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">— North Texas operator</figcaption>
-            </figure>
-            <figure class="rounded-3xl border border-black/5 bg-white p-6 shadow-soft" data-reveal>
-              <blockquote class="text-sm leading-relaxed text-ink/80">
-                “Our site finally looks legit on mobile. People stopped bouncing and started booking.”
-              </blockquote>
-              <figcaption class="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">— Service business owner</figcaption>
-            </figure>
-            <figure class="rounded-3xl border border-black/5 bg-white p-6 shadow-soft" data-reveal>
-              <blockquote class="text-sm leading-relaxed text-ink/80">
-                “It felt like having an in-house growth person—direct, fast replies, and measurable progress.”
-              </blockquote>
-              <figcaption class="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">— Local founder</figcaption>
-            </figure>
+          <div class="problem-story">
+            <article class="story-card">
+              <div class="story-time">9:15 AM. Quiet phone</div>
+              <p>You’re ready for work. Phones barely ring. You wonder if it’s just a slow week… again.</p>
+            </article>
+            <article class="story-card">
+              <div class="story-time">2:40 PM. Competitor on Google</div>
+              <p>
+                A friend says, “I tried to find you on Google but saw three other companies instead.”
+              </p>
+            </article>
+            <article class="story-card">
+              <div class="story-time">7:05 PM. Another sales pitch</div>
+              <p>
+                You open your email and see more “we can fix your marketing” messages. They all sound the same.
+              </p>
+            </article>
           </div>
         </div>
       </section>
+
+      <!-- WHAT'S HAPPENING -->
+      <section id="whats-happening" class="section section-dark">
+        <div class="container">
+          <div class="why-hard">
+            <div class="why-hard-eyebrow">Why you’re hard to find</div>
+
+            <h2 class="why-hard-headline">
+              If you’re not clearly<br>on the map, you <em>don’t exist.</em>
+            </h2>
+            <div class="why-hard-rule" aria-hidden="true"></div>
+
+            <div class="why-hard-cards" role="list" aria-label="Why businesses don’t show up on Google">
+              <article class="why-hard-card" role="listitem">
+                <div class="why-hard-num">01 —</div>
+                <h3 class="why-hard-title">Google is where<br>people look</h3>
+                <p class="why-hard-body">When someone searches “plumber in McKinney” or “dentist near Prosper,” Google shows a map and a list. If you’re missing or buried, they never see your name.</p>
+              </article>
+
+              <article class="why-hard-card" role="listitem">
+                <div class="why-hard-num">02 —</div>
+                <h3 class="why-hard-title">Your listing is<br><em>wrong or incomplete</em></h3>
+                <p class="why-hard-body">Wrong address, half-filled info, or Google doesn’t know what you do. When things are unclear, Google shows someone else instead of you.</p>
+              </article>
+
+              <article class="why-hard-card" role="listitem">
+                <div class="why-hard-num">03 —</div>
+                <h3 class="why-hard-title">Nothing gets<br>maintained</h3>
+                <p class="why-hard-body">Work gets done once, then ignored. Listings drift. Visibility fades. Whether you serve Allen, Plano, Celina, or Prosper — the phone gets quiet again.</p>
+              </article>
+            </div>
+
+            <div class="why-hard-footer">
+              <p class="why-hard-footer-text">We get you <strong>clearly on the map</strong> — and keep you there.</p>
+              <a href="/final-cta" class="why-hard-cta">
+                Request a free visibility check
+                <span aria-hidden="true" class="why-hard-cta-arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
 
       <!-- SERVICES -->
-      <section id="services" class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <div class="mx-auto max-w-3xl text-center" data-reveal>
-          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-ink/60">What we actually do</p>
-          <h2 class="mt-3 font-display text-4xl tracking-tight text-ink sm:text-5xl">Three things. Done right.</h2>
-          <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-ink/70">
-            No bloated packages. No services you don't need. Just the work that gets your phone ringing.
-          </p>
+      <section id="services" class="section section-light">
+        <div class="container">
+          <span class="eyebrow">What we manage for you</span>
+          <h2>Pick what fits your business.</h2>
+          <div class="service-tabs" data-service-tabs>
+            <div class="service-tabs-controls">
+              <button class="service-tab is-active" type="button" data-service="seo">SEO</button>
+              <button class="service-tab" type="button" data-service="website">Web Design</button>
+              <button class="service-tab" type="button" data-service="conversion">Conversion Optimization</button>
+            </div>
+            <div class="service-panels">
+              <article class="service-panel is-active" data-service-panel="seo">
+                <h3>Be the business people actually find.</h3>
+                <div class="service-panel-grid">
+                  <div class="service-panel-cell">
+                    <h4>What we do</h4>
+                    <p>We make sure your website and Google listing tell Google what you do, where you serve, and who you’re for, so your site can rank properly when people search nearby.</p>
+                  </div>
+                  <div class="service-panel-cell">
+                    <h4>What you get</h4>
+                    <ul>
+                      <li>More calls from people who say “I found you on Google”</li>
+                      <li>Form fills from areas you actually want</li>
+                      <li>Fewer empty days on the calendar</li>
+                    </ul>
+                  </div>
+                </div>
+                <p class="service-panel-cta">
+                  <a href="/seo" class="btn btn-primary">Learn about SEO</a>
+                  <a href="/final-cta" class="service-panel-cta-link">Book a Strategy Call</a>
+                </p>
+              </article>
+              <article class="service-panel" data-service-panel="website">
+                <h3>Web Design that turns visitors into calls.</h3>
+                <div class="service-panel-grid">
+                  <div class="service-panel-cell">
+                    <h4>What we do</h4>
+                    <p>We design (or redesign) a clear, fast site that makes you look credible and makes it easy to call or request a quote. Mobile first, simple, and built around what people actually need to see to choose you.</p>
+                  </div>
+                  <div class="service-panel-cell">
+                    <h4>What you get</h4>
+                    <ul>
+                      <li>More people clicking “Call” or “Request a quote”</li>
+                      <li>A site that feels modern, trustworthy, and easy to use</li>
+                    </ul>
+                  </div>
+                </div>
+                <p class="service-panel-cta">
+                  <a href="/web-design" class="btn btn-primary">Learn about Web Design</a>
+                  <a href="/final-cta" class="service-panel-cta-link">Book a Strategy Call</a>
+                </p>
+              </article>
+              <article class="service-panel" data-service-panel="conversion">
+                <h3>Turn more visitors into leads</h3>
+                <div class="service-panel-grid">
+                  <div class="service-panel-cell">
+                    <h4>What we do</h4>
+                    <p>If you already get traffic but leads are inconsistent, we improve the pages so more people call or submit a form. Clear calls to action, better forms, better layout, and tracking that shows what is working.</p>
+                  </div>
+                  <div class="service-panel-cell">
+                    <h4>What you get</h4>
+                    <ul>
+                      <li>More calls and form submissions from the same traffic</li>
+                      <li>Better forms and clearer next steps</li>
+                      <li>Analytics and conversion tracking that makes sense</li>
+                    </ul>
+                  </div>
+                </div>
+                <p class="service-panel-cta">
+                  <a href="/conversion-optimization" class="btn btn-primary">Learn about Conversion Optimization</a>
+                  <a href="/final-cta" class="service-panel-cta-link">Book a Strategy Call</a>
+                </p>
+              </article>
+            </div>
+          </div>
+          <p class="section-summary"><a href="/services">See full service details</a> · <a href="/final-cta">Book a strategy call</a></p>
         </div>
-
-        <div class="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3">
-          <article class="rounded-3xl border border-black/5 bg-white/70 p-7 shadow-soft" data-reveal>
-            <div class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#0b2a66] text-white shadow-sm">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" class="h-5 w-5">
-                <path d="M12 21s7-4.6 7-11a7 7 0 0 0-14 0c0 6.4 7 11 7 11Z" stroke="currentColor" stroke-width="2" />
-                <path d="M12 10.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" fill="currentColor" />
-              </svg>
-            </div>
-
-            <h3 class="mt-6 font-display text-2xl tracking-tight text-ink">
-              <a href="/seo" class="hover:underline hover:decoration-bluebonnet/50 hover:underline-offset-8">Google Business &amp; Local SEO</a>
-            </h3>
-            <p class="mt-4 text-sm leading-relaxed text-ink/70">
-              Full GBP optimization, local citations, review strategy, and local content. We make Google understand that you are the choice in your area.
-            </p>
-
-            <div class="mt-8 border-t border-black/5 pt-5">
-              <a href="/seo" class="inline-flex items-center gap-2 text-sm font-semibold text-bluebonnet hover:underline">
-                <span class="inline-flex h-7 w-7 items-center justify-center rounded-full border border-bluebonnet/20 bg-bluebonnet/10" aria-hidden="true">◎</span>
-                Outcome: More Map Pack visibility
-              </a>
-            </div>
-          </article>
-
-          <article class="rounded-3xl border border-black/5 bg-white/70 p-7 shadow-soft" data-reveal>
-            <div class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-700 text-white shadow-sm">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" class="h-5 w-5">
-                <path d="M4 5h16v12H4V5Z" stroke="currentColor" stroke-width="2" />
-                <path d="M8 21h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                <path d="M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-              </svg>
-            </div>
-
-            <h3 class="mt-6 font-display text-2xl tracking-tight text-ink">
-              <a href="/web-design" class="hover:underline hover:decoration-bluebonnet/50 hover:underline-offset-8">Modern Web Design</a>
-            </h3>
-            <p class="mt-4 text-sm leading-relaxed text-ink/70">
-              Fast, mobile-first websites that look great and load fast. Built to turn visitors into leads — not just look pretty on a portfolio page.
-            </p>
-
-            <div class="mt-8 border-t border-black/5 pt-5">
-              <a href="/web-design" class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-800 hover:underline">
-                <span class="inline-flex h-7 w-7 items-center justify-center rounded-full border border-emerald-300/70 bg-emerald-50" aria-hidden="true">↳</span>
-                Outcome: More calls &amp; form fills
-              </a>
-            </div>
-          </article>
-
-          <article class="rounded-3xl border border-black/5 bg-white/70 p-7 shadow-soft" data-reveal>
-            <div class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-bluebonnet text-white shadow-sm">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" class="h-5 w-5">
-                <path d="M7 13v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                <path d="M12 9v10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                <path d="M17 5v14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-              </svg>
-            </div>
-
-            <h3 class="mt-6 font-display text-2xl tracking-tight text-ink">
-              <a href="/conversion-optimization" class="hover:underline hover:decoration-bluebonnet/50 hover:underline-offset-8">Conversion Optimization</a>
-            </h3>
-            <p class="mt-4 text-sm leading-relaxed text-ink/70">
-              Traffic means nothing if nobody calls. We refine your site, forms, and calls-to-action so visitors become paying customers.
-            </p>
-
-            <div class="mt-8 border-t border-black/5 pt-5">
-              <a href="/conversion-optimization" class="inline-flex items-center gap-2 text-sm font-semibold text-bluebonnet hover:underline">
-                <span class="inline-flex h-7 w-7 items-center justify-center rounded-full border border-bluebonnet/20 bg-bluebonnet/10" aria-hidden="true">↗</span>
-                Outcome: Steady, full calendar
-              </a>
-            </div>
-          </article>
-        </div>
-
-        <p class="mt-10 text-center text-sm text-ink/70" data-reveal>
-          Want the full breakdown? <a class="font-semibold text-bluebonnet hover:underline" href="/services">See all services →</a>
-        </p>
       </section>
 
-      <!-- CITY LINKS -->
-      <section class="border-y border-black/5 bg-white/50">
-        <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <div class="max-w-2xl" data-reveal>
-            <h2 class="font-display text-3xl tracking-tight text-ink sm:text-4xl">Serving the Backbone of North Texas.</h2>
-            <p class="mt-4 text-base leading-relaxed text-ink/70">
-              City pages are written like real local landers (not doorway pages): local context, service-city keywords, and a map embed that signals relevance.
+      <!-- PERSONAL DIFFERENCE -->
+      <section id="difference" class="section section-dark section-split">
+        <div class="container split-grid">
+          <div class="split-copy">
+            <span class="eyebrow">Why this feels different</span>
+            <h2>You don’t get an account manager. You get me.</h2>
+            <p>
+              Bluebonnet Growth is not an agency. There’s no junior team behind the curtain. When you work with Bluebonnet Growth, you work
+              directly with me, the person actually doing the work.
             </p>
+            <p>
+              You have my phone number. You can text me when something feels off, when you have a question, or when you
+              just want to know how things are going. No ticket system. No waiting a week for a reply.
+            </p>
+            <p>
+              I learn your busy seasons, your best type of customer, and what a good month means for you. The goal
+              isn’t to impress you with reports. It’s to make your phone and calendar feel steady.
+            </p>
+            <ul class="icon-list">
+              <li>
+                <strong>Direct text access</strong>
+                <span>You can send a quick photo or question. I’ll translate it into action.</span>
+              </li>
+              <li>
+                <strong>Plain English updates</strong>
+                <span>You’ll always know, in simple terms, what’s being done and why.</span>
+              </li>
+              <li>
+                <strong>One clear contact</strong>
+                <span>No handoffs. No repeating your story.</span>
+              </li>
+            </ul>
           </div>
-
-          <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <a class="group rounded-3xl border border-black/5 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-[0_22px_60px_rgba(11,18,32,0.14)]" href="/seo-melissa.html" data-reveal>
-              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">Local SEO</p>
-              <p class="mt-2 font-display text-xl tracking-tight text-ink">SEO Services in Melissa</p>
-              <p class="mt-2 text-sm text-ink/70">Win the Map Pack and turn searches into calls.</p>
-              <p class="mt-4 text-sm font-semibold text-bluebonnet group-hover:underline">Open page →</p>
-            </a>
-            <a class="group rounded-3xl border border-black/5 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-[0_22px_60px_rgba(11,18,32,0.14)]" href="/seo-mckinney.html" data-reveal>
-              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">Local SEO</p>
-              <p class="mt-2 font-display text-xl tracking-tight text-ink">SEO Services in McKinney</p>
-              <p class="mt-2 text-sm text-ink/70">More calls from people ready to book.</p>
-              <p class="mt-4 text-sm font-semibold text-bluebonnet group-hover:underline">Open page →</p>
-            </a>
-            <a class="group rounded-3xl border border-black/5 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-[0_22px_60px_rgba(11,18,32,0.14)]" href="/seo-anna.html" data-reveal>
-              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">Local SEO</p>
-              <p class="mt-2 font-display text-xl tracking-tight text-ink">SEO Services in Anna</p>
-              <p class="mt-2 text-sm text-ink/70">Get seen on US‑75 searches and win jobs.</p>
-              <p class="mt-4 text-sm font-semibold text-bluebonnet group-hover:underline">Open page →</p>
-            </a>
-            <a class="group rounded-3xl border border-black/5 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-[0_22px_60px_rgba(11,18,32,0.14)]" href="/seo-frisco.html" data-reveal>
-              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">Local SEO</p>
-              <p class="mt-2 font-display text-xl tracking-tight text-ink">SEO Services in Frisco</p>
-              <p class="mt-2 text-sm text-ink/70">Stand out where competition is loud.</p>
-              <p class="mt-4 text-sm font-semibold text-bluebonnet group-hover:underline">Open page →</p>
-            </a>
-            <a class="group rounded-3xl border border-black/5 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-[0_22px_60px_rgba(11,18,32,0.14)]" href="/seo-prosper.html" data-reveal>
-              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">Local SEO</p>
-              <p class="mt-2 font-display text-xl tracking-tight text-ink">SEO Services in Prosper</p>
-              <p class="mt-2 text-sm text-ink/70">More visibility without the agency games.</p>
-              <p class="mt-4 text-sm font-semibold text-bluebonnet group-hover:underline">Open page →</p>
-            </a>
-            <a class="group rounded-3xl border border-black/5 bg-white p-6 shadow-soft transition hover:-translate-y-0.5 hover:shadow-[0_22px_60px_rgba(11,18,32,0.14)]" href="/seo-allen.html" data-reveal>
-              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">Local SEO</p>
-              <p class="mt-2 font-display text-xl tracking-tight text-ink">SEO Services in Allen</p>
-              <p class="mt-2 text-sm text-ink/70">Convert map clicks into booked work.</p>
-              <p class="mt-4 text-sm font-semibold text-bluebonnet group-hover:underline">Open page →</p>
-            </a>
+          <div class="split-visual">
+            <div class="chat-mockup">
+              <div class="chat-bubble chat-bubble--owner">
+                Phones have been weirdly quiet this week.
+              </div>
+              <div class="chat-bubble chat-bubble--spark">
+                I saw that too. Updated your listing and tightened up the website calls to action this morning. Let’s watch the next few days.
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- OPERATOR EDGE -->
-      <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center">
-          <div class="lg:col-span-7" data-reveal>
-            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-ink/60">The operator edge</p>
-            <h2 class="mt-3 font-display text-3xl tracking-tight text-ink sm:text-4xl">Texas-built. Operator-led. No agency runaround.</h2>
-            <p class="mt-4 text-base leading-relaxed text-ink/70">
-              You don’t need another report. You need calls and revenue. You work directly with the person doing the work—no ticket system, no handoffs.
-            </p>
+      <!-- RESULTS -->
+      <section id="results" class="section">
+        <div class="container">
+          <span class="eyebrow">What life looks like after</span>
+          <h2>Steady demand. Fewer surprises. More calm.</h2>
 
-            <ul class="mt-7 space-y-3 text-sm text-ink/75">
-              <li class="flex gap-3">
-                <span class="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-xl bg-bluebonnet/10 text-bluebonnet">✓</span>
-                <span><strong class="text-ink">Plain-English plan</strong> so you know what’s happening and why.</span>
+          <div class="before-after">
+            <div class="before-after-inner">
+              <div class="before-after-side before-after-side--before">
+                <div class="before-after-label">Before Bluebonnet Growth</div>
+                <ul>
+                  <li>Some weeks packed, others silent.</li>
+                  <li>No idea which marketing, if any, is working.</li>
+                  <li>Constant worry about next month.</li>
+                </ul>
+              </div>
+              <div class="before-after-overlay" data-before-after-overlay>
+                <div class="before-after-side before-after-side--after">
+                  <div class="before-after-label">After Bluebonnet Growth</div>
+                  <ul>
+                    <li>Steadier calls and forms from the right people.</li>
+                    <li>A clear view of what’s bringing leads in.</li>
+                    <li>More time for the business, less chasing marketing.</li>
+                  </ul>
+                </div>
+              </div>
+              <button type="button" class="before-after-toggle" aria-label="Switch view" data-before-after-toggle>
+                <span class="before-after-toggle-text">View After</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <section id="pricing" class="section section-light">
+        <div class="container pricing-grid">
+          <div class="pricing-copy">
+            <span class="eyebrow">Money, clearly explained</span>
+            <h2>Not the cheapest. Not locked in. Built to feel fair.</h2>
+            <p>
+              Good marketing should pay for itself, not feel like a gamble. Bluebonnet Growth is priced so that you understand what
+              you’re paying for, you’re never trapped in a long contract, and we only keep going if it’s working for
+              you.
+            </p>
+            <ul class="icon-list">
+              <li>
+                <strong>No long term lock ins</strong>
+                <span>Work month to month once setup is done. If it stops making sense, you can stop.</span>
               </li>
-              <li class="flex gap-3">
-                <span class="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-xl bg-bluebonnet/10 text-bluebonnet">✓</span>
-                <span><strong class="text-ink">Conversion-first design</strong> that makes it easy to call and book.</span>
+              <li>
+                <strong>Simple, honest fees</strong>
+                <span>Clear monthly amount for ongoing work. You know what you are paying for.</span>
               </li>
-              <li class="flex gap-3">
-                <span class="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-xl bg-bluebonnet/10 text-bluebonnet">✓</span>
-                <span><strong class="text-ink">Local SEO execution</strong> focused on Map Pack wins and service-city queries.</span>
+              <li>
+                <strong>Start small, then grow</strong>
+                <span>We begin with what feels comfortable, then adjust once you see results.</span>
               </li>
             </ul>
           </div>
 
-          <div class="lg:col-span-5" data-reveal>
-            <div class="rounded-3xl border border-black/5 bg-white p-7 shadow-soft">
-              <p class="text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">What you’ll feel</p>
-              <p class="mt-4 font-display text-xl tracking-tight">“Finally. Someone who gets it.”</p>
-              <p class="mt-3 text-sm leading-relaxed text-ink/70">
-                You’re busy running the business. This is built to reduce stress: fewer unknowns, clearer next steps, and a steady flow of qualified leads.
+          <div class="pricing-calculator" data-pricing-calculator>
+              <h3>Rough estimate for your situation</h3>
+            <p class="calculator-intro">
+              This isn’t a quote. It just helps us start in the right ballpark.
+            </p>
+            <form>
+              <label class="field">
+                <span class="field-label">What do you need most right now?</span>
+                <select id="needSelect">
+                  <option value="fast-leads">More calls fast</option>
+                  <option value="fix-basics">Fix the basics first</option>
+                  <option value="website-refresh">Web Design</option>
+                  <option value="not-sure">Not sure</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span class="field-label">
+                  About how many new leads per month would feel good?
+                </span>
+                <input
+                  id="leadsSlider"
+                  type="range"
+                  min="5"
+                  max="50"
+                  value="20"
+                />
+                <div class="field-range-labels">
+                  <span>Just a few more</span>
+                  <span>Comfortably busy</span>
+                  <span>Very busy</span>
+                </div>
+              </label>
+
+              <fieldset class="field">
+                <legend class="field-label">Which services are you open to?</legend>
+                <div class="chip-row">
+                  <label class="chip">
+                    <input type="checkbox" value="seo" checked />
+                    <span>SEO</span>
+                  </label>
+                  <label class="chip">
+                    <input type="checkbox" value="website" />
+                    <span>Web Design</span>
+                  </label>
+                  <label class="chip">
+                    <input type="checkbox" value="conversion" />
+                    <span>Conversion Optimization</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <label class="field">
+                <span class="field-label">Rough monthly budget you’re considering (a guess is fine)</span>
+                <input type="number" min="0" placeholder="For example: 800" id="budgetInput" />
+              </label>
+            </form>
+
+            <div class="calculator-output" data-calculator-output>
+              <h4>Likely starting range</h4>
+              <p class="calculator-range" data-calculator-range>
+                Most owners in a similar spot start around <strong>$299+ per month</strong> after setup.
               </p>
-              <div class="mt-6 rounded-2xl bg-cream p-5">
-                <p class="text-sm font-semibold text-ink">Text you can expect:</p>
-                <p class="mt-2 text-sm text-ink/75">
-                  “I tightened your GBP services + updated your main service page today. Watch for calls from McKinney + Anna this week.”
-                </p>
-              </div>
+              <p class="calculator-note">
+                We’ll talk through real numbers together before you decide anything.
+              </p>
             </div>
+
+            <a href="/final-cta" class="btn btn-primary btn-full">Book a Strategy Call</a>
           </div>
         </div>
       </section>
 
-      <!-- LEAD FORM -->
-      <section id="lead" class="border-t border-black/5 bg-white/50">
-        <div class="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-12 lg:items-start">
-          <div class="lg:col-span-6" data-reveal>
-            <h2 class="font-display text-3xl tracking-tight text-ink sm:text-4xl">Get your free audit (and a plan you can actually use).</h2>
-            <p class="mt-4 text-base leading-relaxed text-ink/70">
-              We’ll review your Google visibility + website conversion path and reply with the clearest “fix this first” plan you’ve seen.
-            </p>
-            <p class="mt-6 text-sm text-ink/70">
-              Prefer email? <a class="font-semibold text-bluebonnet hover:underline" href="mailto:hello@bluebonnetgrowth.com">hello@bluebonnetgrowth.com</a>
-            </p>
-            <p class="mt-3 text-xs text-ink/60">Tip: replace the sticky “Call Now” phone number at the bottom of this file.</p>
-          </div>
+      <!-- FAQ -->
+      <section id="faq" class="section">
+        <div class="container">
+          <span class="eyebrow">Questions you may still have</span>
+          <h2>Honest answers before you decide anything.</h2>
 
-          <div class="lg:col-span-6" data-reveal>
-            <form
-              class="rounded-3xl border border-black/5 bg-white p-7 shadow-soft"
-              action="https://formspree.io/f/YOUR_FORMSPREE_FORM_ID"
-              method="POST"
-            >
-              <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <label class="grid gap-2">
-                  <span class="text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">Name</span>
-                  <input
-                    class="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm text-ink outline-none ring-bluebonnet/20 focus:ring-4"
-                    name="name"
-                    autocomplete="name"
-                    required
-                  />
-                </label>
-                <label class="grid gap-2">
-                  <span class="text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">Business</span>
-                  <input
-                    class="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm text-ink outline-none ring-bluebonnet/20 focus:ring-4"
-                    name="business"
-                    required
-                  />
-                </label>
-                <label class="grid gap-2 sm:col-span-2">
-                  <span class="text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">Website URL</span>
-                  <input
-                    class="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm text-ink outline-none ring-bluebonnet/20 focus:ring-4"
-                    name="website"
-                    placeholder="https://"
-                    inputmode="url"
-                  />
-                </label>
-                <label class="grid gap-2">
-                  <span class="text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">Email</span>
-                  <input
-                    class="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm text-ink outline-none ring-bluebonnet/20 focus:ring-4"
-                    type="email"
-                    name="email"
-                    autocomplete="email"
-                    required
-                  />
-                </label>
-                <label class="grid gap-2">
-                  <span class="text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">Phone</span>
-                  <input
-                    class="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm text-ink outline-none ring-bluebonnet/20 focus:ring-4"
-                    type="tel"
-                    name="phone"
-                    autocomplete="tel"
-                    required
-                  />
-                </label>
-                <label class="grid gap-2 sm:col-span-2">
-                  <span class="text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">What city do you want more calls from?</span>
-                  <input
-                    class="w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm text-ink outline-none ring-bluebonnet/20 focus:ring-4"
-                    name="target_city"
-                    placeholder="Melissa, McKinney, Anna, Frisco…"
-                    required
-                  />
-                </label>
-                <label class="grid gap-2 sm:col-span-2">
-                  <span class="text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">What’s the #1 thing you want fixed?</span>
-                  <textarea
-                    class="min-h-[110px] w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm text-ink outline-none ring-bluebonnet/20 focus:ring-4"
-                    name="notes"
-                    placeholder="Example: ‘We get traffic, but not enough calls.’"
-                    required
-                  ></textarea>
-                </label>
-              </div>
-
-              <button
-                class="mt-6 inline-flex w-full items-center justify-center rounded-2xl bg-bluebonnet px-6 py-3 text-base font-semibold text-white shadow-soft hover:brightness-110 focus:outline-none focus:ring-4 focus:ring-bluebonnet/20"
-                type="submit"
-              >
-                Get My Free SEO Audit
+          <div class="faq-list" data-faq>
+            <article class="faq-item">
+              <button class="faq-question" type="button">
+                <span>How long until I see results?</span>
+                <span class="faq-icon">+</span>
               </button>
-              <p class="mt-3 text-center text-xs text-ink/60">No pressure. If we’re not a fit, we’ll say so.</p>
+              <div class="faq-answer">
+                <p>
+                  It depends on where we start. Fixing the basics and improving conversions can bring more leads within
+                  days or weeks. Deeper search improvements can take a few months to really show up.
+                </p>
+                <p>I’ll be honest with you about what to expect before we begin.</p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <button class="faq-question" type="button">
+                <span>What happens if I stop?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  You keep what’s been built, your website, your listings, your content. Over time, if no
+                  one maintains things, results may slowly fade. But you’re never stuck. If life changes or the work no
+                  longer makes sense, we pause or stop without penalties.
+                </p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <button class="faq-question" type="button">
+                <span>Do I own my website?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Yes. Your website, content, and accounts are yours. I’ll help set things up in a way that you can
+                  access later, even if we stop working together.
+                </p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <button class="faq-question" type="button">
+                <span>Why do I get traffic but not enough leads?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Usually the website is unclear or the next step is too hard. We fix that with conversion focused Web Design and Conversion Optimization so more visitors call or submit a form.</p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <button class="faq-question" type="button">
+                <span>I’ve been burned before. Why trust this?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  You shouldn’t trust anyone just because they have a nice website. Here’s what I can promise: you’ll
+                  talk directly with me, I’ll explain what I’m doing in plain language, and if it’s not working we’ll
+                  change course or stop together.
+                </p>
+              </div>
+            </article>
+
+            <article class="faq-item">
+              <button class="faq-question" type="button">
+                <span>How much of my time will this take?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  At the start, we’ll need one focused call and a few emails or texts to gather details. After that,
+                  most owners spend less than an hour a month with me, usually quick check ins to confirm
+                  what we’re seeing and what’s coming next.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section id="final-cta" class="section section-dark final-cta">
+        <div class="container final-cta-grid">
+          <div class="final-cta-copy">
+            <span class="eyebrow">Next step</span>
+            <h2>Book a Strategy Call</h2>
+            <p>
+              We’ll look at how you show up online today and talk through what could change. No pressure, no commitment.
+            </p>
+            <p>
+              Or request a <strong>free visibility check</strong>: we send you a short, plain English view of where you stand.
+            </p>
+            <p>
+              Serving small businesses in McKinney, Melissa, Anna, Sherman, Allen, Plano, Prosper, Celina, and across North Texas.
+            </p>
+          </div>
+          <div class="final-cta-form">
+            <form id="contact-form" novalidate>
+              <div class="form-steps" data-form-steps>
+                <div class="form-step is-active" data-step="1">
+                  <label class="field">
+                    <span class="field-label">First, what should I call you?</span>
+                    <input type="text" name="name" placeholder="I’m Sarah, owner of…" required />
+                  </label>
+                  <button type="button" class="btn btn-primary form-next">Next</button>
+                </div>
+                <div class="form-step" data-step="2">
+                  <label class="field">
+                    <span class="field-label">What kind of business do you run?</span>
+                    <input
+                      type="text"
+                      name="business"
+                      placeholder="For example: family dental office in Austin"
+                      required
+                    />
+                    <span class="field-help">A simple description is perfect.</span>
+                  </label>
+                  <div class="form-nav">
+                    <button type="button" class="btn btn-outline form-prev">Back</button>
+                    <button type="button" class="btn btn-primary form-next">Next</button>
+                  </div>
+                </div>
+                <div class="form-step" data-step="3">
+                  <fieldset class="field">
+                    <legend class="field-label">What feels hardest about marketing right now?</legend>
+                    <div class="chip-row">
+                      <label class="chip">
+                        <input type="checkbox" name="pain" value="not-enough-leads" />
+                        <span>Not enough leads</span>
+                      </label>
+                      <label class="chip">
+                        <input type="checkbox" name="pain" value="wrong-fit" />
+                        <span>Leads are the wrong fit</span>
+                      </label>
+                      <label class="chip">
+                        <input type="checkbox" name="pain" value="marketing-black-box" />
+                        <span>Marketing feels like a black box</span>
+                      </label>
+                      <label class="chip">
+                        <input type="checkbox" name="pain" value="website-outdated" />
+                        <span>Website design feels out of date</span>
+                      </label>
+                      <label class="chip">
+                        <input type="checkbox" name="pain" value="tired-of-guessing" />
+                        <span>I’m just tired of guessing</span>
+                      </label>
+                      <label class="chip">
+                        <input type="checkbox" name="pain" value="other" />
+                        <span>Other</span>
+                      </label>
+                    </div>
+                  </fieldset>
+                  <div class="form-nav">
+                    <button type="button" class="btn btn-outline form-prev">Back</button>
+                    <button type="button" class="btn btn-primary form-next">Next</button>
+                  </div>
+                </div>
+                <div class="form-step" data-step="4">
+                  <fieldset class="field">
+                    <legend class="field-label">How do you prefer I get back to you?</legend>
+                    <div class="chip-row">
+                      <label class="chip">
+                        <input type="radio" name="contactPreference" value="call" checked />
+                        <span>Call</span>
+                      </label>
+                      <label class="chip">
+                        <input type="radio" name="contactPreference" value="text" />
+                        <span>Text</span>
+                      </label>
+                      <label class="chip">
+                        <input type="radio" name="contactPreference" value="email" />
+                        <span>Email</span>
+                      </label>
+                    </div>
+                  </fieldset>
+                  <label class="field" data-contact-phone>
+                    <span class="field-label">What number should I use?</span>
+                    <input type="tel" name="phone" placeholder="Mobile number" required />
+                  </label>
+                  <label class="field field--hidden" data-contact-email>
+                    <span class="field-label">What email should I use?</span>
+                    <input type="email" name="email" placeholder="you@example.com" />
+                  </label>
+                  <div class="form-nav">
+                    <button type="button" class="btn btn-outline form-prev">Back</button>
+                    <button type="button" class="btn btn-primary form-next">Next</button>
+                  </div>
+                </div>
+                <div class="form-step" data-step="5">
+                  <label class="field">
+                    <span class="field-label">Anything else you want me to know?</span>
+                    <textarea name="notes" rows="3" placeholder="Optional"></textarea>
+                  </label>
+                  <button type="submit" class="btn btn-primary btn-full">Book a Strategy Call</button>
+                </div>
+              </div>
+              <p class="form-footnote">
+                This first look is just information for you. You can choose to do nothing with it.
+              </p>
+              <div class="form-confirmation" data-form-confirmation>
+                <h3>Got it. I’ll take a look.</h3>
+                <p>
+                  I’ll review how you show up online and get back to you within one business day with a simple, human
+                  explanation, not a sales pitch.
+                </p>
+              </div>
             </form>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="border-t border-black/5 bg-cream">
-      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-        <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
-          <div>
-            <p class="font-display text-xl tracking-tight">Bluebonnet Growth</p>
-            <p class="mt-3 text-sm leading-relaxed text-ink/70">
-              Local SEO and web design for North Texas operators who want more calls, less chaos, and a site that converts.
-            </p>
-            <p class="mt-4 text-sm text-ink/70">
-              Email: <a class="font-semibold text-bluebonnet hover:underline" href="mailto:hello@bluebonnetgrowth.com">hello@bluebonnetgrowth.com</a>
-            </p>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-main">
+          <div class="footer-brand-block">
+            <a href="/" class="footer-brand-link">
+              <img
+                src="/assets/bluebonnet-icon.png"
+                alt="Bluebonnet Growth"
+                class="footer-mark"
+                width="28"
+                height="28"
+                loading="lazy"
+                decoding="async"
+              />
+              <span class="footer-brand">bluebonnet growth</span>
+            </a>
+            <p class="footer-copy">Helping small businesses be easy to find and simple to choose.</p>
+            <div class="footer-social" aria-label="Social media">
+              <a href="https://facebook.com/bluebonnetdotco" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="footer-social-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+              <a href="https://x.com/bluebonnetdotco" target="_blank" rel="noopener noreferrer" aria-label="X" class="footer-social-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+              <a href="https://www.instagram.com/bluebonnetgrowth/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="footer-social-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+              <a href="https://youtube.com/@bluebonnetdotco" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="footer-social-link"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            </div>
           </div>
-
-          <nav aria-label="Services" class="text-sm">
-            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">Services</p>
-            <div class="mt-4 grid gap-2 text-ink/75">
-              <a class="hover:text-ink" href="/seo">Local SEO</a>
-              <a class="hover:text-ink" href="/web-design">Web Design</a>
-              <a class="hover:text-ink" href="/conversion-optimization">Conversion Optimization</a>
-            </div>
+          <nav class="footer-nav-col" aria-label="Services">
+            <h3 class="footer-col-heading">Services</h3>
+            <a href="/services" class="footer-link">Services</a>
+            <a href="/seo" class="footer-link">SEO</a>
+            <a href="/web-design" class="footer-link">Web Design</a>
+            <a href="/conversion-optimization" class="footer-link">Conversion Optimization</a>
           </nav>
-
-          <nav aria-label="Company" class="text-sm">
-            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-ink/60">Company</p>
-            <div class="mt-4 grid gap-2 text-ink/75">
-              <a class="hover:text-ink" href="/about">About</a>
-              <a class="hover:text-ink" href="/proof">Our Approach</a>
-              <a class="hover:text-ink" href="/pricing">Pricing</a>
-              <a class="hover:text-ink" href="/contact">Contact</a>
-            </div>
+          <nav class="footer-nav-col" aria-label="Company">
+            <h3 class="footer-col-heading">Company</h3>
+            <a href="/about" class="footer-link">About us</a>
+            <a href="/pricing" class="footer-link">Pricing</a>
+            <a href="/proof" class="footer-link">Our Approach</a>
+            <a href="/blog" class="footer-link">Blog</a>
+            <a href="/faq" class="footer-link">FAQ</a>
+            <a href="/locations" class="footer-link">Locations</a>
           </nav>
         </div>
-
-        <div class="mt-10 flex flex-col items-start justify-between gap-4 border-t border-black/5 pt-6 text-xs text-ink/60 sm:flex-row sm:items-center">
-          <p>© 2026 Bluebonnet Growth. Born and raised Texans. Serving North Texas.</p>
-          <p><a class="hover:text-ink" href="/locations">Locations</a></p>
+        <div class="footer-bottom">
+          <p class="footer-location">Born and raised Texans. Based in Melissa and serving North Texas.</p>
+          <p class="footer-credit">Sparked by <a href="https://travisgoldston.com" target="_blank" rel="noopener noreferrer">Travis Goldston</a> ⚡</p>
         </div>
       </div>
     </footer>
 
-    <!-- Mobile sticky CTA -->
-    <div class="fixed inset-x-0 bottom-0 z-50 border-t border-black/10 bg-white/85 backdrop-blur md:hidden">
-      <div class="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3 sm:px-6">
-        <a
-          href="tel:+1-000-000-0000"
-          class="inline-flex flex-1 items-center justify-center rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm font-semibold text-ink shadow-soft"
-        >
-          Call Now
-        </a>
-        <a
-          href="#lead"
-          class="inline-flex flex-1 items-center justify-center rounded-2xl bg-bluebonnet px-4 py-3 text-sm font-semibold text-white shadow-soft"
-        >
-          Free Audit
-        </a>
-      </div>
-    </div>
-
-    <script>
-      // Reveal animations (subtle + accessible).
-      (function () {
-        const els = Array.from(document.querySelectorAll("[data-reveal]"));
-        if (!els.length) return;
-
-        const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        if (reduce) {
-          els.forEach((el) => el.classList.add("is-in"));
-          return;
-        }
-
-        const obs = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((e) => {
-              if (e.isIntersecting) {
-                e.target.classList.add("is-in");
-                obs.unobserve(e.target);
-              }
-            });
-          },
-          { threshold: 0.15 }
-        );
-
-        els.forEach((el) => obs.observe(el));
-      })();
-    </script>
+    <script src="script.js" defer></script>
   </body>
 </html>
+
+
+
+
+
+
+
