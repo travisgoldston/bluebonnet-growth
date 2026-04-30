@@ -104,6 +104,7 @@
     </a>
 
     <header class="sticky top-0 z-50 border-b border-black/5 bg-cream/80 backdrop-blur">
+      <div aria-hidden="true" class="h-1 w-full bg-gradient-to-r from-bluebonnet/0 via-bluebonnet/70 to-bluebonnet/0"></div>
       <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
         <a href="/" class="flex items-center gap-2">
           <img src="/assets/bluebonnet-icon.png" alt="" width="28" height="28" decoding="async" />
@@ -131,18 +132,24 @@
 
     <main>
       <!-- HERO -->
-      <section class="relative overflow-hidden">
+      <section class="relative overflow-hidden bg-gradient-to-b from-bluebonnet/5 via-cream to-cream">
         <div aria-hidden="true" class="pointer-events-none absolute inset-0">
-          <div class="absolute -left-24 -top-24 h-96 w-96 rounded-full bg-bluebonnet/10 blur-3xl"></div>
-          <div class="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-bluebonnet/10 blur-3xl"></div>
+          <div class="absolute -left-24 -top-24 h-96 w-96 rounded-full bg-bluebonnet/20 blur-3xl"></div>
+          <div class="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-bluebonnet/15 blur-3xl"></div>
         </div>
 
         <div class="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-12 lg:items-center lg:gap-14">
           <div class="lg:col-span-7" data-reveal>
-            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-ink/60">Texas-built · operator-led</p>
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-ink/60">
+              <span class="inline-flex items-center gap-2 rounded-full border border-bluebonnet/15 bg-white/70 px-3 py-1">
+                <span class="h-2 w-2 rounded-full bg-bluebonnet"></span>
+                Texas-built · operator-led
+              </span>
+            </p>
 
             <h1 class="mt-4 font-display text-4xl leading-[1.05] tracking-tight text-ink sm:text-5xl">
-              Stop being invisible on Google. Start getting more calls.
+              Stop being invisible on Google.
+              <span class="text-bluebonnet">Start getting more calls.</span>
             </h1>
             <p class="mt-5 max-w-xl text-lg leading-relaxed text-ink/75">
               Texas-built SEO and high-converting web design for local operators who are tired of being buried on page two.
