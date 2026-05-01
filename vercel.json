@@ -1,6 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "budgetocity-preview.bluebonnetgrowth.com" }],
+      "destination": "/budgetocity-preview/$1"
+    }
+  ],
   "redirects": [
     {
       "source": "/(.*)",
