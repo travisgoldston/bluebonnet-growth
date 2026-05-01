@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bluebonnet Growth: So people can actually find your business</title>
+    <title>Bluebonnet Growth | Local SEO &amp; Web Design for North Texas Small Businesses</title>
     <meta
       name="description"
-      content="Bluebonnet Growth helps small, local businesses show up on Google, get more calls, and fill their schedule, without you having to learn marketing."
+      content="Texas-built local SEO and web design so your business shows up on Google and the map — serving McKinney, Frisco, Plano, Prosper, Celina, Allen, and North Texas. Book a strategy call."
     />
     <link rel="icon" href="/assets/favicon-32x32.png" type="image/png" />
     <link rel="apple-touch-icon" href="/assets/favicon-32x32.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="home-page">
     <header class="site-header" data-header>
       <div class="container header-inner">
         <a href="/" class="logo">
@@ -109,52 +109,69 @@
 
             <div class="location-strip" aria-label="Serving North Texas">
               <span class="location-label">Serving</span>
-              <span class="location-tag">McKinney</span>
-              <span class="location-tag">Melissa</span>
-              <span class="location-tag">Anna</span>
-              <span class="location-tag">Sherman</span>
-              <span class="location-tag">Allen</span>
-              <span class="location-tag">Plano</span>
-              <span class="location-tag">Prosper</span>
-              <span class="location-tag">Celina</span>
-              <span class="location-tag">Frisco</span>
+              <a class="location-tag" href="/mckinney">McKinney</a>
+              <a class="location-tag" href="/melissa">Melissa</a>
+              <a class="location-tag" href="/anna">Anna</a>
+              <a class="location-tag" href="/sherman">Sherman</a>
+              <a class="location-tag" href="/allen">Allen</a>
+              <a class="location-tag" href="/plano">Plano</a>
+              <a class="location-tag" href="/prosper">Prosper</a>
+              <a class="location-tag" href="/celina">Celina</a>
+              <a class="location-tag" href="/frisco">Frisco</a>
             </div>
           </div>
 
-          <div class="hero-right" aria-label="Example Google search result">
-            <div class="mock-phone">
-              <div class="mock-header">
-                <div class="mock-search-bar">
-                  <span class="mock-search-icon" aria-hidden="true"></span>
-                  <span data-typing>plumber near me</span>
-                  <span class="search-dot" aria-hidden="true"></span>
+          <div class="hero-right" aria-label="Example Google Maps local results">
+            <div class="mock-phone mock-phone--gmaps">
+              <div class="gmaps-chrome" aria-hidden="true">
+                <span class="gmaps-dot gmaps-dot--red"></span>
+                <span class="gmaps-dot gmaps-dot--yellow"></span>
+                <span class="gmaps-dot gmaps-dot--green"></span>
+              </div>
+              <div class="mock-header mock-header--gmaps">
+                <div class="mock-search-bar mock-search-bar--gmaps">
+                  <svg class="gmaps-search-svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path
+                      fill="currentColor"
+                      d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                    />
+                  </svg>
+                  <span class="gmaps-query" data-typing>plumber near me</span>
+                  <span class="gmaps-mic" aria-hidden="true"></span>
                 </div>
               </div>
 
-              <div class="mock-map" aria-hidden="true">
-                <div class="map-pin">
-                  <div class="map-pin-dot"></div>
-                  <div class="map-pin-label">Your Business</div>
+              <div class="mock-map mock-map--gmaps" aria-hidden="true">
+                <div class="gmaps-map-grid"></div>
+                <div class="map-pin map-pin--gmaps">
+                  <svg class="gmaps-pin-svg" width="36" height="48" viewBox="0 0 36 48" aria-hidden="true">
+                    <path
+                      fill="#EA4335"
+                      d="M18 0C10.5 0 4.5 5.9 4.5 13.2c0 9.9 13.5 26.3 13.5 26.3S31.5 23 31.5 13.2C31.5 5.9 25.5 0 18 0zm0 18c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z"
+                    />
+                  </svg>
+                  <div class="map-pin-label map-pin-label--gmaps">Your Business</div>
                 </div>
               </div>
 
-              <div class="mock-results">
-                <div class="mock-result">
+              <div class="mock-results mock-results--gmaps">
+                <p class="gmaps-local-pack-label">Local results</p>
+                <div class="mock-result mock-result--gmaps">
                   <div class="result-info">
-                    <div class="result-name">Other Company</div>
-                    <div class="result-meta"><span class="result-stars" aria-hidden="true">★</span> 3.1 · Open now</div>
+                    <div class="result-name result-name--gmaps">Other Company</div>
+                    <div class="result-meta result-meta--gmaps"><span class="result-stars" aria-hidden="true">★</span> 3.1 · Open · closes 6 PM</div>
                   </div>
                 </div>
-                <div class="mock-result highlight">
+                <div class="mock-result mock-result--gmaps mock-result--gmaps-you">
                   <div class="result-info">
-                    <div class="result-name">Your Business</div>
-                    <div class="result-meta"><span class="result-stars" aria-hidden="true">★</span> 4.8 · Open now</div>
+                    <div class="result-name result-name--gmaps">Your Business</div>
+                    <div class="result-meta result-meta--gmaps"><span class="result-stars" aria-hidden="true">★</span> 4.8 · Open now</div>
                   </div>
-                  <div class="call-btn">Call</div>
+                  <div class="call-btn call-btn--gmaps">Call</div>
                 </div>
               </div>
 
-              <div class="mock-review">
+              <div class="mock-review mock-review--gmaps">
                 <p>“Found you on Google — booked same day. You were the first result.”</p>
                 <div class="mock-review-attr">— McKinney, TX · Google review</div>
               </div>
@@ -209,132 +226,117 @@
         </div>
       </section>
 
-      <!-- WHAT'S HAPPENING -->
-      <section id="whats-happening" class="section section-dark">
+      <!-- THE SHIFT -->
+      <section id="the-shift" class="section section-light">
         <div class="container">
-          <div class="why-hard">
-            <div class="why-hard-eyebrow">Why you’re hard to find</div>
+          <span class="eyebrow">The shift</span>
+          <h2>What life looks like after working together</h2>
+          <p class="section-intro">Same business — clearer visibility, steadier demand, less guesswork.</p>
 
-            <h2 class="why-hard-headline">
-              If you’re not clearly<br>on the map, you <em>don’t exist.</em>
-            </h2>
-            <div class="why-hard-rule" aria-hidden="true"></div>
-
-            <div class="why-hard-cards" role="list" aria-label="Why businesses don’t show up on Google">
-              <article class="why-hard-card" role="listitem">
-                <div class="why-hard-num">01 —</div>
-                <h3 class="why-hard-title">Google is where<br>people look</h3>
-                <p class="why-hard-body">When someone searches “plumber in McKinney” or “dentist near Prosper,” Google shows a map and a list. If you’re missing or buried, they never see your name.</p>
-              </article>
-
-              <article class="why-hard-card" role="listitem">
-                <div class="why-hard-num">02 —</div>
-                <h3 class="why-hard-title">Your listing is<br><em>wrong or incomplete</em></h3>
-                <p class="why-hard-body">Wrong address, half-filled info, or Google doesn’t know what you do. When things are unclear, Google shows someone else instead of you.</p>
-              </article>
-
-              <article class="why-hard-card" role="listitem">
-                <div class="why-hard-num">03 —</div>
-                <h3 class="why-hard-title">Nothing gets<br>maintained</h3>
-                <p class="why-hard-body">Work gets done once, then ignored. Listings drift. Visibility fades. Whether you serve Allen, Plano, Celina, or Prosper — the phone gets quiet again.</p>
-              </article>
-            </div>
-
-            <div class="why-hard-footer">
-              <p class="why-hard-footer-text">We get you <strong>clearly on the map</strong> — and keep you there.</p>
-              <a href="/final-cta" class="why-hard-cta">
-                Request a free visibility check
-                <span aria-hidden="true" class="why-hard-cta-arrow">→</span>
-              </a>
+          <div class="before-after">
+            <div class="before-after-inner">
+              <div class="before-after-side before-after-side--before">
+                <div class="before-after-label">Before</div>
+                <ul>
+                  <li>Quiet weeks where you wonder if the phone is even working.</li>
+                  <li>Word-of-mouth only — nothing reliable from search.</li>
+                  <li>Competitors rank above you even when your work is stronger.</li>
+                  <li>No idea what’s actually driving calls (or not).</li>
+                </ul>
+              </div>
+              <div class="before-after-overlay" data-before-after-overlay>
+                <div class="before-after-side before-after-side--after">
+                  <div class="before-after-label">After</div>
+                  <ul>
+                    <li>Steadier calls and forms from people actively searching.</li>
+                    <li>Showing up in the Google Map Pack for the services you sell.</li>
+                    <li>A website that turns visitors into booked jobs.</li>
+                    <li>Plain-English reporting — you know what changed and why.</li>
+                  </ul>
+                </div>
+              </div>
+              <button type="button" class="before-after-toggle" aria-label="Switch view" data-before-after-toggle>
+                <span class="before-after-toggle-text">View After</span>
+              </button>
             </div>
           </div>
         </div>
       </section>
 
-      
-
-      <!-- SERVICES -->
-      <section id="services" class="section section-light">
+      <!-- WHAT WE ACTUALLY DO -->
+      <section id="services" class="section section-light section-tint">
         <div class="container">
-          <span class="eyebrow">What we manage for you</span>
-          <h2>Pick what fits your business.</h2>
-          <div class="service-tabs" data-service-tabs>
-            <div class="service-tabs-controls">
-              <button class="service-tab is-active" type="button" data-service="seo">SEO</button>
-              <button class="service-tab" type="button" data-service="website">Web Design</button>
-              <button class="service-tab" type="button" data-service="conversion">Conversion Optimization</button>
-            </div>
-            <div class="service-panels">
-              <article class="service-panel is-active" data-service-panel="seo">
-                <h3>Be the business people actually find.</h3>
-                <div class="service-panel-grid">
-                  <div class="service-panel-cell">
-                    <h4>What we do</h4>
-                    <p>We make sure your website and Google listing tell Google what you do, where you serve, and who you’re for, so your site can rank properly when people search nearby.</p>
-                  </div>
-                  <div class="service-panel-cell">
-                    <h4>What you get</h4>
-                    <ul>
-                      <li>More calls from people who say “I found you on Google”</li>
-                      <li>Form fills from areas you actually want</li>
-                      <li>Fewer empty days on the calendar</li>
-                    </ul>
-                  </div>
-                </div>
-                <p class="service-panel-cta">
-                  <a href="/seo" class="btn btn-primary">Learn about SEO</a>
-                  <a href="/final-cta" class="service-panel-cta-link">Book a Strategy Call</a>
-                </p>
-              </article>
-              <article class="service-panel" data-service-panel="website">
-                <h3>Web Design that turns visitors into calls.</h3>
-                <div class="service-panel-grid">
-                  <div class="service-panel-cell">
-                    <h4>What we do</h4>
-                    <p>We design (or redesign) a clear, fast site that makes you look credible and makes it easy to call or request a quote. Mobile first, simple, and built around what people actually need to see to choose you.</p>
-                  </div>
-                  <div class="service-panel-cell">
-                    <h4>What you get</h4>
-                    <ul>
-                      <li>More people clicking “Call” or “Request a quote”</li>
-                      <li>A site that feels modern, trustworthy, and easy to use</li>
-                    </ul>
-                  </div>
-                </div>
-                <p class="service-panel-cta">
-                  <a href="/web-design" class="btn btn-primary">Learn about Web Design</a>
-                  <a href="/final-cta" class="service-panel-cta-link">Book a Strategy Call</a>
-                </p>
-              </article>
-              <article class="service-panel" data-service-panel="conversion">
-                <h3>Turn more visitors into leads</h3>
-                <div class="service-panel-grid">
-                  <div class="service-panel-cell">
-                    <h4>What we do</h4>
-                    <p>If you already get traffic but leads are inconsistent, we improve the pages so more people call or submit a form. Clear calls to action, better forms, better layout, and tracking that shows what is working.</p>
-                  </div>
-                  <div class="service-panel-cell">
-                    <h4>What you get</h4>
-                    <ul>
-                      <li>More calls and form submissions from the same traffic</li>
-                      <li>Better forms and clearer next steps</li>
-                      <li>Analytics and conversion tracking that makes sense</li>
-                    </ul>
-                  </div>
-                </div>
-                <p class="service-panel-cta">
-                  <a href="/conversion-optimization" class="btn btn-primary">Learn about Conversion Optimization</a>
-                  <a href="/final-cta" class="service-panel-cta-link">Book a Strategy Call</a>
-                </p>
-              </article>
-            </div>
+          <span class="eyebrow">What we actually do</span>
+          <h2>Three things. Done right.</h2>
+          <p class="section-intro">
+            No bloated packages. Just the work that helps North Texas SMBs get found when people search — including
+            <a href="/frisco">Frisco</a>, <a href="/plano">Plano</a>, <a href="/mckinney">McKinney</a>, and nearby cities.
+          </p>
+
+          <div class="what-we-do-grid">
+            <article class="what-we-do-card">
+              <div class="what-we-do-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                  />
+                </svg>
+              </div>
+              <h3>Google Business &amp; local SEO</h3>
+              <p>
+                Profile optimization, local relevance, reviews, and content so Google understands what you do and where you operate.
+              </p>
+              <p class="what-we-do-outcome">Outcome: more Map Pack visibility</p>
+              <a href="/seo" class="btn btn-secondary">Local SEO details</a>
+            </article>
+            <article class="what-we-do-card">
+              <div class="what-we-do-icon what-we-do-icon--sage" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"
+                  />
+                </svg>
+              </div>
+              <h3>Web design</h3>
+              <p>
+                Fast, mobile-first sites built to earn trust and make calling or requesting a quote the obvious next step.
+              </p>
+              <p class="what-we-do-outcome">Outcome: more calls &amp; form fills</p>
+              <a href="/web-design" class="btn btn-secondary">Web design details</a>
+            </article>
+            <article class="what-we-do-card">
+              <div class="what-we-do-icon what-we-do-icon--sky" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"
+                  />
+                </svg>
+              </div>
+              <h3>Conversion optimization</h3>
+              <p>
+                Traffic only matters if people take action. We tighten pages, forms, and CTAs so more visitors become leads.
+              </p>
+              <p class="what-we-do-outcome">Outcome: fuller calendar, less waste</p>
+              <a href="/conversion-optimization" class="btn btn-secondary">Conversion details</a>
+            </article>
           </div>
-          <p class="section-summary"><a href="/services">See full service details</a> · <a href="/final-cta">Book a strategy call</a></p>
+          <p class="section-summary"><a href="/services">Full services overview</a> · <a href="/final-cta">Book a strategy call</a></p>
         </div>
       </section>
 
       <!-- PERSONAL DIFFERENCE -->
-      <section id="difference" class="section section-dark section-split">
+      <section id="difference" class="section section-dark section-split section-difference-allwhite">
         <div class="container split-grid">
           <div class="split-copy">
             <span class="eyebrow">Why this feels different</span>
@@ -367,50 +369,34 @@
             </ul>
           </div>
           <div class="split-visual">
-            <div class="chat-mockup">
-              <div class="chat-bubble chat-bubble--owner">
-                Phones have been weirdly quiet this week.
-              </div>
-              <div class="chat-bubble chat-bubble--spark">
-                I saw that too. Updated your listing and tightened up the website calls to action this morning. Let’s watch the next few days.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- RESULTS -->
-      <section id="results" class="section">
-        <div class="container">
-          <span class="eyebrow">What life looks like after</span>
-          <h2>Steady demand. Fewer surprises. More calm.</h2>
-
-          <div class="before-after">
-            <div class="before-after-inner">
-              <div class="before-after-side before-after-side--before">
-                <div class="before-after-label">Before Bluebonnet Growth</div>
-                <ul>
-                  <li>Some weeks packed, others silent.</li>
-                  <li>No idea which marketing, if any, is working.</li>
-                  <li>Constant worry about next month.</li>
-                </ul>
-              </div>
-              <div class="before-after-overlay" data-before-after-overlay>
-                <div class="before-after-side before-after-side--after">
-                  <div class="before-after-label">After Bluebonnet Growth</div>
-                  <ul>
-                    <li>Steadier calls and forms from the right people.</li>
-                    <li>A clear view of what’s bringing leads in.</li>
-                    <li>More time for the business, less chasing marketing.</li>
-                  </ul>
+            <div class="imessage-thread" aria-label="Example text thread">
+              <div class="imessage-thread-header">
+                <div class="imessage-thread-avatar" aria-hidden="true">BB</div>
+                <div>
+                  <div class="imessage-thread-name">Bluebonnet Growth</div>
+                  <div class="imessage-thread-sub">Text message</div>
                 </div>
               </div>
-              <button type="button" class="before-after-toggle" aria-label="Switch view" data-before-after-toggle>
-                <span class="before-after-toggle-text">View After</span>
-              </button>
+              <div class="imessage-messages">
+                <div class="imessage-row imessage-row--incoming">
+                  <div class="imessage-bubble imessage-bubble--incoming">
+                    Phones have been weirdly quiet this week.
+                  </div>
+                  <time class="imessage-time" datetime="2025-03-04T09:14">9:14 AM</time>
+                </div>
+                <div class="imessage-row imessage-row--outgoing">
+                  <div class="imessage-bubble imessage-bubble--outgoing">
+                    I saw that too. I updated your listing and tightened the main CTAs on the site this morning. Let’s watch the next few days.
+                  </div>
+                  <time class="imessage-time imessage-time--out" datetime="2025-03-04T09:18">Delivered</time>
+                </div>
+                <div class="imessage-row imessage-row--incoming">
+                  <div class="imessage-bubble imessage-bubble--incoming">Sounds good. Thank you.</div>
+                  <time class="imessage-time" datetime="2025-03-04T09:19">9:19 AM</time>
+                </div>
+              </div>
             </div>
           </div>
-
         </div>
       </section>
 

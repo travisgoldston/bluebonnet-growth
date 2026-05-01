@@ -2971,3 +2971,372 @@ input[type='range'] {
   }
 }
 
+/* —— Homepage: white primary CTAs (header + hero + drawer) —— */
+.home-page .site-header .btn-primary,
+.home-page .nav-drawer-cta.btn-primary,
+.home-page .hero .btn-primary {
+  background: #ffffff;
+  color: var(--brand-deep-indigo);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.home-page .site-header .btn-primary:hover,
+.home-page .nav-drawer-cta.btn-primary:hover,
+.home-page .hero .btn-primary:hover {
+  background: #f7f8ff;
+  color: var(--brand-deep-indigo);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.16);
+}
+
+/* City pills in hero */
+a.location-tag {
+  text-decoration: none;
+  display: inline-block;
+}
+
+a.location-tag:hover {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Google Maps–style local pack mockup */
+.mock-phone--gmaps {
+  background: #f8f9fa;
+  border: 1px solid rgba(60, 64, 67, 0.18);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+  backdrop-filter: none;
+}
+
+.gmaps-chrome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px 6px;
+  background: #e8eaed;
+  border-bottom: 1px solid rgba(60, 64, 67, 0.12);
+}
+
+.gmaps-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.gmaps-dot--red {
+  background: #ff5f57;
+}
+
+.gmaps-dot--yellow {
+  background: #febc2e;
+}
+
+.gmaps-dot--green {
+  background: #28c840;
+}
+
+.mock-header--gmaps {
+  padding: 12px 14px 10px;
+  border-bottom: 1px solid rgba(60, 64, 67, 0.1);
+  background: #fff;
+}
+
+.mock-search-bar--gmaps {
+  background: #fff;
+  border: 1px solid #dadce0;
+  border-radius: 24px;
+  box-shadow: 0 1px 2px rgba(60, 64, 67, 0.08);
+  padding: 10px 14px;
+}
+
+.gmaps-search-svg {
+  flex-shrink: 0;
+  color: #5f6368;
+}
+
+.gmaps-query {
+  font-size: 0.95rem;
+  color: #202124;
+  font-weight: 400;
+}
+
+.mock-phone--gmaps [data-typing] {
+  border-right-color: #1a73e8;
+}
+
+.mock-map--gmaps {
+  height: 130px;
+  background: linear-gradient(180deg, #d2e3fc 0%, #e8f0fe 45%, #ceead6 100%);
+  border-bottom: 1px solid rgba(60, 64, 67, 0.12);
+}
+
+.mock-map--gmaps::before {
+  display: none;
+}
+
+.gmaps-map-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  background-image: linear-gradient(#81c995 1px, transparent 1px), linear-gradient(90deg, #81c995 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.map-pin--gmaps {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -58%);
+}
+
+.map-pin--gmaps .gmaps-pin-svg {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+.map-pin-label--gmaps {
+  background: #fff;
+  color: #202124;
+  border: 1px solid #dadce0;
+  box-shadow: 0 1px 3px rgba(60, 64, 67, 0.2);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.gmaps-mic {
+  width: 20px;
+  height: 20px;
+  margin-left: auto;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #f8f9fa, #e8eaed);
+  border: 1px solid #dadce0;
+}
+
+.mock-results--gmaps {
+  background: #fff;
+  padding: 12px 14px 14px;
+}
+
+.gmaps-local-pack-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #5f6368;
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.mock-result--gmaps {
+  background: #fff;
+  border: 1px solid #e8eaed;
+  border-radius: 12px;
+}
+
+.mock-result--gmaps .result-name--gmaps {
+  color: #202124;
+}
+
+.mock-result--gmaps-you {
+  border-color: #d2e3fc;
+  background: #f8fbff;
+}
+
+.result-meta--gmaps {
+  color: #5f6368;
+  font-family: inherit;
+}
+
+.call-btn--gmaps {
+  background: #1a73e8;
+  color: #fff;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.mock-review--gmaps {
+  margin: 0;
+  border-radius: 0 0 18px 18px;
+  background: #f8f9fa;
+  border-top: 1px solid #e8eaed;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+.mock-review--gmaps p {
+  color: #3c4043;
+}
+
+.mock-review--gmaps .mock-review-attr {
+  color: #5f6368;
+}
+
+/* What we actually do */
+.section-tint {
+  background: linear-gradient(180deg, rgba(140, 160, 140, 0.06) 0%, var(--color-bg-soft) 100%);
+}
+
+.what-we-do-grid {
+  display: grid;
+  gap: 22px;
+  margin-top: 28px;
+}
+
+@media (min-width: 900px) {
+  .what-we-do-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.what-we-do-card {
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.35rem 1.5rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.what-we-do-card h3 {
+  margin-top: 0;
+}
+
+.what-we-do-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  background: rgba(40, 40, 140, 0.08);
+  color: var(--brand-deep-indigo);
+}
+
+.what-we-do-icon--sage {
+  background: rgba(140, 160, 140, 0.2);
+  color: var(--brand-stem-olive);
+}
+
+.what-we-do-icon--sky {
+  background: rgba(80, 120, 180, 0.12);
+  color: var(--brand-texas-sky);
+}
+
+.what-we-do-outcome {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--brand-deep-indigo);
+  margin: 12px 0 16px;
+}
+
+/* Why this feels different — all copy reads white */
+.section-difference-allwhite .split-copy p,
+.section-difference-allwhite .split-copy .icon-list span {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.section-difference-allwhite .split-copy h2,
+.section-difference-allwhite .split-copy .icon-list strong {
+  color: #ffffff;
+}
+
+.section-difference-allwhite .split-copy .eyebrow {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* iMessage-style thread */
+.imessage-thread {
+  width: 100%;
+  max-width: 400px;
+  margin-inline: auto;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  background: #fff;
+}
+
+.imessage-thread-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: #f6f6f6;
+  border-bottom: 1px solid #d1d1d6;
+}
+
+.imessage-thread-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #8ca08c, #5c6b5c);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imessage-thread-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.imessage-thread-sub {
+  font-size: 0.75rem;
+  color: #8e8e93;
+}
+
+.imessage-messages {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 12px 16px;
+  background: #e5e5ea;
+  min-height: 220px;
+}
+
+.imessage-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  max-width: 88%;
+}
+
+.imessage-row--incoming {
+  align-self: flex-start;
+}
+
+.imessage-row--outgoing {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.imessage-bubble {
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  border-radius: 18px;
+  position: relative;
+}
+
+.imessage-bubble--incoming {
+  background: #e9e9eb;
+  color: #000;
+  border-bottom-left-radius: 4px;
+}
+
+.imessage-bubble--outgoing {
+  background: #007aff;
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.imessage-time {
+  font-size: 0.65rem;
+  color: #8e8e93;
+  margin-top: 4px;
+  padding-left: 4px;
+}
+
+.imessage-time--out {
+  padding-right: 4px;
+}
+
