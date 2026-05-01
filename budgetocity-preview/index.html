@@ -23,12 +23,6 @@
       content="Budget around your paychecks — not the calendar. Built for weekly and biweekly income."
     />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="styles.css" />
     <script type="application/ld+json">
       {
@@ -52,7 +46,7 @@
     <header class="site-header">
       <div class="header-inner">
         <a class="logo" href="./">
-          <img class="logo-mark" src="logo-mark.svg" width="32" height="32" alt="" />
+          <img class="logo-mark" src="assets/logo.svg" width="36" height="36" alt="" />
           Budgetocity
         </a>
         <nav class="nav-desktop" aria-label="Primary">
@@ -183,8 +177,8 @@
 
       <section class="problem-strip" aria-labelledby="problem-heading">
         <div class="container problem-inner">
-          <p class="eyebrow" style="justify-content: center; display: block; text-align: center">Problem</p>
-          <h2 id="problem-heading" style="text-align: center; margin-bottom: 1rem">
+          <p class="eyebrow text-center">Problem</p>
+          <h2 id="problem-heading" class="text-center">
             Calendar-first budgeting wasn’t built for your paycheck
           </h2>
           <p>
@@ -225,9 +219,9 @@
         </div>
       </section>
 
-      <section class="section" style="background: var(--color-surface); border-block: 1px solid var(--color-border)">
+      <section class="section surface-band">
         <div class="container">
-          <div class="section-header">
+          <div class="section-header section-header--wide">
             <p class="eyebrow">Comparison</p>
             <h2>Built for paychecks — not spreadsheets in disguise</h2>
             <p class="section-intro">
@@ -268,7 +262,7 @@
               </tbody>
             </table>
           </div>
-          <p style="margin-top: 1.5rem; font-size: 0.9375rem; color: var(--color-ink-secondary)">
+          <p class="compare-footnote">
             See a direct feature comparison with YNAB on our
             <a href="budgetocity-vs-ynab/">Budgetocity vs YNAB</a> page.
           </p>
@@ -288,8 +282,8 @@
             <article class="card">
               <div class="feature-icon" aria-hidden="true">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <rect x="3" y="4" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.5" />
-                  <path d="M3 8h14" stroke="currentColor" stroke-width="1.5" />
+                  <rect x="3" y="4" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.25" />
+                  <path d="M3 8h14" stroke="currentColor" stroke-width="1.25" />
                 </svg>
               </div>
               <h3>Paycheck envelopes</h3>
@@ -301,7 +295,7 @@
                   <path
                     d="M10 4v12M6 8l4-4 4 4"
                     stroke="currentColor"
-                    stroke-width="1.5"
+                    stroke-width="1.25"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   />
@@ -313,8 +307,8 @@
             <article class="card">
               <div class="feature-icon" aria-hidden="true">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <circle cx="10" cy="10" r="6" stroke="currentColor" stroke-width="1.5" />
-                  <path d="M10 7v3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                  <circle cx="10" cy="10" r="6" stroke="currentColor" stroke-width="1.25" />
+                  <path d="M10 7v3l2 2" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" />
                 </svg>
               </div>
               <h3>Bill reminders tied to paydays</h3>
@@ -326,10 +320,10 @@
                   <path
                     d="M4 16V6l6-3 6 3v10"
                     stroke="currentColor"
-                    stroke-width="1.5"
+                    stroke-width="1.25"
                     stroke-linejoin="round"
                   />
-                  <path d="M10 10v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                  <path d="M10 10v6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" />
                 </svg>
               </div>
               <h3>Partner-friendly</h3>
@@ -341,7 +335,7 @@
                   <path
                     d="M6 14l8-8M9 6h5v5"
                     stroke="currentColor"
-                    stroke-width="1.5"
+                    stroke-width="1.25"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   />
@@ -353,8 +347,8 @@
             <article class="card">
               <div class="feature-icon" aria-hidden="true">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <rect x="4" y="5" width="12" height="10" rx="1" stroke="currentColor" stroke-width="1.5" />
-                  <path d="M7 9h6M7 12h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                  <rect x="4" y="5" width="12" height="10" rx="1" stroke="currentColor" stroke-width="1.25" />
+                  <path d="M7 9h6M7 12h4" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" />
                 </svg>
               </div>
               <h3>Private by design</h3>
@@ -364,15 +358,15 @@
         </div>
       </section>
 
-      <section class="section" style="background: var(--color-surface); border-block: 1px solid var(--color-border)">
+      <section class="section surface-band">
         <div class="container">
-          <div class="section-header">
+          <div class="section-header section-header--wide">
             <p class="eyebrow">Testimonials</p>
             <h2>Real households. Paycheck reality.</h2>
             <p class="section-intro">Quotes represent the kind of outcomes Budgetocity is designed to support.</p>
           </div>
           <div class="grid-3">
-            <figure class="card quote-card">
+            <figure class="quote-block quote-card">
               <blockquote>
                 “We stopped living in two calendars — the bank’s and the budget app’s. Everything finally lines up with
                 Friday deposits.”
@@ -382,7 +376,7 @@
                 <div class="quote-role">Biweekly household, Dallas–Fort Worth</div>
               </figcaption>
             </figure>
-            <figure class="card quote-card">
+            <figure class="quote-block quote-card">
               <blockquote>
                 “I tried the big names. They are great if you think in months. I get paid every other week — Budgetocity
                 speaks my language.”
@@ -392,7 +386,7 @@
                 <div class="quote-role">Healthcare tech, Austin</div>
               </figcaption>
             </figure>
-            <figure class="card quote-card">
+            <figure class="quote-block quote-card">
               <blockquote>
                 “The win was simple: rent always sits on the paycheck that can handle it. No more overdraft anxiety.”
               </blockquote>
@@ -407,10 +401,10 @@
 
       <section class="section" id="pricing" aria-labelledby="pricing-heading">
         <div class="container">
-          <div class="section-header" style="text-align: center; margin-inline: auto">
+          <div class="section-header section-header--wide text-center mx-auto">
             <p class="eyebrow">Pricing</p>
             <h2 id="pricing-heading">Start free. Upgrade when budgeting sticks.</h2>
-            <p class="section-intro" style="margin-inline: auto; text-align: center">
+            <p class="section-intro section-intro--center">
               Transparent pricing — no surprise fees for trying the workflow that matches your pay cycle.
             </p>
           </div>
@@ -457,7 +451,7 @@
                   Bill calendar by pay period
                 </li>
               </ul>
-              <a class="btn btn-secondary" href="#download" style="width: 100%">Start free</a>
+              <a class="btn btn-secondary btn-block" href="#download">Start free</a>
             </div>
             <div class="card price-card featured">
               <span class="price-badge">Most popular</span>
@@ -502,7 +496,7 @@
                   Priority support
                 </li>
               </ul>
-              <a class="btn btn-primary" href="#download" style="width: 100%">Start your first paycheck budget</a>
+              <a class="btn btn-primary btn-block" href="#download">Start your first paycheck budget</a>
             </div>
           </div>
         </div>
@@ -514,13 +508,11 @@
           <p>
             Join households who budget in the same rhythm they get paid. Free to start — no credit card required.
           </p>
-          <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center">
+          <div class="cta-actions">
             <a class="btn btn-primary btn-lg" href="#">App Store</a>
             <a class="btn btn-secondary btn-lg" href="#">Google Play</a>
           </div>
-          <p style="margin-top: 1.25rem; font-size: 0.875rem; color: rgba(255, 255, 255, 0.55)">
-            Store badges are placeholders for this prototype.
-          </p>
+          <p class="cta-subtle">Store badges are placeholders for this prototype.</p>
         </div>
       </section>
     </main>
@@ -530,7 +522,7 @@
         <div class="footer-grid">
           <div class="footer-brand">
             <a class="logo" href="./">
-              <img class="logo-mark" src="logo-mark.svg" width="32" height="32" alt="" />
+              <img class="logo-mark" src="assets/logo.svg" width="36" height="36" alt="" />
               Budgetocity
             </a>
             <p>The budgeting app built for paycheck-based budgeting — weekly, biweekly, and beyond.</p>
