@@ -3340,3 +3340,63 @@ a.location-tag:hover {
   padding-right: 4px;
 }
 
+/* ── Blog pull quotes ── */
+.blog-pullquote {
+  margin: 2.5rem 0;
+  padding: 1.5rem 1.75rem;
+  border-left: 4px solid var(--brand-texas-sky);
+  background: rgba(80, 120, 180, 0.06);
+  border-radius: 0 8px 8px 0;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--brand-deep-indigo);
+  font-style: italic;
+  position: relative;
+}
+.blog-pullquote p {
+  margin: 0;
+}
+.blog-pullquote cite {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  font-style: normal;
+  color: var(--color-text-muted);
+}
+
+/* ── Blog mid-article CTA box ── */
+.blog-cta-box {
+  margin: 2.5rem 0;
+  padding: 2rem 2rem 1.75rem;
+  background: var(--brand-parchment);
+  border: 2px solid var(--brand-sky-light);
+  border-radius: 12px;
+  text-align: center;
+}
+.blog-cta-box h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  color: var(--brand-deep-indigo);
+}
+.blog-cta-box p {
+  margin: 0 0 1.25rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.blog-cta-box .btn {
+  display: inline-block;
+}
+
+@media (max-width: 600px) {
+  .blog-pullquote {
+    padding: 1.25rem 1.25rem;
+    font-size: 1.05rem;
+  }
+  .blog-cta-box {
+    padding: 1.5rem 1.25rem 1.25rem;
+  }
+}
+
