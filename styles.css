@@ -67,10 +67,20 @@ ul { list-style: none; }
   gap: 10px;
 }
 
-.nav-logo img {
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
+.nav-logo img,
+.footer-brand-row img,
+.site-logo {
+  width: 42px;
+  height: 42px;
+  display: block;
+  flex-shrink: 0;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.footer-brand-row img {
+  width: 36px;
+  height: 36px;
 }
 
 .nav-logo-text {
@@ -220,6 +230,15 @@ ul { list-style: none; }
   font-weight: 600;
   color: var(--text2);
   line-height: 1.5;
+}
+
+.contact-hero-logo {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.25rem;
+  display: block;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 /* LOGO BAR */
@@ -477,8 +496,6 @@ footer {
   gap: 10px;
   margin-bottom: 0.5rem;
 }
-
-.footer-brand-row img { width: 28px; height: 28px; border-radius: 6px; }
 
 .footer-brand {
   font-size: 14px;
