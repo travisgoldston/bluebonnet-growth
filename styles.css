@@ -16,6 +16,8 @@
   --text4: #bbbbbb;
   --radius: 9px;
   --font: "Inter", sans-serif;
+  --logo-width: 44px;
+  --logo-aspect: 682 / 1024;
 }
 
 html { scroll-behavior: smooth; }
@@ -58,7 +60,7 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 64px;
+  height: 72px;
 }
 
 .nav-logo {
@@ -70,17 +72,16 @@ ul { list-style: none; }
 .nav-logo img,
 .footer-brand-row img,
 .site-logo {
-  width: 42px;
-  height: 42px;
+  width: var(--logo-width);
+  height: auto;
+  aspect-ratio: var(--logo-aspect);
   display: block;
   flex-shrink: 0;
   object-fit: contain;
-  image-rendering: -webkit-optimize-contrast;
 }
 
 .footer-brand-row img {
-  width: 36px;
-  height: 36px;
+  width: 38px;
 }
 
 .nav-logo-text {
@@ -233,12 +234,12 @@ ul { list-style: none; }
 }
 
 .contact-hero-logo {
-  width: 64px;
-  height: 64px;
+  width: 88px;
+  height: auto;
+  aspect-ratio: var(--logo-aspect);
   margin: 0 auto 1.25rem;
   display: block;
   object-fit: contain;
-  image-rendering: -webkit-optimize-contrast;
 }
 
 /* LOGO BAR */
