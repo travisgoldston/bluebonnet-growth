@@ -52,6 +52,23 @@ ${locationStripHtml()}
       </section>`;
 }
 
+function industryGuidesSection(city) {
+  if (!city.industryGuides || !city.industryGuides.length) return "";
+  const items = city.industryGuides
+    .map((g) => `            <li><a href="/blog/${g.slug}">How to rank for "${g.title}"</a></li>`)
+    .join("\n");
+  return `      <section class="section section-light">
+        <div class="container">
+          <h2>Local SEO guides for ${city.name} businesses</h2>
+          <p>Plain-English guides for the searches your customers actually type, like "${city.industryGuides[0].title.toLowerCase()}" and similar phrases.</p>
+          <ul>
+${items}
+          </ul>
+          <p><a href="/blog">See all blog guides</a></p>
+        </div>
+      </section>`;
+}
+
 function nearbySection(city) {
   const links = nearbyLinks(city);
   if (!links) return "";
@@ -187,6 +204,7 @@ ${contextParas}
         </div>
       </section>
 
+${industryGuidesSection(city)}
 ${nearbySection(city)}
 ${texasInterlinkSection()}
 
@@ -392,7 +410,11 @@ function updateVercelRedirects() {
 }
 
 function updateSitemap() {
+  const industrySlugs = fs.existsSync(path.join(ROOT, "scripts", "data", "industry_blog_slugs.json"))
+    ? JSON.parse(fs.readFileSync(path.join(ROOT, "scripts", "data", "industry_blog_slugs.json"), "utf8"))
+    : [];
   const BLOG_SLUGS = [
+    ...industrySlugs,
     "what-to-do-when-phone-stops-ringing",
     "how-to-get-more-google-reviews",
     "why-competitor-ranks-higher",
