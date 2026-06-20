@@ -268,20 +268,83 @@ ${FOOTER_SOCIAL}
 `;
 }
 
+function regionSlug(region) {
+  return region.toLowerCase().replace(/\s+/g, "-");
+}
+
+const REGION_BLURBS = {
+  "Dallas-Fort Worth": "McKinney, Frisco, Dallas, Fort Worth, and the northern suburbs",
+  "Central Texas": "Austin, Round Rock, Waco, and the I-35 corridor",
+  "Houston Area": "Houston, The Woodlands, Galveston, and the Gulf Coast",
+  "San Antonio Area": "San Antonio and South Central Texas",
+  "West Texas": "Lubbock, Midland, El Paso, and the Permian Basin",
+  "South Texas": "Corpus Christi, McAllen, and the Rio Grande Valley",
+  "East Texas": "Tyler and the East Texas regional market",
+};
+
+const REGION_ORDER = [
+  "Dallas-Fort Worth",
+  "Central Texas",
+  "Houston Area",
+  "San Antonio Area",
+  "West Texas",
+  "South Texas",
+  "East Texas",
+];
+
+function renderRegionNav() {
+  const byRegion = cities.byRegion();
+  const links = REGION_ORDER.filter((r) => byRegion[r])
+    .map((r) => `            <a href="#${regionSlug(r)}" class="region-jump-link">${r}</a>`)
+    .join("\n");
+  return `          <nav class="region-jump-nav" aria-label="Jump to region">
+${links}
+          </nav>`;
+}
+
+function homepageRegionsSection() {
+  const cards = REGION_ORDER.map(
+    (r) => `            <a href="/locations#${regionSlug(r)}" class="region-card">
+              <span class="region-card-title">${r}</span>
+              <span class="region-card-desc">${REGION_BLURBS[r]}</span>
+            </a>`
+  ).join("\n");
+
+  return `      <section class="section section-light">
+        <div class="container">
+          <h2>Serving businesses across Texas</h2>
+          <p>Local SEO for owner-led businesses statewide. Pick a region to browse cities and local guides.</p>
+          <nav class="regions-hub" aria-label="Texas regions">
+${cards}
+          </nav>
+          <p class="section-cta"><a href="/locations">Browse all Texas cities</a> · <a href="/blog?category=city-guide">City guides</a> · <a href="/services/local-seo">Local SEO services</a></p>
+        </div>
+      </section>`;
+}
+
+function patchHomepage() {
+  const file = path.join(ROOT, "index.html");
+  let html = fs.readFileSync(file, "utf8");
+  const section = homepageRegionsSection();
+  if (/<section class="section section-light">\s*<div class="container">\s*<h2>(?:Local SEO in cities across Texas|Serving businesses across Texas)<\/h2>[\s\S]*?<\/section>/.test(html)) {
+    html = html.replace(
+      /<section class="section section-light">\s*<div class="container">\s*<h2>(?:Local SEO in cities across Texas|Serving businesses across Texas)<\/h2>[\s\S]*?<\/section>/,
+      section.trim()
+    );
+  } else {
+    html = html.replace("</main>", `${section}\n\n    </main>`).replace(
+      /(<section class="final-cta"[\s\S]*?<\/section>)\s*(<footer>)/,
+      `$1\n\n    ${section.trim()}\n\n    $2`
+    );
+  }
+  fs.writeFileSync(file, html, "utf8");
+  console.log("Homepage: regions hub");
+}
+
 function renderLocationsGrid() {
   const byRegion = cities.byRegion();
-  const regionOrder = [
-    "Dallas-Fort Worth",
-    "Central Texas",
-    "Houston Area",
-    "San Antonio Area",
-    "West Texas",
-    "South Texas",
-    "East Texas",
-  ];
 
-  return regionOrder
-    .filter((r) => byRegion[r])
+  return REGION_ORDER.filter((r) => byRegion[r])
     .map((region) => {
       const cards = byRegion[region]
         .sort((a, b) => a.name.localeCompare(b.name))
@@ -292,7 +355,7 @@ function renderLocationsGrid() {
             </article>`
         )
         .join("\n");
-      return `          <h3 class="locations-region">${region}</h3>
+      return `          <h3 class="locations-region" id="${regionSlug(region)}">${region}</h3>
           <div class="locations-grid">
 ${cards}
           </div>`;
@@ -344,7 +407,6 @@ function patchCorePages() {
     "results.html",
     "how-it-works.html",
     "services.html",
-    "blog.html",
     "pricing.html",
     "faq.html",
     "proof.html",
@@ -389,6 +451,7 @@ function updateLocationsPage() {
           <p>
             These are dedicated local SEO pages for cities I work in. Most clients serve several areas. That is normal.
           </p>
+${renderRegionNav()}
 ${renderLocationsGrid()}
         </div>
       </section>
@@ -549,6 +612,7 @@ for (const f of stripTargets) {
 updateSitemap();
 updateIndexSchema();
 updateVercelRedirects();
+patchHomepage();
 patchCorePages();
 patchBlogPosts();
 

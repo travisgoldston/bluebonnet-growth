@@ -408,3 +408,123 @@ if (formEl && stepsRoot) {
   });
 }
 
+// Blog index filters
+(function initBlogFilters() {
+  const grid = document.querySelector('[data-blog-grid]');
+  if (!grid) return;
+
+  const cards = [...grid.querySelectorAll('.blog-card-index')];
+  const countEl = document.querySelector('[data-blog-count]');
+  const clearBtn = document.querySelector('[data-blog-clear]');
+
+  const state = {
+    category: 'all',
+    city: 'all',
+    industry: 'all',
+    topic: 'all',
+  };
+
+  const FILTER_DATASET = {
+    category: 'filterCategory',
+    city: 'filterCity',
+    industry: 'filterIndustry',
+    topic: 'filterTopic',
+  };
+
+  function setActiveInGroup(group, value) {
+    const key = FILTER_DATASET[group];
+    document.querySelectorAll(`[data-filter-${group}]`).forEach((btn) => {
+      btn.classList.toggle('is-active', btn.dataset[key] === value);
+    });
+  }
+
+  function updateUrl() {
+    const params = new URLSearchParams();
+    Object.entries(state).forEach(([key, val]) => {
+      if (val !== 'all') params.set(key, val);
+    });
+    const qs = params.toString();
+    const next = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
+    window.history.replaceState({}, '', next);
+  }
+
+  function cardMatches(card) {
+    const cat = card.dataset.category;
+    const tags = (card.dataset.tags || '').split(',');
+    if (state.category !== 'all' && cat !== state.category) return false;
+    if (state.city !== 'all' && !tags.includes(state.city)) return false;
+    if (state.industry !== 'all' && !tags.includes(state.industry)) return false;
+    if (state.topic !== 'all' && !tags.includes(state.topic)) return false;
+    return true;
+  }
+
+  function applyFilters() {
+    let visible = 0;
+    cards.forEach((card) => {
+      const show = cardMatches(card);
+      card.hidden = !show;
+      if (show) visible += 1;
+    });
+
+    if (countEl) {
+      countEl.textContent =
+        visible === cards.length
+          ? `Showing ${visible} articles`
+          : `Showing ${visible} of ${cards.length} articles`;
+    }
+
+    if (clearBtn) {
+      clearBtn.hidden = Object.values(state).every((v) => v === 'all');
+    }
+  }
+
+  function activateFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    ['category', 'city', 'industry', 'topic'].forEach((key) => {
+      const val = params.get(key);
+      if (val) {
+        state[key] = val;
+        setActiveInGroup(key, val);
+      }
+    });
+    const legacyTag = params.get('tag');
+    if (legacyTag) {
+      if (document.querySelector(`[data-filter-city="${legacyTag}"]`)) {
+        state.city = legacyTag;
+        setActiveInGroup('city', legacyTag);
+      } else if (document.querySelector(`[data-filter-industry="${legacyTag}"]`)) {
+        state.industry = legacyTag;
+        setActiveInGroup('industry', legacyTag);
+      } else if (document.querySelector(`[data-filter-topic="${legacyTag}"]`)) {
+        state.topic = legacyTag;
+        setActiveInGroup('topic', legacyTag);
+      }
+    }
+    applyFilters();
+  }
+
+  ['category', 'city', 'industry', 'topic'].forEach((group) => {
+    document.querySelectorAll(`[data-filter-${group}]`).forEach((btn) => {
+      btn.addEventListener('click', () => {
+        state[group] = btn.dataset[FILTER_DATASET[group]];
+        setActiveInGroup(group, state[group]);
+        updateUrl();
+        applyFilters();
+      });
+    });
+  });
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      Object.keys(state).forEach((k) => {
+        state[k] = 'all';
+        setActiveInGroup(k, 'all');
+      });
+      updateUrl();
+      applyFilters();
+    });
+  }
+
+  activateFromUrl();
+})();
+

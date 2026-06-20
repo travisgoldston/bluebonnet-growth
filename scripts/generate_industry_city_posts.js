@@ -3,6 +3,7 @@ const path = require("path");
 const cities = require("./data/texas_cities");
 const industries = require("./data/industry_templates");
 const guideCities = require("./data/industry_guide_cities");
+const { blogMetaHtml } = require("./lib/blog_meta");
 
 const ROOT = path.resolve(__dirname, "..");
 const BLOG = path.join(ROOT, "blog");
@@ -53,7 +54,7 @@ ${locationStripHtml()}
         </div>
       </section>`;
 
-function shell({ slug, title, description, eyebrow, lead, sections }) {
+function shell({ slug, title, description, eyebrow, lead, sections, blogMeta }) {
   return `<!DOCTYPE html>
 <html lang="en">
   <head>
@@ -105,6 +106,7 @@ function shell({ slug, title, description, eyebrow, lead, sections }) {
           <span class="eyebrow">${eyebrow}</span>
           <h1>${title}</h1>
           <p class="lead">${lead}</p>
+${blogMeta}
         </div>
       </section>
 
@@ -290,6 +292,9 @@ function industryPost(cityCfg, industry) {
       </section>`,
   ];
 
+  const tags = [industry.key, citySlug, "local-seo"];
+  const cardBlurb = fill(industry.cardBlurb, vars);
+
   return {
     slug,
     title,
@@ -298,10 +303,15 @@ function industryPost(cityCfg, industry) {
     lead,
     sections,
     guideTitle: searchPhraseAlt,
-    cardBlurb: fill(industry.cardBlurb, vars),
+    cardBlurb,
     city,
     citySlug,
     region: cityMeta.region,
+    category: "city-guide",
+    tags,
+    excerpt: cardBlurb,
+    cityName: city,
+    blogMeta: blogMetaHtml({ category: "city-guide", tags }),
   };
 }
 
@@ -322,6 +332,17 @@ for (const post of posts) {
   fs.writeFileSync(file, shell(post), "utf8");
 }
 
+const manifest = posts.map((p) => ({
+  slug: p.slug,
+  title: p.title,
+  excerpt: p.excerpt,
+  category: p.category,
+  tags: p.tags,
+  cityName: p.cityName,
+}));
+
+fs.writeFileSync(path.join(ROOT, "scripts", "data", "blog_manifest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8");
+
 fs.writeFileSync(
   path.join(ROOT, "scripts", "data", "industry_blog_slugs.json"),
   JSON.stringify(posts.map((p) => p.slug), null, 2) + "\n",
@@ -334,77 +355,5 @@ fs.writeFileSync(
   "utf8"
 );
 
-function blogCard(post) {
-  return `            <article class="blog-card">
-              <h4><a href="/blog/${post.slug}">${post.title}</a></h4>
-              <p>${post.cardBlurb}</p>
-              <p><a href="/blog/${post.slug}">Read more</a></p>
-            </article>`;
-}
-
-function blogIndexSection() {
-  const byRegion = {};
-  for (const cityCfg of guideCities) {
-    const cityPosts = posts.filter((p) => p.citySlug === cityCfg.slug);
-    const region = cityPosts[0].region;
-    if (!byRegion[region]) byRegion[region] = [];
-    byRegion[region].push({ city: cityPosts[0].city, citySlug: cityCfg.slug, posts: cityPosts });
-  }
-
-  const regionOrder = [
-    "Dallas-Fort Worth",
-    "Central Texas",
-    "Houston Area",
-    "San Antonio Area",
-    "West Texas",
-    "South Texas",
-    "East Texas",
-  ];
-
-  const blocks = regionOrder
-    .filter((r) => byRegion[r])
-    .map((region) => {
-      const citiesInRegion = byRegion[region]
-        .map(({ city, citySlug, posts: cityPosts }) => {
-          const example = cityPosts[0].guideTitle.toLowerCase();
-          return `          <h4>${city}</h4>
-          <p>Guides for searches like "${example}" and similar phrases. <a href="${cityPath(citySlug)}">Local SEO in ${city}</a></p>
-          <div class="blog-list">
-${cityPosts.map(blogCard).join("\n")}
-          </div>`;
-        })
-        .join("\n\n");
-      return `          <h3>${region}</h3>\n${citiesInRegion}`;
-    })
-    .join("\n\n");
-
-  return `      <section class="section section-light">
-        <div class="container">
-          <h2>Industry local SEO guides (Texas)</h2>
-          <p>Plain-English guides for the searches people actually type: dentist, plumber, HVAC, roofer, chiropractor, electrician, vet, landscaper, therapist, lawyer, insurance agent, and financial advisor plus your city and TX.</p>
-${blocks}
-          <p style="margin-top: 1.5rem;">Browse <a href="/locations">all Texas cities</a> or <a href="/services/local-seo">local SEO services</a>.</p>
-        </div>
-      </section>`;
-}
-
-const blogPath = path.join(ROOT, "blog.html");
-let blogHtml = fs.readFileSync(blogPath, "utf8");
-const startMarker = "<!-- INDUSTRY-GUIDES-START -->";
-const endMarker = "<!-- INDUSTRY-GUIDES-END -->";
-
-if (blogHtml.includes(startMarker)) {
-  blogHtml = blogHtml.replace(
-    new RegExp(`${startMarker}[\\s\\S]*?${endMarker}`),
-    `${startMarker}\n${blogIndexSection()}\n      ${endMarker}`
-  );
-} else {
-  blogHtml = blogHtml.replace(
-    /(<section class="section section-light">\s*<div class="container">\s*<h2>)Melissa business guides[\s\S]*?(<\/section>\s*<section class="section">)/,
-    `${startMarker}\n${blogIndexSection()}\n      ${endMarker}\n\n      $2`
-  );
-}
-
-fs.writeFileSync(blogPath, blogHtml, "utf8");
-
 console.log(`Done. ${posts.length} industry guides across ${guideCities.length} Texas cities.`);
+require("./build_blog_index.js");
