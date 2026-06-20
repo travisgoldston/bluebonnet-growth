@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const cities = require("./data/texas_cities");
+const { extraSections } = require("./lib/city_page_extra");
 
 const ROOT = path.resolve(__dirname, "..");
 const BASE = "https://bluebonnetgrowth.com";
@@ -47,7 +48,7 @@ function texasInterlinkSection() {
           <nav class="location-strip" aria-label="Texas cities">
 ${locationStripHtml()}
           </nav>
-          <p class="section-cta"><a href="/locations">View all Texas cities we serve</a> · <a href="/services/local-seo">Local SEO services</a> · <a href="/contact">Apply now</a></p>
+          <p class="text-links"><a href="/locations">View all Texas cities we serve</a> · <a href="/services/local-seo">Local SEO services</a> · <a href="/contact">Apply now</a></p>
         </div>
       </section>`;
 }
@@ -94,6 +95,12 @@ function renderCityPage(city) {
   const canonical = `${BASE}${urlPath}`;
   const problemParas = city.problem.map((p) => `          <p>${p}</p>`).join("\n");
   const contextParas = city.context.map((p) => `          <p>${p}</p>`).join("\n");
+  const guidesByCity = loadIndustryGuidesByCity();
+  const extra = extraSections(city, {
+    getPath: cityPath,
+    getBySlug: cities.getBySlug,
+    guidesByCity,
+  });
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -156,6 +163,8 @@ ${problemParas}
         </div>
       </section>
 
+${extra.beforeWhatIDo}
+
       <section class="section">
         <div class="container">
           <h2>What I do for ${city.name} businesses</h2>
@@ -170,12 +179,16 @@ ${problemParas}
         </div>
       </section>
 
+${extra.afterWhatIDo}
+
       <section class="section section-dark">
         <div class="container">
           <h2>${city.contextTitle}</h2>
 ${contextParas}
         </div>
       </section>
+
+${extra.beforeFaq}
 
       <section class="section">
         <div class="container">
@@ -317,7 +330,7 @@ function homepageRegionsSection() {
           <nav class="regions-hub" aria-label="Texas regions">
 ${cards}
           </nav>
-          <p class="section-cta"><a href="/locations">Browse all Texas cities</a> · <a href="/blog?category=city-guide">City guides</a> · <a href="/services/local-seo">Local SEO services</a></p>
+          <p class="text-links"><a href="/locations">Browse all Texas cities</a> · <a href="/blog?category=city-guide">City guides</a> · <a href="/services/local-seo">Local SEO services</a></p>
         </div>
       </section>`;
 }
@@ -379,6 +392,30 @@ function patchLocationStrip(filePath) {
   html = html.replace(/across North Texas get found/g, "across Texas get found");
   fs.writeFileSync(filePath, html, "utf8");
   return true;
+}
+
+function patchSiteWideLinks() {
+  const dirs = [ROOT, path.join(ROOT, "blog"), path.join(ROOT, "services")];
+  let count = 0;
+  for (const dir of dirs) {
+    if (!fs.existsSync(dir)) continue;
+    for (const name of fs.readdirSync(dir)) {
+      if (!name.endsWith(".html")) continue;
+      const file = path.join(dir, name);
+      let html = fs.readFileSync(file, "utf8");
+      const orig = html;
+      html = html.replace(
+        /<p class="section-cta"><a href="\/locations">View all Texas cities we serve<\/a> · <a href="\/services\/local-seo">Local SEO services<\/a> · <a href="\/contact">Apply now<\/a><\/p>/g,
+        '<p class="text-links"><a href="/locations">View all Texas cities we serve</a> · <a href="/services/local-seo">Local SEO services</a> · <a href="/contact">Apply now</a></p>'
+      );
+      html = html.replace(/\s*style="color: var\(--color-yellow\);"/g, "");
+      if (html !== orig) {
+        fs.writeFileSync(file, html, "utf8");
+        count++;
+      }
+    }
+  }
+  if (count) console.log(`Patched link visibility on ${count} HTML files`);
 }
 
 function patchBlogPosts() {
@@ -613,6 +650,7 @@ updateSitemap();
 updateIndexSchema();
 updateVercelRedirects();
 patchHomepage();
+patchSiteWideLinks();
 patchCorePages();
 patchBlogPosts();
 

@@ -715,6 +715,112 @@ footer {
   text-underline-offset: 2px;
 }
 
+.section.section-dark .container a,
+.section-dark .container a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.section.section-dark .container a:hover,
+.section-dark .container a:hover {
+  color: var(--brand-sky-light);
+}
+
+.page-hero .container a {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.text-links {
+  margin-top: 1.5rem;
+  font-size: 15px;
+  color: var(--text2);
+}
+
+.text-links a {
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.section-dark .text-links a,
+.final-cta .text-links a {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.final-cta-note a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.final-cta-note a:hover {
+  color: #fff;
+}
+
+.btn {
+  display: inline-block;
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 13px 26px;
+  border-radius: 8px;
+  text-decoration: none !important;
+  transition: opacity 0.2s, background 0.2s, border-color 0.2s;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--navy);
+  color: #fff !important;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--navy) !important;
+  border-color: var(--navy);
+}
+
+.btn-outline:hover {
+  background: rgba(40, 40, 140, 0.06);
+}
+
+.section-dark .btn-outline,
+.section.section-dark .btn-outline {
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.65);
+}
+
+.section-dark .btn-outline:hover,
+.section.section-dark .btn-outline:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.section-dark .container .btn,
+.section.section-dark .container .btn {
+  text-decoration: none !important;
+}
+
+.service-panel-cta-link {
+  color: var(--navy);
+  font-weight: 600;
+  margin-left: 1rem;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.section-dark .service-panel-cta-link {
+  color: var(--brand-sky-light);
+}
+
 .faq-list {
   margin-top: 1.5rem;
   border: 1px solid var(--border2);
@@ -1197,6 +1303,7 @@ body.blog-post .page-hero .container {
   border-radius: var(--radius);
   background: #fff;
   text-decoration: none;
+  color: var(--text);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 

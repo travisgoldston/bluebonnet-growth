@@ -50,7 +50,7 @@ const texasInterlink = `      <section class="section section-light">
           <nav class="location-strip" aria-label="Texas cities">
 ${locationStripHtml()}
           </nav>
-          <p class="section-cta"><a href="/locations">View all Texas cities we serve</a> · <a href="/services/local-seo">Local SEO services</a> · <a href="/contact">Apply now</a></p>
+          <p class="text-links"><a href="/locations">View all Texas cities we serve</a> · <a href="/services/local-seo">Local SEO services</a> · <a href="/contact">Apply now</a></p>
         </div>
       </section>`;
 
