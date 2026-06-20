@@ -52,15 +52,23 @@ ${locationStripHtml()}
       </section>`;
 }
 
+function loadIndustryGuidesByCity() {
+  const file = path.join(ROOT, "scripts", "data", "industry_guides_by_city.json");
+  if (!fs.existsSync(file)) return {};
+  return JSON.parse(fs.readFileSync(file, "utf8"));
+}
+
 function industryGuidesSection(city) {
-  if (!city.industryGuides || !city.industryGuides.length) return "";
-  const items = city.industryGuides
+  const byCity = loadIndustryGuidesByCity();
+  const guides = byCity[city.slug] || city.industryGuides || [];
+  if (!guides.length) return "";
+  const items = guides
     .map((g) => `            <li><a href="/blog/${g.slug}">How to rank for "${g.title}"</a></li>`)
     .join("\n");
   return `      <section class="section section-light">
         <div class="container">
           <h2>Local SEO guides for ${city.name} businesses</h2>
-          <p>Plain-English guides for the searches your customers actually type, like "${city.industryGuides[0].title.toLowerCase()}" and similar phrases.</p>
+          <p>Plain-English guides for the searches your customers actually type, like "${guides[0].title.toLowerCase()}" and similar phrases.</p>
           <ul>
 ${items}
           </ul>
