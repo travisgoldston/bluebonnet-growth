@@ -222,6 +222,15 @@ ul { list-style: none; }
   line-height: 1.5;
 }
 
+.contact-hero-logo {
+  width: 88px;
+  height: auto;
+  aspect-ratio: 682 / 1024;
+  margin: 0 auto 1.25rem;
+  display: block;
+  object-fit: contain;
+}
+
 /* LOGO BAR */
 .logo-bar {
   border-bottom: 1px solid var(--border);
