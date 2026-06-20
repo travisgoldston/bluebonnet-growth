@@ -5,6 +5,7 @@
 :root {
   --navy: #28288C;
   --navy-deep: #1e1e6a;
+  --brand-sky-light: #A8C8F0;
   --white: #ffffff;
   --off: #f8f8f8;
   --border: #f0f0f0;
@@ -75,9 +76,16 @@ ul { list-style: none; }
 .nav-logo-text {
   font-size: 15px;
   font-weight: 800;
-  color: var(--navy);
   letter-spacing: -0.02em;
   text-transform: uppercase;
+}
+
+.wordmark-bluebonnet { color: var(--navy); }
+
+.wordmark-growth {
+  color: var(--brand-sky-light);
+  font-style: italic;
+  font-weight: 700;
 }
 
 .nav-links { display: flex; gap: 28px; }
@@ -482,7 +490,6 @@ footer {
 .footer-brand {
   font-size: 14px;
   font-weight: 800;
-  color: var(--navy);
   text-transform: uppercase;
   letter-spacing: -0.01em;
 }
