@@ -1,26 +1,36 @@
 // Mobile nav toggle
-const navToggle = document.querySelector('[data-nav-toggle]');
-const navDrawer = document.querySelector('[data-nav-drawer]') || document.getElementById('nav-drawer');
-if (navToggle && navDrawer) {
-  navToggle.addEventListener('click', () => {
+(function initMobileNav() {
+  const navToggle = document.querySelector('[data-nav-toggle]');
+  const navDrawer = document.querySelector('[data-nav-drawer]');
+  if (!navToggle || !navDrawer) return;
+
+  navToggle.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
     const isOpen = navDrawer.classList.toggle('is-open');
-    navToggle.setAttribute('aria-expanded', isOpen);
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-    if (navDrawer.hasAttribute('aria-hidden')) {
-      navDrawer.setAttribute('aria-hidden', !isOpen);
-    }
+    document.body.classList.toggle('nav-open', isOpen);
   });
+
   navDrawer.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       navDrawer.classList.remove('is-open');
       navToggle.setAttribute('aria-expanded', 'false');
       navToggle.setAttribute('aria-label', 'Open menu');
-      if (navDrawer.hasAttribute('aria-hidden')) {
-        navDrawer.setAttribute('aria-hidden', 'true');
-      }
+      document.body.classList.remove('nav-open');
     });
   });
-}
+
+  document.addEventListener('click', (event) => {
+    if (!navDrawer.classList.contains('is-open')) return;
+    if (navDrawer.contains(event.target) || navToggle.contains(event.target)) return;
+    navDrawer.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open menu');
+    document.body.classList.remove('nav-open');
+  });
+})();
 
 // Pretty URL for final CTA section
 if (window.location && window.location.pathname === '/final-cta') {
@@ -294,22 +304,23 @@ if (calculatorRoot) {
     rangeEl.innerHTML = `Most owners in a similar spot start around <strong>${lowStr} to ${highStr} per month</strong> after setup.`;
   };
 
-  needSelect.addEventListener('change', updateEstimate);
-  leadsSlider.addEventListener('input', updateEstimate);
-  if (budgetInput) {
-    budgetInput.addEventListener('input', updateEstimate);
+  if (needSelect && leadsSlider) {
+    needSelect.addEventListener('change', updateEstimate);
+    leadsSlider.addEventListener('input', updateEstimate);
+    if (budgetInput) {
+      budgetInput.addEventListener('input', updateEstimate);
+    }
+    serviceCheckboxes.forEach((cb) => cb.addEventListener('change', updateEstimate));
+    updateEstimate();
   }
-  serviceCheckboxes.forEach((cb) => cb.addEventListener('change', updateEstimate));
-
-  updateEstimate();
 }
 
-// Conversational form
+// Conversational form (multi-step only)
 const formEl = document.querySelector('#contact-form');
-if (formEl) {
-  const stepsRoot = formEl.querySelector('[data-form-steps]');
+const stepsRoot = formEl ? formEl.querySelector('[data-form-steps]') : null;
+if (formEl && stepsRoot) {
   const confirmation = formEl.querySelector('[data-form-confirmation]');
-  const steps = stepsRoot ? Array.from(stepsRoot.querySelectorAll('.form-step')) : [];
+  const steps = Array.from(stepsRoot.querySelectorAll('.form-step'));
   const nextButtons = formEl.querySelectorAll('.form-next');
   const prevButtons = formEl.querySelectorAll('.form-prev');
   const phoneField = formEl.querySelector('[data-contact-phone]');
