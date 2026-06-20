@@ -30,6 +30,8 @@
     { "source": "/seo-melissa.html", "destination": "/melissa", "permanent": true },
     { "source": "/seo-prosper", "destination": "/prosper", "permanent": true },
     { "source": "/seo-prosper.html", "destination": "/prosper", "permanent": true },
+    { "source": "/seo-fort-worth", "destination": "/fort-worth", "permanent": true },
+    { "source": "/seo-fort-worth.html", "destination": "/fort-worth", "permanent": true },
     { "source": "/seo-company-:city", "destination": "/", "permanent": true },
     { "source": "/seo-company-:city.html", "destination": "/", "permanent": true }
   ]
