@@ -4,35 +4,524 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.bluebonnetgrowth.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.bluebonnetgrowth.com"
+        }
+      ],
       "destination": "https://bluebonnetgrowth.com/$1",
       "permanent": true
     },
-    { "source": "/seo", "destination": "/services/local-seo", "permanent": true },
-    { "source": "/seo.html", "destination": "/services/local-seo", "permanent": true },
-    { "source": "/web-design", "destination": "/services/web-design", "permanent": true },
-    { "source": "/web-design.html", "destination": "/services/web-design", "permanent": true },
-    { "source": "/frisco", "destination": "/locations/frisco-tx", "permanent": true },
-    { "source": "/frisco.html", "destination": "/locations/frisco-tx", "permanent": true },
-    { "source": "/allen", "destination": "/locations/allen-tx", "permanent": true },
-    { "source": "/allen.html", "destination": "/locations/allen-tx", "permanent": true },
-    { "source": "/final-cta", "destination": "/contact", "permanent": true },
-    { "source": "/final-cta.html", "destination": "/contact", "permanent": true },
-    { "source": "/seo-mckinney", "destination": "/services/local-seo", "permanent": true },
-    { "source": "/seo-mckinney.html", "destination": "/services/local-seo", "permanent": true },
-    { "source": "/seo-frisco", "destination": "/locations/frisco-tx", "permanent": true },
-    { "source": "/seo-frisco.html", "destination": "/locations/frisco-tx", "permanent": true },
-    { "source": "/seo-allen", "destination": "/locations/allen-tx", "permanent": true },
-    { "source": "/seo-allen.html", "destination": "/locations/allen-tx", "permanent": true },
-    { "source": "/seo-anna", "destination": "/anna", "permanent": true },
-    { "source": "/seo-anna.html", "destination": "/anna", "permanent": true },
-    { "source": "/seo-melissa", "destination": "/melissa", "permanent": true },
-    { "source": "/seo-melissa.html", "destination": "/melissa", "permanent": true },
-    { "source": "/seo-prosper", "destination": "/prosper", "permanent": true },
-    { "source": "/seo-prosper.html", "destination": "/prosper", "permanent": true },
-    { "source": "/seo-fort-worth", "destination": "/fort-worth", "permanent": true },
-    { "source": "/seo-fort-worth.html", "destination": "/fort-worth", "permanent": true },
-    { "source": "/seo-company-:city", "destination": "/", "permanent": true },
-    { "source": "/seo-company-:city.html", "destination": "/", "permanent": true }
+    {
+      "source": "/seo",
+      "destination": "/services/local-seo",
+      "permanent": true
+    },
+    {
+      "source": "/seo.html",
+      "destination": "/services/local-seo",
+      "permanent": true
+    },
+    {
+      "source": "/web-design",
+      "destination": "/services/web-design",
+      "permanent": true
+    },
+    {
+      "source": "/web-design.html",
+      "destination": "/services/web-design",
+      "permanent": true
+    },
+    {
+      "source": "/frisco",
+      "destination": "/locations/frisco-tx",
+      "permanent": true
+    },
+    {
+      "source": "/frisco.html",
+      "destination": "/locations/frisco-tx",
+      "permanent": true
+    },
+    {
+      "source": "/allen",
+      "destination": "/locations/allen-tx",
+      "permanent": true
+    },
+    {
+      "source": "/allen.html",
+      "destination": "/locations/allen-tx",
+      "permanent": true
+    },
+    {
+      "source": "/final-cta",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/final-cta.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/seo-mckinney",
+      "destination": "/services/local-seo",
+      "permanent": true
+    },
+    {
+      "source": "/seo-mckinney.html",
+      "destination": "/services/local-seo",
+      "permanent": true
+    },
+    {
+      "source": "/seo-frisco",
+      "destination": "/locations/frisco-tx",
+      "permanent": true
+    },
+    {
+      "source": "/seo-frisco.html",
+      "destination": "/locations/frisco-tx",
+      "permanent": true
+    },
+    {
+      "source": "/seo-allen",
+      "destination": "/locations/allen-tx",
+      "permanent": true
+    },
+    {
+      "source": "/seo-allen.html",
+      "destination": "/locations/allen-tx",
+      "permanent": true
+    },
+    {
+      "source": "/seo-anna",
+      "destination": "/anna",
+      "permanent": true
+    },
+    {
+      "source": "/seo-anna.html",
+      "destination": "/anna",
+      "permanent": true
+    },
+    {
+      "source": "/seo-melissa",
+      "destination": "/melissa",
+      "permanent": true
+    },
+    {
+      "source": "/seo-melissa.html",
+      "destination": "/melissa",
+      "permanent": true
+    },
+    {
+      "source": "/seo-prosper",
+      "destination": "/prosper",
+      "permanent": true
+    },
+    {
+      "source": "/seo-prosper.html",
+      "destination": "/prosper",
+      "permanent": true
+    },
+    {
+      "source": "/seo-fort-worth",
+      "destination": "/fort-worth",
+      "permanent": true
+    },
+    {
+      "source": "/seo-fort-worth.html",
+      "destination": "/fort-worth",
+      "permanent": true
+    },
+    {
+      "source": "/seo-company-:city",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/seo-company-:city.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/seo-dallas",
+      "destination": "/dallas",
+      "permanent": true
+    },
+    {
+      "source": "/seo-dallas.html",
+      "destination": "/dallas",
+      "permanent": true
+    },
+    {
+      "source": "/seo-arlington",
+      "destination": "/arlington",
+      "permanent": true
+    },
+    {
+      "source": "/seo-arlington.html",
+      "destination": "/arlington",
+      "permanent": true
+    },
+    {
+      "source": "/seo-irving",
+      "destination": "/irving",
+      "permanent": true
+    },
+    {
+      "source": "/seo-irving.html",
+      "destination": "/irving",
+      "permanent": true
+    },
+    {
+      "source": "/seo-denton",
+      "destination": "/denton",
+      "permanent": true
+    },
+    {
+      "source": "/seo-denton.html",
+      "destination": "/denton",
+      "permanent": true
+    },
+    {
+      "source": "/seo-plano",
+      "destination": "/plano",
+      "permanent": true
+    },
+    {
+      "source": "/seo-plano.html",
+      "destination": "/plano",
+      "permanent": true
+    },
+    {
+      "source": "/seo-celina",
+      "destination": "/celina",
+      "permanent": true
+    },
+    {
+      "source": "/seo-celina.html",
+      "destination": "/celina",
+      "permanent": true
+    },
+    {
+      "source": "/seo-wylie",
+      "destination": "/wylie",
+      "permanent": true
+    },
+    {
+      "source": "/seo-wylie.html",
+      "destination": "/wylie",
+      "permanent": true
+    },
+    {
+      "source": "/seo-murphy",
+      "destination": "/murphy",
+      "permanent": true
+    },
+    {
+      "source": "/seo-murphy.html",
+      "destination": "/murphy",
+      "permanent": true
+    },
+    {
+      "source": "/seo-sachse",
+      "destination": "/sachse",
+      "permanent": true
+    },
+    {
+      "source": "/seo-sachse.html",
+      "destination": "/sachse",
+      "permanent": true
+    },
+    {
+      "source": "/seo-lucas",
+      "destination": "/lucas",
+      "permanent": true
+    },
+    {
+      "source": "/seo-lucas.html",
+      "destination": "/lucas",
+      "permanent": true
+    },
+    {
+      "source": "/seo-van-alstyne",
+      "destination": "/van-alstyne",
+      "permanent": true
+    },
+    {
+      "source": "/seo-van-alstyne.html",
+      "destination": "/van-alstyne",
+      "permanent": true
+    },
+    {
+      "source": "/seo-gunter",
+      "destination": "/gunter",
+      "permanent": true
+    },
+    {
+      "source": "/seo-gunter.html",
+      "destination": "/gunter",
+      "permanent": true
+    },
+    {
+      "source": "/seo-sherman",
+      "destination": "/sherman",
+      "permanent": true
+    },
+    {
+      "source": "/seo-sherman.html",
+      "destination": "/sherman",
+      "permanent": true
+    },
+    {
+      "source": "/seo-denison",
+      "destination": "/denison",
+      "permanent": true
+    },
+    {
+      "source": "/seo-denison.html",
+      "destination": "/denison",
+      "permanent": true
+    },
+    {
+      "source": "/seo-howe",
+      "destination": "/howe",
+      "permanent": true
+    },
+    {
+      "source": "/seo-howe.html",
+      "destination": "/howe",
+      "permanent": true
+    },
+    {
+      "source": "/seo-austin",
+      "destination": "/austin",
+      "permanent": true
+    },
+    {
+      "source": "/seo-austin.html",
+      "destination": "/austin",
+      "permanent": true
+    },
+    {
+      "source": "/seo-round-rock",
+      "destination": "/round-rock",
+      "permanent": true
+    },
+    {
+      "source": "/seo-round-rock.html",
+      "destination": "/round-rock",
+      "permanent": true
+    },
+    {
+      "source": "/seo-pflugerville",
+      "destination": "/pflugerville",
+      "permanent": true
+    },
+    {
+      "source": "/seo-pflugerville.html",
+      "destination": "/pflugerville",
+      "permanent": true
+    },
+    {
+      "source": "/seo-san-marcos",
+      "destination": "/san-marcos",
+      "permanent": true
+    },
+    {
+      "source": "/seo-san-marcos.html",
+      "destination": "/san-marcos",
+      "permanent": true
+    },
+    {
+      "source": "/seo-waco",
+      "destination": "/waco",
+      "permanent": true
+    },
+    {
+      "source": "/seo-waco.html",
+      "destination": "/waco",
+      "permanent": true
+    },
+    {
+      "source": "/seo-college-station",
+      "destination": "/college-station",
+      "permanent": true
+    },
+    {
+      "source": "/seo-college-station.html",
+      "destination": "/college-station",
+      "permanent": true
+    },
+    {
+      "source": "/seo-killeen",
+      "destination": "/killeen",
+      "permanent": true
+    },
+    {
+      "source": "/seo-killeen.html",
+      "destination": "/killeen",
+      "permanent": true
+    },
+    {
+      "source": "/seo-houston",
+      "destination": "/houston",
+      "permanent": true
+    },
+    {
+      "source": "/seo-houston.html",
+      "destination": "/houston",
+      "permanent": true
+    },
+    {
+      "source": "/seo-the-woodlands",
+      "destination": "/the-woodlands",
+      "permanent": true
+    },
+    {
+      "source": "/seo-the-woodlands.html",
+      "destination": "/the-woodlands",
+      "permanent": true
+    },
+    {
+      "source": "/seo-galveston",
+      "destination": "/galveston",
+      "permanent": true
+    },
+    {
+      "source": "/seo-galveston.html",
+      "destination": "/galveston",
+      "permanent": true
+    },
+    {
+      "source": "/seo-beaumont",
+      "destination": "/beaumont",
+      "permanent": true
+    },
+    {
+      "source": "/seo-beaumont.html",
+      "destination": "/beaumont",
+      "permanent": true
+    },
+    {
+      "source": "/seo-san-antonio",
+      "destination": "/san-antonio",
+      "permanent": true
+    },
+    {
+      "source": "/seo-san-antonio.html",
+      "destination": "/san-antonio",
+      "permanent": true
+    },
+    {
+      "source": "/seo-lubbock",
+      "destination": "/lubbock",
+      "permanent": true
+    },
+    {
+      "source": "/seo-lubbock.html",
+      "destination": "/lubbock",
+      "permanent": true
+    },
+    {
+      "source": "/seo-abilene",
+      "destination": "/abilene",
+      "permanent": true
+    },
+    {
+      "source": "/seo-abilene.html",
+      "destination": "/abilene",
+      "permanent": true
+    },
+    {
+      "source": "/seo-amarillo",
+      "destination": "/amarillo",
+      "permanent": true
+    },
+    {
+      "source": "/seo-amarillo.html",
+      "destination": "/amarillo",
+      "permanent": true
+    },
+    {
+      "source": "/seo-midland",
+      "destination": "/midland",
+      "permanent": true
+    },
+    {
+      "source": "/seo-midland.html",
+      "destination": "/midland",
+      "permanent": true
+    },
+    {
+      "source": "/seo-odessa",
+      "destination": "/odessa",
+      "permanent": true
+    },
+    {
+      "source": "/seo-odessa.html",
+      "destination": "/odessa",
+      "permanent": true
+    },
+    {
+      "source": "/seo-el-paso",
+      "destination": "/el-paso",
+      "permanent": true
+    },
+    {
+      "source": "/seo-el-paso.html",
+      "destination": "/el-paso",
+      "permanent": true
+    },
+    {
+      "source": "/seo-corpus-christi",
+      "destination": "/corpus-christi",
+      "permanent": true
+    },
+    {
+      "source": "/seo-corpus-christi.html",
+      "destination": "/corpus-christi",
+      "permanent": true
+    },
+    {
+      "source": "/seo-mcallen",
+      "destination": "/mcallen",
+      "permanent": true
+    },
+    {
+      "source": "/seo-mcallen.html",
+      "destination": "/mcallen",
+      "permanent": true
+    },
+    {
+      "source": "/seo-laredo",
+      "destination": "/laredo",
+      "permanent": true
+    },
+    {
+      "source": "/seo-laredo.html",
+      "destination": "/laredo",
+      "permanent": true
+    },
+    {
+      "source": "/seo-brownsville",
+      "destination": "/brownsville",
+      "permanent": true
+    },
+    {
+      "source": "/seo-brownsville.html",
+      "destination": "/brownsville",
+      "permanent": true
+    },
+    {
+      "source": "/seo-tyler",
+      "destination": "/tyler",
+      "permanent": true
+    },
+    {
+      "source": "/seo-tyler.html",
+      "destination": "/tyler",
+      "permanent": true
+    }
   ]
 }
