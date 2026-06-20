@@ -1,0 +1,239 @@
+﻿
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0F2340;
+      --navy-deep: #09192E;
+      --navy-mid: #1a3a6e;
+      --white: #ffffff;
+      --off: #f8f8f8;
+      --border: #f0f0f0;
+      --border2: #e8e8e8;
+      --text: #111111;
+      --text2: #444444;
+      --text3: #888888;
+      --text4: #bbbbbb;
+      --radius: 9px;
+      --font: 'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--white);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo-mark {
+      width: 34px; height: 34px; background: var(--navy);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    }
+    .nav-logo-text {
+      font-size: 15px; font-weight: 800; color: var(--navy);
+      letter-spacing: -0.02em; text-transform: uppercase;
+    }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { font-size: 13px; color: var(--text3); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--navy); color: white;
+      font-size: 13px; font-weight: 700;
+      padding: 10px 22px; border-radius: 7px;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.88; }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 6rem 2.5rem 5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-inner { max-width: 780px; margin: 0 auto; }
+    .hero h1 {
+      font-size: 60px; font-weight: 900;
+      line-height: 1.04; letter-spacing: -0.035em;
+      color: var(--text); margin-bottom: 1.25rem;
+    }
+    .hero h1 span { color: var(--navy); }
+    .hero-sub {
+      font-size: 19px; font-weight: 600; color: var(--text2);
+      margin-bottom: 2.5rem; line-height: 1.45; max-width: 600px;
+      margin-left: auto; margin-right: auto;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: var(--navy); color: white;
+      font-size: 16px; font-weight: 800;
+      padding: 16px 38px; border-radius: 10px;
+      transition: opacity 0.2s;
+    }
+    .hero-cta:hover { opacity: 0.88; }
+    .hero-note { font-size: 13px; color: var(--text4); margin-top: 1rem; }
+
+    /* ── LOGO BAR ── */
+    .logo-bar {
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 2.5rem;
+    }
+    .logo-bar-label {
+      text-align: center; font-size: 11px; font-weight: 700;
+      letter-spacing: 0.12em; color: var(--text4);
+      text-transform: uppercase; margin-bottom: 1.5rem;
+    }
+    .logo-bar-row {
+      display: flex; align-items: center; justify-content: center;
+      gap: 3.5rem; flex-wrap: wrap;
+    }
+    .logo-client {
+      font-size: 13px; font-weight: 700; color: #d0d0d0;
+      letter-spacing: 0.04em; text-transform: uppercase;
+    }
+
+    /* ── SHARED SECTION ── */
+    .section { padding: 5rem 2.5rem; border-bottom: 1px solid var(--border); }
+    .section-inner { max-width: 760px; }
+    .section-inner-wide { max-width: 960px; }
+
+    .section h2 {
+      font-size: 48px; font-weight: 900;
+      letter-spacing: -0.03em; color: var(--text);
+      margin-bottom: 1.75rem; line-height: 1.05;
+    }
+    .section h2 u { text-decoration-color: var(--navy); text-underline-offset: 4px; }
+    .section p {
+      font-size: 17px; color: var(--text2);
+      line-height: 1.75; margin-bottom: 1rem;
+    }
+    .section p strong { color: var(--navy); font-weight: 700; }
+
+    .section-cta {
+      display: inline-block; margin-top: 2rem;
+      background: var(--navy); color: white;
+      font-size: 15px; font-weight: 700;
+      padding: 13px 26px; border-radius: 8px;
+    }
+
+    /* Closer block */
+    .section-closer {
+      font-size: 18px; font-weight: 700; color: var(--text);
+      line-height: 1.55; margin-top: 2rem;
+      padding-top: 2rem; border-top: 1px solid var(--border);
+    }
+    .section-closer strong { color: var(--navy); }
+
+    /* ── RESULTS ── */
+    .results { background: var(--off); }
+    .results-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 2px; background: var(--border2);
+      border: 1px solid var(--border2); border-radius: var(--radius);
+      overflow: hidden; margin-top: 2.5rem;
+    }
+    .result-card { background: white; padding: 2.5rem 2rem; }
+    .result-co {
+      font-size: 11px; font-weight: 700; color: var(--text4);
+      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem;
+    }
+    .result-num {
+      font-size: 54px; font-weight: 900; color: var(--navy);
+      letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.5rem;
+    }
+    .result-desc { font-size: 14px; color: var(--text3); line-height: 1.6; }
+
+    /* ── HOW IT WORKS ── */
+    .how-list { margin-top: 2rem; }
+    .how-item {
+      display: flex; gap: 1.5rem; align-items: flex-start;
+      padding: 1.75rem 0; border-bottom: 1px solid var(--border);
+    }
+    .how-item:first-child { padding-top: 0; }
+    .how-num {
+      font-size: 12px; font-weight: 800; color: var(--text4);
+      min-width: 28px; padding-top: 3px;
+    }
+    .how-title { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .how-desc { font-size: 14px; color: var(--text3); line-height: 1.65; }
+
+    /* ── NOT AN AGENCY ── */
+    .not-agency {}
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      background: var(--navy); padding: 6rem 2.5rem; text-align: center;
+    }
+    .final-cta h2 {
+      font-size: 52px; font-weight: 900;
+      letter-spacing: -0.03em; color: white;
+      margin-bottom: 1rem; line-height: 1.05;
+    }
+    .final-cta p { font-size: 16px; color: rgba(255,255,255,0.45); margin-bottom: 2.5rem; }
+    .final-cta-btn {
+      display: inline-block;
+      background: white; color: var(--navy);
+      font-size: 16px; font-weight: 800;
+      padding: 16px 38px; border-radius: 10px;
+      transition: opacity 0.2s;
+    }
+    .final-cta-btn:hover { opacity: 0.9; }
+    .final-cta-note { font-size: 12px; color: rgba(255,255,255,0.2); margin-top: 1.25rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2.5rem;
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem; border-top: 1px solid var(--border);
+      align-items: start;
+    }
+    .footer-brand {
+      font-size: 14px; font-weight: 800; color: var(--navy);
+      text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 0.5rem;
+    }
+    .footer-tagline { font-size: 13px; color: var(--text4); line-height: 1.6; }
+    .footer-col-title { font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
+    .footer-links { display: flex; flex-direction: column; gap: 7px; }
+    .footer-links a { font-size: 13px; color: var(--text4); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text); }
+    .footer-cta-text { font-size: 13px; color: var(--text4); margin-bottom: 1rem; line-height: 1.55; }
+    .footer-btn {
+      display: inline-block;
+      background: var(--navy); color: white;
+      font-size: 13px; font-weight: 700;
+      padding: 10px 20px; border-radius: 7px;
+    }
+    .copyright {
+      padding: 1.25rem 2.5rem;
+      border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .copyright span { font-size: 12px; color: var(--text4); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .hero h1 { font-size: 38px; }
+      .hero-sub { font-size: 16px; }
+      .section h2 { font-size: 32px; }
+      .results-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      footer { grid-template-columns: 1fr; }
+      .final-cta h2 { font-size: 34px; }
+      .logo-bar-row { gap: 1.5rem; }
+    }
+  
