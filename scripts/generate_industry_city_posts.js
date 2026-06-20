@@ -166,16 +166,22 @@ function defaultMarketNote(cityName, citySlug) {
   return `${cityName} has its own search market on Google. Nearby towns often show up in the same results.`;
 }
 
+function formatSearchPhraseAlt(searchKey, city) {
+  if (searchKey === "hvac") return `HVAC ${city} TX`;
+  const titled = searchKey
+    .split(" ")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+  return `${titled} ${city} TX`;
+}
+
 function industryPost(cityCfg, industry) {
   const cityMeta = cities.getBySlug(cityCfg.slug);
   const city = cityMeta.name;
   const citySlug = cityCfg.slug;
   const cityLower = city.toLowerCase();
   const searchPhrase = `${industry.searchKey} ${cityLower} tx`;
-  const searchPhraseAlt =
-    industry.searchKey === "hvac"
-      ? `HVAC ${city} TX`
-      : `${industry.searchKey.charAt(0).toUpperCase() + industry.searchKey.slice(1)} ${city} TX`;
+  const searchPhraseAlt = formatSearchPhraseAlt(industry.searchKey, city);
   const slug = `local-seo-for-${industry.key}-${citySlug}-tx`;
   const vars = { city, citySlug, searchPhrase };
 
@@ -375,7 +381,7 @@ ${cityPosts.map(blogCard).join("\n")}
   return `      <section class="section section-light">
         <div class="container">
           <h2>Industry local SEO guides (Texas)</h2>
-          <p>Plain-English guides for the searches people actually type: dentist, plumber, HVAC, roofer, chiropractor, and electrician plus your city and TX.</p>
+          <p>Plain-English guides for the searches people actually type: dentist, plumber, HVAC, roofer, chiropractor, electrician, vet, landscaper, therapist, lawyer, insurance agent, and financial advisor plus your city and TX.</p>
 ${blocks}
           <p style="margin-top: 1.5rem;">Browse <a href="/locations">all Texas cities</a> or <a href="/services/local-seo">local SEO services</a>.</p>
         </div>
