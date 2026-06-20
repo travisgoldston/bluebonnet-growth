@@ -1,19 +1,23 @@
 // Mobile nav toggle
 const navToggle = document.querySelector('[data-nav-toggle]');
-const navDrawer = document.getElementById('nav-drawer');
+const navDrawer = document.querySelector('[data-nav-drawer]') || document.getElementById('nav-drawer');
 if (navToggle && navDrawer) {
   navToggle.addEventListener('click', () => {
     const isOpen = navDrawer.classList.toggle('is-open');
     navToggle.setAttribute('aria-expanded', isOpen);
     navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-    navDrawer.setAttribute('aria-hidden', !isOpen);
+    if (navDrawer.hasAttribute('aria-hidden')) {
+      navDrawer.setAttribute('aria-hidden', !isOpen);
+    }
   });
-  navDrawer.querySelectorAll('.nav-drawer-link, .nav-drawer-sublink, .nav-drawer-cta').forEach((link) => {
+  navDrawer.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       navDrawer.classList.remove('is-open');
       navToggle.setAttribute('aria-expanded', 'false');
       navToggle.setAttribute('aria-label', 'Open menu');
-      navDrawer.setAttribute('aria-hidden', 'true');
+      if (navDrawer.hasAttribute('aria-hidden')) {
+        navDrawer.setAttribute('aria-hidden', 'true');
+      }
     });
   });
 }
