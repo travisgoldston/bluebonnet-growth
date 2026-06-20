@@ -16,8 +16,6 @@
   --text4: #bbbbbb;
   --radius: 9px;
   --font: "Inter", sans-serif;
-  --logo-width: 44px;
-  --logo-aspect: 682 / 1024;
 }
 
 html { scroll-behavior: smooth; }
@@ -60,7 +58,7 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 64px;
 }
 
 .nav-logo {
@@ -69,19 +67,10 @@ ul { list-style: none; }
   gap: 10px;
 }
 
-.nav-logo img,
-.footer-brand-row img,
-.site-logo {
-  width: var(--logo-width);
-  height: auto;
-  aspect-ratio: var(--logo-aspect);
-  display: block;
-  flex-shrink: 0;
-  object-fit: contain;
-}
-
-.footer-brand-row img {
-  width: 38px;
+.nav-logo img {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
 }
 
 .nav-logo-text {
@@ -231,15 +220,6 @@ ul { list-style: none; }
   font-weight: 600;
   color: var(--text2);
   line-height: 1.5;
-}
-
-.contact-hero-logo {
-  width: 88px;
-  height: auto;
-  aspect-ratio: var(--logo-aspect);
-  margin: 0 auto 1.25rem;
-  display: block;
-  object-fit: contain;
 }
 
 /* LOGO BAR */
@@ -497,6 +477,8 @@ footer {
   gap: 10px;
   margin-bottom: 0.5rem;
 }
+
+.footer-brand-row img { width: 28px; height: 28px; border-radius: 6px; }
 
 .footer-brand {
   font-size: 14px;
