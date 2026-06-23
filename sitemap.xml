@@ -1136,11 +1136,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bluebonnetgrowth.com/conversion-optimization</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://bluebonnetgrowth.com/corpus-christi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1326,12 +1321,17 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bluebonnetgrowth.com/services/google-business-profile</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://bluebonnetgrowth.com/services/local-seo</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bluebonnetgrowth.com/services/web-design</loc>
+    <loc>https://bluebonnetgrowth.com/services/seo-content</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
