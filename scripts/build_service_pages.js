@@ -24,7 +24,7 @@ function texasLinksSection(title, intro) {
         <div class="container">
           <h2>${title}</h2>
           <p>${intro}</p>
-          <p class="text-links"><a href="/locations">View all Texas cities we serve</a> · <a href="/blog">Read guides on the blog</a></p>
+          <p class="text-links"><a href="/locations">North Texas city pages</a> · <a href="/blog">Read guides on the blog</a></p>
         </div>
       </section>`;
 }
@@ -38,8 +38,8 @@ function finalCta(headline, body) {
             ${paras(Array.isArray(body) ? body : [body])}
           </div>
           <div class="final-cta-actions">
-            <a href="/contact" class="btn btn-primary">Book a Strategy Call</a>
-            <a href="/contact" class="btn btn-outline">Request a free visibility check</a>
+            <a href="/contact" class="btn btn-primary">Apply Now</a>
+            <a href="/contact" class="btn btn-outline">Free visibility audit</a>
           </div>
         </div>
       </section>`;
@@ -106,7 +106,7 @@ ${main}
           <img src="/assets/bluebonnet-icon.png" alt="Bluebonnet Growth" width="28" height="28" />
           <div class="footer-brand">Bluebonnet Growth</div>
         </div>
-        <div class="footer-tagline">Ranking Texas local businesses on Google. One operator. Direct access. Real results.</div>
+        <div class="footer-tagline">Local SEO for North Texas service businesses. One operator. Direct access. More calls from Google.</div>
 ${FOOTER_SOCIAL}
       </div>
       <div>
@@ -128,7 +128,7 @@ ${FOOTER_SOCIAL}
     </footer>
     <div class="copyright">
       <span>© 2026 Bluebonnet Growth. All rights reserved.</span>
-      <span>Based in Melissa, TX · Serving Texas</span>
+      <span>Based in Melissa, TX · Serving North Texas</span>
     </div>
     <script src="/script.js" defer></script>
   </body>
@@ -139,353 +139,9 @@ ${FOOTER_SOCIAL}
 function localSeoMain() {
   return `      <section class="page-hero">
         <div class="container">
-          <span class="eyebrow">Texas local SEO agency</span>
-          <h1>Local SEO for Small Businesses Across Texas</h1>
-          <p class="lead">Bluebonnet Growth helps owner-led businesses rank on Google in Dallas, Houston, Austin, San Antonio, Fort Worth, and cities across the state. We are based in Melissa, Texas, and work with small businesses statewide. Map Pack visibility, cleaner Google Business Profiles, and service pages that match real searches.</p>
-          <p class="section-cta">
-            <a href="/contact" class="btn btn-primary">Book a Strategy Call</a>
-          </p>
-        </div>
-      </section>
-
-      <section class="section section-light">
-        <div class="container">
-          <span class="eyebrow">What it is</span>
-          <h2>SEO is long term lead generation from Google</h2>
-          <p class="section-intro">When someone searches on Google, they see a map and a list of businesses. Local SEO is the work that helps you show up there. It also helps your site make sense to Google for searches like "electrician near me," "roof repair Dallas," or "dentist in Austin."</p>
-          <ul>
-            <li><strong>High intent keywords:</strong> We target searches that lead to calls, not curiosity traffic.</li>
-            <li><strong>Local visibility:</strong> Better presence for nearby searches and map results.</li>
-            <li><strong>Service and location pages:</strong> A clear page for each service and each area you serve.</li>
-          </ul>
-          <p class="section-summary">What is included in our SEO work</p>
-          <ul>
-            <li><strong>Local SEO and Google Business Profile:</strong> Clean up, optimization, and accuracy.</li>
-            <li><strong>Service and location strategy:</strong> Pages that match what customers actually search.</li>
-            <li><strong>SEO content creation:</strong> Useful content that supports rankings and answers common questions.</li>
-            <li><strong>Tracking:</strong> Analytics and call tracking setup so you can see lead flow.</li>
-          </ul>
-          <p class="section-cta">
-            <a href="/pricing" class="btn btn-primary">See pricing</a>
-            <a href="/faq" class="service-panel-cta-link">Read the FAQ</a>
-          </p>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <span class="eyebrow">What we do</span>
-          <h2>What SEO work looks like with us</h2>
-          <p class="section-intro">No dashboard homework. We do the work and then show you, in simple terms, what we changed and what it is doing for you.</p>
-          <ol class="process-list">
-            <li><strong>Audit:</strong> We check your Google listing, your site, your competitors, and what people are actually searching in your market.</li>
-            <li><strong>Build the right pages:</strong> Service and location pages that match what customers search across Texas.</li>
-            <li><strong>Improve and maintain:</strong> On page fixes, content improvements, and consistency so rankings hold.</li>
-          </ol>
-          <p>Want to compare services? See <a href="/services">Services</a>. Curious about pricing? Take a look at <a href="/pricing">Pricing</a>.</p>
-          <p class="section-cta">
-            <a href="/contact" class="btn btn-primary">Book a Strategy Call</a>
-          </p>
-        </div>
-      </section>
-
-      <section class="section section-dark">
-        <div class="container">
-          <span class="eyebrow">Who it helps</span>
-          <h2>SEO is a fit when people already search for you</h2>
-          <p>If your customers search things like "plumber near me," "HVAC repair Houston TX," or "SEO company Dallas," local SEO is usually worth it. The goal is to show up for high intent searches in the cities you serve, then turn those visits into leads.</p>
-          <p>Pair SEO with conversion focused <a href="/services/web-design">Web Design</a> and <a href="/conversion-optimization">Conversion Optimization</a> so traffic actually books.</p>
-          <p class="section-cta">
-            <a href="/contact" class="btn btn-primary">Book a Strategy Call</a>
-          </p>
-        </div>
-      </section>
-
-      <section class="section section-light">
-        <div class="container">
-          <h2>Why Texas businesses invest in local SEO now</h2>
-${paras([
-    "Texas is growing fast. New neighborhoods and new businesses open every week in Dallas-Fort Worth, the Austin area, Houston suburbs, and cities along I-35. That growth brings demand, but it also brings more competition in Google's local results. When someone searches for a service near them, Google picks a short list of businesses in seconds.",
-    "Most owners we meet are great at their work but frustrated online. They have a website, maybe a Google listing, and a stack of invoices from vendors who sent reports instead of calls. Local SEO should be measurable: more profile views, more direction requests, more calls from the ZIP codes you actually want.",
-    "We focus on the searches that pay bills. That means high-intent phrases tied to your services and service area, not vanity traffic from blog posts nobody in your city will read. We align your Google Business Profile, on-page content, reviews, and citations so Google trusts that you are the right answer for your market.",
-    "You do not need to be in the same city as your SEO partner. What matters is that your listing, site, and reviews clearly show where you work and what you do. We work remotely with Texas owners every week from our base in Melissa and stay focused on calls, not jargon.",
-  ])}
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <h2>What our Texas local SEO work includes</h2>
-          <p>Every engagement starts with a plain-English audit: where you show up today, which competitors own the map pack, and which pages are missing for the jobs you want. From there we build a practical roadmap. No 40-page slide deck.</p>
-          <ul>
-            <li><strong>Google Business Profile:</strong> Categories, services, photos, posts, and Q&amp;A tuned for your city and surrounding searches.</li>
-            <li><strong>Service and location pages:</strong> Clear pages for each offering and each city you serve.</li>
-            <li><strong>On-page SEO:</strong> Titles, headings, and internal links that reinforce local relevance without keyword stuffing.</li>
-            <li><strong>Reviews and reputation:</strong> A simple system to earn consistent Google reviews from happy customers.</li>
-            <li><strong>Reporting you can use:</strong> Calls, forms, and map visibility explained in language that ties back to revenue.</li>
-          </ul>
-          <p>When your site is the bottleneck, we pair SEO with <a href="/services/web-design">web design</a> and <a href="/conversion-optimization">conversion optimization</a> so traffic actually books.</p>
-        </div>
-      </section>
-
-      <section class="section section-light">
-        <div class="container">
-          <h2>How long local SEO takes in Texas markets</h2>
-${paras([
-    "Honest answer: it depends on your city, your category, and how much cleanup your listing and site need. A broken Google profile fixed the right way can produce more calls within weeks. Competing for crowded terms in a major metro often takes several months of steady work.",
-    "We set expectations up front. Before you commit, we tell you who ranks today, what they did to get there, and what we would tackle first. You should never pay for SEO without a clear picture of the path ahead.",
-    "Texas is big, but local SEO still works town by town. A plumber in Lubbock and a dentist in Plano face different competition. We build plans around your actual service area, not a generic national checklist.",
-  ])}
-        </div>
-      </section>
-
-${finalCta("Ready for local SEO that shows up in the numbers?", [
-    "Book a short strategy call or request a free visibility check. We will show you where you stand on Google today and what we would fix first for your Texas market. No pressure, no jargon.",
-    "Serving small businesses across Texas from our home base in Melissa.",
-  ])}
-
-${texasLinksSection(
-    "Local SEO in cities across Texas",
-    "We help small businesses get found on Google statewide. Browse cities we serve or read plain-English guides on the blog."
-  )}`;
-}
-
-function webDesignMain() {
-  return `      <section class="page-hero">
-        <div class="container">
-          <span class="eyebrow">Texas web design for small business</span>
-          <h1>Web Design That Turns Visitors Into Calls</h1>
-          <p class="lead">We build fast, mobile-first websites for owner-led businesses across Texas. Based in Melissa, we serve Dallas, Houston, Austin, San Antonio, and cities statewide. Clear service pages, local structure, and calls to action that support <a href="/services/local-seo">local SEO</a> and real lead flow.</p>
-          <p class="section-cta">
-            <a href="/contact" class="btn btn-primary">Book a Strategy Call</a>
-          </p>
-        </div>
-      </section>
-
-      <section class="section section-light">
-        <div class="container">
-          <span class="eyebrow">What matters</span>
-          <h2>A conversion focused website does three things</h2>
-          <p class="section-intro">It loads fast, it makes the next step obvious, and it is built in a way that helps rankings.</p>
-          <ul>
-            <li><strong>Speed:</strong> Fast load times, especially on phones.</li>
-            <li><strong>Clarity:</strong> Clear services, clear service area, clear calls to action.</li>
-            <li><strong>Structure:</strong> SEO friendly pages and a simple layout that helps Google and visitors.</li>
-          </ul>
-          <p>Want more leads long term? Pair web design with <a href="/services/local-seo">Local SEO</a> and <a href="/conversion-optimization">Conversion Optimization</a> so when someone in your city searches for what you do, your site shows up and makes it easy to choose you.</p>
-          <p class="section-cta">
-            <a href="/pricing" class="btn btn-primary">See pricing</a>
-            <a href="/faq" class="service-panel-cta-link">Read the FAQ</a>
-          </p>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <span class="eyebrow">How we build</span>
-          <h2>Web design built for Texas small businesses</h2>
-${paras([
-    "Your website is often the first real impression a customer gets after finding you on Google. If the site is slow, confusing, or hard to use on a phone, you lose the call. We design sites that load quickly, explain what you do in plain language, and make calling or requesting a quote the obvious next step.",
-    "We do not sell fancy templates that look good in a portfolio but fail in the field. Every page has a job: answer a question, build trust, or push someone to contact you. Service pages spell out what you offer. Location pages show where you work. Contact paths stay visible on every screen size.",
-    "Structure matters for SEO too. Clean headings, logical URLs, and internal links help Google understand your business. When we rebuild a site, we plan page hierarchy around the searches your customers actually type, not around what a designer thought looked cool.",
-  ])}
-          <ol class="process-list">
-            <li><strong>Discovery:</strong> We learn your services, service area, and what a good lead looks like.</li>
-            <li><strong>Wireframe and copy:</strong> Simple layouts and plain words before any polish.</li>
-            <li><strong>Build and launch:</strong> Fast hosting, mobile testing, forms and tracking wired up.</li>
-            <li><strong>Improve:</strong> We watch calls and form fills, then tighten pages that underperform.</li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="section section-dark">
-        <div class="container">
-          <span class="eyebrow">Who it helps</span>
-          <h2>Web design is a fit when your site holds you back</h2>
-          <p>Maybe you rank on Google but visitors bounce. Maybe your site looks fine on a laptop but breaks on phones. Maybe you have one long page instead of clear service pages for each job type. These problems show up for HVAC companies in Houston, law firms in Dallas, and home service crews in Central Texas alike.</p>
-          <p>A new site is not always the answer. Sometimes we fix what you have: faster images, clearer buttons, better forms. We will tell you honestly which path saves you money and gets you more leads.</p>
-          <p>See how we measure results on <a href="/results">Results</a> and how we work on <a href="/how-it-works">How it works</a>.</p>
-        </div>
-      </section>
-
-      <section class="section section-light">
-        <div class="container">
-          <h2>What you get with our web design work</h2>
-${paras([
-    "Every project includes mobile-first layout, fast page speed, and clear calls to action. We set up contact forms, click-to-call buttons, and basic tracking so you know when the site produces a lead.",
-    "We write in plain English at a reading level your customers actually use. No filler paragraphs. No buzzwords. Your visitor should know within seconds if you solve their problem and how to reach you.",
-    "For businesses that serve multiple cities, we build location pages that support local SEO without duplicate fluff. Each page speaks to that market while staying true to your brand.",
-    "After launch, we stay available for updates. Texas businesses change services, hours, and service areas. Your site should keep up without a fight every time.",
-  ])}
-          <ul>
-            <li><strong>Custom design:</strong> Built for your brand, not a generic theme.</li>
-            <li><strong>SEO-ready structure:</strong> Headings, meta tags, and internal links done right.</li>
-            <li><strong>Forms and tracking:</strong> Know which pages drive calls and quote requests.</li>
-            <li><strong>Ongoing support:</strong> Small updates without starting from scratch.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <h2>Why Texas owners choose us over big agencies</h2>
-${paras([
-    "Big agencies spread your project across junior staff and account managers. You get pretty mockups and slow email threads. We are one operator based in Melissa with direct access and a small client roster so your site gets real attention.",
-    "We understand Texas markets because we work in them every day. Suburban growth in DFW, seasonal demand on the Gulf Coast, and competitive trades in major metros all change what your site needs to say. We bake that context into structure and copy from day one.",
-    "Most importantly, we tie design back to leads. A beautiful site that does not convert is a cost. A simple site that gets calls is an asset. That is the standard we build toward.",
-  ])}
-          <p class="section-cta">
-            <a href="/contact" class="btn btn-primary">Book a Strategy Call</a>
-          </p>
-        </div>
-      </section>
-
-      <section class="section section-light">
-        <div class="container">
-          <h2>What to expect during a web design project</h2>
-${paras([
-    "Most builds take a few weeks from kickoff to launch, depending on how many pages you need and how fast you can approve copy. We keep the process simple: short check-ins, clear milestones, no surprise scope creep.",
-    "You will review layouts on mobile first because that is how most Texas searchers browse. We test forms, phone links, and page speed before anything goes live.",
-    "After launch we stick around for a tuning period. Real users behave differently than mockups predict. We watch early lead data and adjust headlines or buttons when something underperforms.",
-  ])}
-        </div>
-      </section>
-
-${finalCta("Ready for a website that earns its keep?", [
-    "Book a short call. We will review your current site, show you what we would fix first, and give you an honest read on whether you need a rebuild or targeted improvements.",
-    "Serving small businesses across Texas from Melissa.",
-  ])}
-
-${texasLinksSection(
-    "Web design for Texas cities",
-    "We build lead-ready sites for businesses across the state. See city pages and read practical guides on the blog."
-  )}`;
-}
-
-function conversionOptimizationMain() {
-  return `      <section class="page-hero">
-        <div class="container">
-          <span class="eyebrow">Conversion optimization</span>
-          <h1>Traffic Is Worthless If It Does Not Convert</h1>
-          <p class="lead">We optimize your website to turn more visitors into calls, form submissions, and customers. Based in Melissa, Texas, we help small businesses statewide fix the leaks between Google visits and booked jobs.</p>
-          <p class="section-cta">
-            <a href="/contact" class="btn btn-primary">Book a Strategy Call</a>
-          </p>
-        </div>
-      </section>
-
-      <section class="section section-light">
-        <div class="container">
-          <span class="eyebrow">What this is</span>
-          <h2>Simple changes that improve lead flow</h2>
-          <p class="section-intro">Many small business websites get visits but do not get enough calls. Conversion optimization is the work of removing friction and making the next step obvious for visitors coming from Google searches in your service area.</p>
-          <ul>
-            <li><strong>Calls to action:</strong> Clear buttons, clear phone placement, clear next step.</li>
-            <li><strong>Forms:</strong> Fewer fields, better questions, better follow up.</li>
-            <li><strong>Page layout:</strong> People should find what they need fast.</li>
-            <li><strong>Tracking:</strong> Know what is producing leads, not just visits.</li>
-          </ul>
-          <p class="section-cta">
-            <a href="/pricing" class="btn btn-primary">See pricing</a>
-            <a href="/faq" class="service-panel-cta-link">Read the FAQ</a>
-          </p>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <span class="eyebrow">What is included</span>
-          <h2>Conversion work we do for Texas businesses</h2>
-${paras([
-    "We start with data when we can: which pages get traffic, where people leave, and how many calls or forms you get per week. If tracking is missing, we install it first. You cannot fix what you cannot see.",
-    "Then we walk the site like a customer would. Is the phone number easy to tap on mobile? Does the main button stand out? Do service pages answer the question that brought someone there? Small fixes often produce big gains.",
-    "We also look at speed and trust signals. Slow pages lose impatient searchers. Missing reviews, vague service lists, or hidden pricing create doubt. We address the practical blockers that stop a ready buyer from reaching out.",
-  ])}
-          <ul>
-            <li><strong>CTA and layout audit:</strong> Find and fix confusing pages and weak buttons.</li>
-            <li><strong>Form optimization:</strong> Shorter forms, better field labels, confirmation flows.</li>
-            <li><strong>Mobile usability:</strong> Tap-to-call, sticky headers, readable text on phones.</li>
-            <li><strong>Call tracking review:</strong> Make sure calls from Google get credit to the right source.</li>
-            <li><strong>A/B style testing:</strong> Try headline and button changes, keep what wins.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="section section-dark">
-        <div class="container">
-          <span class="eyebrow">Who it helps</span>
-          <h2>Conversion optimization fits when traffic exists but leads lag</h2>
-          <p>You might already rank for important searches in Dallas, Austin, or smaller markets across Texas. Analytics show sessions climbing, but your phone is not ringing more. That gap is a conversion problem, not an SEO problem.</p>
-          <p>It also helps after a site launch or redesign when traffic holds steady but leads dip. New layouts sometimes hide the phone number or bury the quote form. We find those regressions quickly and restore lead flow.</p>
-          <p>Pair this work with <a href="/services/local-seo">Local SEO</a> for more traffic and <a href="/services/web-design">Web Design</a> when the site structure itself is the bottleneck.</p>
-        </div>
-      </section>
-
-      <section class="section section-light">
-        <div class="container">
-          <h2>Common conversion problems we fix</h2>
-${paras([
-    "Hidden phone numbers are the most frequent issue. Visitors on phones want one tap to call. If they have to hunt through a menu, many leave. We put click-to-call where thumbs naturally land.",
-    "Forms ask for too much too soon. Asking for address, budget, and timeline on a first touch scares off good leads. We trim fields to what you truly need to start a conversation.",
-    "Service pages talk about the company instead of the customer's problem. We rewrite headings and intro copy so a visitor sees their issue reflected immediately.",
-    "Pages load heavy images or scripts that slow mobile users. Speed fixes are conversion fixes. We compress assets and remove bloat that hurts both rankings and patience.",
-  ])}
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <h2>How we measure success</h2>
-${paras([
-    "We care about calls, form fills, and booked jobs, not vanity metrics. After changes go live, we compare lead volume week over week and look at which pages improved.",
-    "You get plain reports. No dashboard login required unless you want one. We explain what we changed, what moved, and what we would test next.",
-    "Conversion work is iterative. Markets shift, seasons change, and competitors update their sites. We treat optimization as ongoing tuning, not a one-time project, especially for businesses growing across multiple Texas cities.",
-  ])}
-          <p>Learn more about our approach on <a href="/how-it-works">How it works</a> and see client metrics on <a href="/results">Results</a>.</p>
-          <p class="section-cta">
-            <a href="/contact" class="btn btn-primary">Book a Strategy Call</a>
-          </p>
-        </div>
-      </section>
-
-      <section class="section section-light">
-        <div class="container">
-          <h2>When to choose conversion work over a full rebuild</h2>
-${paras([
-    "Not every lead problem needs a new website. If your brand looks fine, pages load acceptably, and structure is sound, targeted conversion fixes often cost less and pay back faster than starting over.",
-    "We look for quick wins first: phone placement, form length, headline clarity, trust badges, and proof near the call to action. Those changes can ship in days, not months.",
-    "When the foundation is weak, we say so. Thin content, broken mobile layout, or missing service pages are web design problems dressed up as conversion issues. We will point you to the right service instead of selling optimization you do not need.",
-  ])}
-        </div>
-      </section>
-
-      <section class="section section-dark">
-        <div class="container">
-          <h2>Conversion optimization for multi-city Texas businesses</h2>
-${paras([
-    "Many Texas service companies cover several counties or metros. Each landing page should speak to that area without cloning the same paragraph everywhere. We tune location pages so visitors feel you serve their town while keeping forms and phone paths consistent.",
-    "Seasonal swings matter too. HVAC crews see different urgency in August than in March. We adjust messaging and offers on key pages when demand shifts, so your site matches what searchers need right now.",
-  ])}
-        </div>
-      </section>
-
-${finalCta("Getting traffic but not enough leads?", [
-    "Request a conversion review. We will walk through your site, show you the biggest leaks, and outline fixes in plain language. No pressure to hire us for everything at once.",
-    "Serving Texas small businesses from our base in Melissa.",
-  ])}
-
-${texasLinksSection(
-    "Conversion help across Texas",
-    "We improve lead flow for businesses in cities statewide. Browse locations or read tips on the blog."
-  )}`;
-}
-
-function servicesOverviewMain() {
-  return `      <section class="page-hero">
-        <div class="container">
-          <span class="eyebrow">Services for Texas small business</span>
-          <h1>Three Things. Done Right.</h1>
-          <p class="lead">Local SEO, web design, and conversion optimization for owner-led businesses across Texas. No bloated retainers. No services you do not need. Just the work that gets you found on Google, trusted online, and chosen when someone is ready to buy. Based in Melissa, serving the state.</p>
+          <span class="eyebrow">North Texas local SEO</span>
+          <h1>Local SEO for Home Service Businesses in North Texas</h1>
+          <p class="lead">I help pest control, HVAC, plumbing, roofing, and electrical companies show up on Google when people in North Texas search for help. Based in Melissa, I work with owner-led crews across Dallas-Fort Worth, Collin County, and nearby cities. More map pack visibility. More calls from the ZIP codes you want.</p>
           <p class="section-cta">
             <a href="/contact" class="btn btn-primary">Apply Now</a>
           </p>
@@ -494,11 +150,387 @@ function servicesOverviewMain() {
 
       <section class="section section-light">
         <div class="container">
-          <span class="eyebrow">How we help</span>
-          <h2>One partner for search, site, and conversion</h2>
+          <span class="eyebrow">What it is</span>
+          <h2>Local SEO is how you get found on Google</h2>
+          <p class="section-intro">When someone searches "plumber near me" or "AC repair Frisco," Google shows a map and a short list of businesses. Local SEO is the work that helps your company land in that list. It also helps your website rank for the services you offer in the towns you serve.</p>
+          <ul>
+            <li><strong>High intent searches:</strong> I target phrases that lead to calls, not random traffic.</li>
+            <li><strong>Map pack visibility:</strong> Better presence in Google Maps and the local three-pack.</li>
+            <li><strong>On-site signals:</strong> Titles, headings, and pages that tell Google where you work and what you do.</li>
+          </ul>
+          <p class="section-summary">What local SEO includes with me</p>
+          <ul>
+            <li><strong>Keyword and competitor research:</strong> What people search in your market and who ranks today.</li>
+            <li><strong>On-page SEO:</strong> Titles, headings, and internal links on your existing pages.</li>
+            <li><strong>Citations and consistency:</strong> Your name, address, and phone match across the web.</li>
+            <li><strong>Review strategy:</strong> A simple system to earn steady Google reviews.</li>
+            <li><strong>Tracking:</strong> Call tracking and analytics so you see lead flow.</li>
+          </ul>
+          <p>Your Google Business Profile and content pages are separate services. See <a href="/services/google-business-profile">Google Business Profile Optimization</a> and <a href="/services/seo-content">SEO Content</a> for those.</p>
+          <p class="section-cta">
+            <a href="/contact" class="btn btn-primary">Apply Now</a>
+            <a href="/faq" class="service-panel-cta-link">Read the FAQ</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <span class="eyebrow">What I do</span>
+          <h2>What local SEO work looks like</h2>
+          <p class="section-intro">No dashboard homework. I do the work and explain what changed in plain language. You stay focused on running jobs. I stay focused on Google.</p>
+          <ol class="process-list">
+            <li><strong>Audit:</strong> I check your Google listing, your site, your competitors, and what people actually search in your area.</li>
+            <li><strong>Fix the foundation:</strong> On-page fixes, citation cleanup, and review gaps that hold you back.</li>
+            <li><strong>Build and maintain:</strong> Steady improvements so rankings hold as North Texas markets shift.</li>
+          </ol>
+          <p>Want the full picture? See <a href="/services">Services</a> or read <a href="/how-it-works">How it works</a>.</p>
+          <p class="section-cta">
+            <a href="/contact" class="btn btn-primary">Apply Now</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-dark">
+        <div class="container">
+          <span class="eyebrow">Who it helps</span>
+          <h2>Local SEO fits when people already search for your trade</h2>
+          <p>If your customers search things like "pest control Allen TX," "roof repair McKinney," or "electrician near me," local SEO is usually worth it. The goal is to show up for those searches in the cities you serve, then turn visits into phone calls.</p>
+          <p>I work mainly with home service owners: pest control, HVAC, plumbing, roofing, and electricians. If your business lives and dies by the phone ringing, this is built for you.</p>
+          <p class="section-cta">
+            <a href="/contact" class="btn btn-primary">Apply Now</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-light">
+        <div class="container">
+          <h2>Why North Texas home service owners invest in local SEO</h2>
 ${paras([
-    "Most small businesses do not need a dozen marketing services. They need to show up when locals search, look credible online, and convert visits into calls. We focus on those three jobs and do them well.",
-    "We work with trades, professional services, healthcare practices, and other local businesses from Dallas to El Paso and points in between. You get one operator, direct access, and reporting tied to leads instead of jargon.",
+    "North Texas keeps growing. New neighborhoods go up every month in Frisco, Prosper, Celina, and across Collin and Denton counties. More homes mean more demand for HVAC, plumbing, roofing, and pest control. It also means more companies fighting for the same spots on Google.",
+    "Most owners I talk to are great at their trade but tired of marketing that does not show results. They have a website, maybe a Google listing, and a folder of reports from vendors who never explained what changed. Local SEO should be simple to track: more profile views, more direction requests, more calls from the areas you actually serve.",
+    "I focus on searches that pay bills. That means phrases tied to your services and your towns, not blog traffic from people three states away. I align your on-page content, reviews, citations, and listing signals so Google trusts you as the right answer in your market.",
+    "You do not need to meet me in person. I am based in Melissa and work with North Texas owners every week. What matters is that your listing and site clearly show where you work and what jobs you take.",
+  ])}
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>What my local SEO work includes</h2>
+          <p>Every project starts with a plain audit: where you show up today, which competitors own the map pack, and which gaps cost you calls. From there I build a practical plan. No giant slide deck.</p>
+          <ul>
+            <li><strong>Competitor analysis:</strong> Who ranks in your city and what they did to get there.</li>
+            <li><strong>On-page SEO:</strong> Titles, headings, meta descriptions, and internal links without keyword stuffing.</li>
+            <li><strong>Citation cleanup:</strong> Consistent name, address, and phone across directories.</li>
+            <li><strong>Review system:</strong> A steady flow of Google reviews from happy customers.</li>
+            <li><strong>Monthly reporting:</strong> Calls, forms, and map visibility explained in words you can use.</li>
+          </ul>
+          <p>For your Google listing, see <a href="/services/google-business-profile">Google Business Profile Optimization</a>. For service pages, city pages, and blog guides, see <a href="/services/seo-content">SEO Content</a>.</p>
+        </div>
+      </section>
+
+      <section class="section section-light">
+        <div class="container">
+          <h2>How long local SEO takes in North Texas</h2>
+${paras([
+    "Honest answer: it depends on your city, your trade, and how much cleanup your listing and site need. A broken profile fixed the right way can produce more calls within weeks. Competing for crowded terms in Plano or Frisco often takes several months of steady work.",
+    "I set expectations up front. Before you commit, I tell you who ranks today, what they did to get there, and what I would tackle first. You should never pay for SEO without a clear picture of the path ahead.",
+    "North Texas is big, but local SEO still works town by town. A roofer in Sherman and an HVAC crew in Carrollton face different competition. I build plans around your actual service area, not a generic checklist.",
+    "Seasons matter too. AC companies see a rush in summer. Pest control spikes in spring. I adjust focus when search patterns shift so you are ready when demand hits.",
+  ])}
+        </div>
+      </section>
+
+      <section class="section section-dark">
+        <div class="container">
+          <h2>Local SEO for pest control, HVAC, plumbing, roofing, and electrical</h2>
+${paras([
+    "Each trade has its own search patterns. Pest control owners need visibility for emergency and seasonal terms. HVAC crews compete hard on repair and install phrases. Plumbers fight for drain, leak, and water heater searches. Roofers need storm and inspection traffic. Electricians win on panel upgrades and emergency calls.",
+    "I learn your trade before I touch your account. I look at what your best customers typed before they called you. Then I map those searches to pages, listings, and reviews you already have or still need.",
+    "You get one operator, not a rotating team. I cap my client list at five businesses so your account gets real attention. When you have a question, you talk to me directly.",
+  ])}
+          <p class="section-cta">
+            <a href="/contact" class="btn btn-primary">Apply Now</a>
+          </p>
+        </div>
+      </section>
+
+${finalCta("Ready for local SEO that shows up in your call log?", [
+    "Apply for a free visibility check. I will show you where you stand on Google today and what I would fix first for your North Texas market. No pressure, no jargon.",
+    "Based in Melissa, TX. Serving home service businesses across North Texas.",
+  ])}
+
+${texasLinksSection(
+    "Local SEO in North Texas cities",
+    "I help home service businesses get found on Google across North Texas. Browse city pages or read plain guides on the blog."
+  )}`;
+}
+
+function gbpMain() {
+  return `      <section class="page-hero">
+        <div class="container">
+          <span class="eyebrow">Google Business Profile</span>
+          <h1>Google Business Profile Optimization for North Texas Home Services</h1>
+          <p class="lead">Your Google Business Profile is often the first thing a customer sees. I optimize profiles for pest control, HVAC, plumbing, roofing, and electrical companies across North Texas. Better categories, better photos, better posts, and a listing that matches what people search.</p>
+          <p class="section-cta">
+            <a href="/contact" class="btn btn-primary">Apply Now</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-light">
+        <div class="container">
+          <span class="eyebrow">What it is</span>
+          <h2>Your Google listing is a sales tool</h2>
+          <p class="section-intro">When someone searches for a home service near them, Google shows a map with a short list of businesses. Your Google Business Profile controls how you look in that list. A weak profile costs you calls even if your work is great.</p>
+          <ul>
+            <li><strong>Categories and services:</strong> The right labels so Google knows what you do.</li>
+            <li><strong>Photos and posts:</strong> Proof that you are real, active, and local.</li>
+            <li><strong>Reviews and Q&amp;A:</strong> Trust signals that push people to call.</li>
+            <li><strong>Accuracy:</strong> Hours, service area, and phone that match your real business.</li>
+          </ul>
+          <p>Pair this with <a href="/services/local-seo">Local SEO</a> for rankings and <a href="/services/seo-content">SEO Content</a> for the pages behind your listing.</p>
+          <p class="section-cta">
+            <a href="/contact" class="btn btn-primary">Apply Now</a>
+            <a href="/faq" class="service-panel-cta-link">Read the FAQ</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <span class="eyebrow">What I do</span>
+          <h2>Google Business Profile work step by step</h2>
+          <p class="section-intro">I treat your listing like a landing page. Every field should help a North Texas homeowner choose you over the next name on the map.</p>
+          <ol class="process-list">
+            <li><strong>Audit:</strong> I review your profile, your competitors, and what is missing or wrong today.</li>
+            <li><strong>Fix and optimize:</strong> Categories, services, description, photos, posts, and Q&amp;A.</li>
+            <li><strong>Maintain:</strong> Regular posts, photo updates, and review responses so the profile stays active.</li>
+          </ol>
+          <p class="section-cta">
+            <a href="/contact" class="btn btn-primary">Apply Now</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-dark">
+        <div class="container">
+          <span class="eyebrow">Who it helps</span>
+          <h2>Profile optimization fits most home service owners</h2>
+          <p>If you run a pest control, HVAC, plumbing, roofing, or electrical company in North Texas, your Google listing matters. Maybe you never claimed it. Maybe a past vendor set wrong categories. Maybe you have no photos or stale hours. These problems show up every week when I audit new accounts.</p>
+          <p>A strong profile does not replace good work. It makes sure people who find you online actually call.</p>
+        </div>
+      </section>
+
+      <section class="section section-light">
+        <div class="container">
+          <h2>Why your Google Business Profile matters in North Texas</h2>
+${paras([
+    "North Texas homeowners search on their phones. They see your star rating, your photos, and your review count before they ever click your website. If your profile looks empty or outdated, they call the next company.",
+    "Google uses your profile to decide map pack rankings. Categories, services, review velocity, and activity all send signals. A profile you set once and forgot about falls behind competitors who post weekly and collect steady reviews.",
+    "Many owners think the listing is fine because it exists. When I audit, I often find wrong categories, duplicate listings, missing service areas, or phone numbers that do not match the website. Small errors confuse Google and cost you visibility.",
+    "I am based in Melissa and work with home service businesses across Dallas-Fort Worth and nearby counties. I know how suburban growth changes search patterns from Frisco to Sherman and points in between.",
+  ])}
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>What Google Business Profile optimization includes</h2>
+${paras([
+    "I start with a full profile review. I check primary and secondary categories, the services list, business description, attributes, hours, service area settings, and whether duplicate listings exist.",
+    "Photos matter more than most owners think. I help you build a photo library that shows trucks, crews, finished jobs, and your service area. I also set up a simple posting schedule so your profile looks alive.",
+    "Reviews are part of profile health. I set up a review request process your techs can actually use in the field. I also draft responses for new reviews so you stay engaged without spending hours typing.",
+  ])}
+          <ul>
+            <li><strong>Category and service tuning:</strong> Labels that match how customers search.</li>
+            <li><strong>Description and attributes:</strong> Clear copy that supports your trade and area.</li>
+            <li><strong>Photo strategy:</strong> Regular uploads that build trust.</li>
+            <li><strong>Google posts:</strong> Offers, updates, and seasonal reminders.</li>
+            <li><strong>Q&amp;A setup:</strong> Common questions answered before competitors fill them in.</li>
+            <li><strong>Duplicate and NAP cleanup:</strong> One correct listing across the web.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section-light">
+        <div class="container">
+          <h2>Common Google profile mistakes I fix</h2>
+${paras([
+    "Wrong primary category is the biggest one. An HVAC company listed as a general contractor fights the wrong fight. A plumber listed under handyman loses relevant searches. I pick categories based on what your customers type, not what sounds broad.",
+    "Service areas set too wide or too narrow both hurt. If you serve Collin County but your profile says Dallas only, you miss Frisco and McKinney searches. If you claim the whole state, Google may not trust you for local map results.",
+    "Stock photos and logos with no real job shots make you look like every other listing. Homeowners want to see your trucks, your uniforms, and your work. I push for real images on a steady schedule.",
+    "Ignored reviews look bad. A one-star review with no response scares off callers. I help you respond in a professional way that shows you stand behind your work.",
+  ])}
+        </div>
+      </section>
+
+      <section class="section section-dark">
+        <div class="container">
+          <h2>How profile work ties to local SEO</h2>
+${paras([
+    "Your Google Business Profile and your website should tell the same story. Same name, same phone, same services, same cities. When those signals match, Google trusts you more.",
+    "Profile optimization alone can produce more calls quickly. Long term, it works best paired with <a href=\"/services/local-seo\">Local SEO</a> and <a href=\"/services/seo-content\">SEO Content</a> so your site backs up what your listing promises.",
+    "I cap my client list at five businesses. You work with me directly, not a junior account manager. When your profile needs a fix, I handle it.",
+  ])}
+          <p class="section-cta">
+            <a href="/contact" class="btn btn-primary">Apply Now</a>
+          </p>
+        </div>
+      </section>
+
+${finalCta("Ready for a Google listing that earns calls?", [
+    "Apply for a free profile review. I will show you what is wrong today and what I would fix first. Plain language, no pressure.",
+    "Based in Melissa, TX. Serving home service businesses across North Texas.",
+  ])}
+
+${texasLinksSection(
+    "Google visibility in North Texas cities",
+    "I optimize listings for home service businesses across North Texas. Browse city pages or read guides on the blog."
+  )}`;
+}
+
+function seoContentMain() {
+  return `      <section class="page-hero">
+        <div class="container">
+          <span class="eyebrow">SEO content</span>
+          <h1>SEO Content for North Texas Home Service Businesses</h1>
+          <p class="lead">Google needs pages that match what people search. I write service pages, city pages, and blog guides for pest control, HVAC, plumbing, roofing, and electrical companies across North Texas. Plain language. Real local detail. Built to rank and earn calls.</p>
+          <p class="section-cta">
+            <a href="/contact" class="btn btn-primary">Apply Now</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-light">
+        <div class="container">
+          <span class="eyebrow">What it is</span>
+          <h2>Content that helps you rank on Google</h2>
+          <p class="section-intro">Most home service sites have a homepage and little else. That leaves money on the table. Service pages explain each job you do. City pages show you serve specific towns. Blog guides answer questions your customers ask before they call.</p>
+          <ul>
+            <li><strong>Service pages:</strong> One clear page per offering, like drain cleaning or AC repair.</li>
+            <li><strong>City pages:</strong> Pages for Frisco, McKinney, Allen, and other towns you serve.</li>
+            <li><strong>Blog guides:</strong> Helpful articles that build trust and support rankings.</li>
+          </ul>
+          <p>Content works best with <a href="/services/local-seo">Local SEO</a> and a strong <a href="/services/google-business-profile">Google Business Profile</a>.</p>
+          <p class="section-cta">
+            <a href="/contact" class="btn btn-primary">Apply Now</a>
+            <a href="/faq" class="service-panel-cta-link">Read the FAQ</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <span class="eyebrow">What I do</span>
+          <h2>How I build SEO content</h2>
+          <p class="section-intro">I research what people search in your market, then write pages that match those searches without sounding like a robot.</p>
+          <ol class="process-list">
+            <li><strong>Research:</strong> I find the phrases your customers use and see which pages competitors rank with.</li>
+            <li><strong>Plan:</strong> I map service pages, city pages, and guides to gaps on your site.</li>
+            <li><strong>Write and publish:</strong> Plain copy, clear headings, and internal links that help Google understand your site.</li>
+          </ol>
+          <p class="section-cta">
+            <a href="/contact" class="btn btn-primary">Apply Now</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-dark">
+        <div class="container">
+          <span class="eyebrow">Who it helps</span>
+          <h2>SEO content fits when your site is thin</h2>
+          <p>Maybe you rank for your company name but not for "roof repair Plano" or "pest control Frisco." Maybe you serve ten cities but only mention one on your site. Maybe competitors have dozens of pages and you have five. Content fixes those gaps.</p>
+          <p>I focus on home service trades in North Texas where search volume is real and calls matter.</p>
+        </div>
+      </section>
+
+      <section class="section section-light">
+        <div class="container">
+          <h2>Why home service businesses need more than a homepage</h2>
+${paras([
+    "Google ranks pages, not whole websites. If you want to show up for water heater repair, you need a page about water heater repair. If you want calls from Celina, you need content that speaks to Celina.",
+    "North Texas searchers use specific phrases. They type their city, their problem, and sometimes their urgency. A generic homepage cannot cover every job and every town. Service pages and city pages give Google clear targets.",
+    "Blog guides help too. A short article on when to replace an AC unit or how to spot roof storm damage answers questions, builds trust, and links back to your money pages. I write guides people in your area would actually read.",
+    "Bad content hurts you. Duplicate city pages, copied paragraphs, and keyword stuffing can get you ignored or penalized. I write original copy for each page so your site grows the right way.",
+  ])}
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>What SEO content creation includes</h2>
+${paras([
+    "Service pages explain one offering in depth. What it is, when a homeowner needs it, what you do, and how to contact you. Each page targets searches that lead to calls, not curiosity clicks.",
+    "City pages show you work in a specific town without copying the same paragraph everywhere. I mention local landmarks, neighborhoods, and search patterns for that market. The goal is relevance, not spam.",
+    "Blog guides support your main pages. They answer common questions, earn internal links, and give you something useful to share. I keep them short, clear, and focused on your trade.",
+  ])}
+          <ul>
+            <li><strong>Keyword research:</strong> Real searches from your North Texas market.</li>
+            <li><strong>Service page writing:</strong> One page per core offering.</li>
+            <li><strong>City page writing:</strong> Local pages for towns you serve.</li>
+            <li><strong>Blog guides:</strong> Practical articles that support rankings.</li>
+            <li><strong>On-page setup:</strong> Titles, headings, meta descriptions, and internal links.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section-light">
+        <div class="container">
+          <h2>How I write for pest control, HVAC, plumbing, roofing, and electrical</h2>
+${paras([
+    "Each trade has different customer questions. Pest control callers want fast help and clear pricing signals. HVAC searches spike with weather. Plumbing emergencies need trust fast. Roofing leads often follow storms. Electrical work needs safety language people understand.",
+    "I learn your services before I write. I talk to you about which jobs pay best, which towns you want more of, and what customers ask on the phone. That input shapes every page.",
+    "I write at a seventh or eighth grade reading level. No jargon walls. A homeowner should understand the page in seconds and know how to call you.",
+  ])}
+        </div>
+      </section>
+
+      <section class="section section-dark">
+        <div class="container">
+          <h2>How content ties to your broader SEO plan</h2>
+${paras([
+    "New pages alone do not fix a broken Google listing or weak reviews. Content works best as part of a plan. I pair it with <a href=\"/services/local-seo\">Local SEO</a> and <a href=\"/services/google-business-profile\">Google Business Profile Optimization</a> so every signal points the same direction.",
+    "I publish on a schedule that fits your business. Some owners need ten service pages upfront. Others add city pages month by month as they expand. I quote based on what will move the needle, not on word count for its own sake.",
+    "You work with me directly. I cap my roster at five clients so your content queue does not sit behind a big agency backlog.",
+  ])}
+          <p class="section-cta">
+            <a href="/contact" class="btn btn-primary">Apply Now</a>
+          </p>
+        </div>
+      </section>
+
+${finalCta("Need pages that rank and read like a human wrote them?", [
+    "Apply for a content review. I will show you which pages are missing and what I would write first. Plain language, no pressure.",
+    "Based in Melissa, TX. Serving home service businesses across North Texas.",
+  ])}
+
+${texasLinksSection(
+    "SEO content for North Texas cities",
+    "I write service pages, city pages, and guides for home service businesses across North Texas. Browse city pages or read examples on the blog."
+  )}`;
+}
+
+function servicesOverviewMain() {
+  return `      <section class="page-hero">
+        <div class="container">
+          <span class="eyebrow">Services for North Texas home services</span>
+          <h1>Three Services. One Goal: More Calls from Google.</h1>
+          <p class="lead">I help pest control, HVAC, plumbing, roofing, and electrical companies get found on Google across North Texas. Local SEO, Google Business Profile optimization, and SEO content. No bloated packages. No services you do not need. Based in Melissa. Limited to five clients at a time.</p>
+          <p class="section-cta">
+            <a href="/contact" class="btn btn-primary">Apply Now</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-light">
+        <div class="container">
+          <span class="eyebrow">How I help</span>
+          <h2>One operator focused on local search</h2>
+${paras([
+    "Most home service owners do not need a dozen marketing services. They need to show up when locals search, look credible on Google, and turn that visibility into phone calls. I focus on three jobs and do them well.",
+    "I work with owner-led trades across Dallas-Fort Worth, Collin County, and nearby North Texas cities. You get direct access to me, plain updates, and reporting tied to calls instead of jargon.",
   ])}
         </div>
       </section>
@@ -508,9 +540,9 @@ ${paras([
           <span class="eyebrow">01</span>
           <h2>Local SEO</h2>
 ${paras([
-    "Local SEO gets your business in front of people searching on Google and Google Maps. We tune your Google Business Profile, build service and location pages, earn reviews, and fix the on-site signals that help you rank in your service area.",
-    "This is long-term lead generation. Rankings take time, but the payoff compounds. When you own the map pack for high-intent searches in your city, you stop renting every click from ads.",
-    "Learn more on our <a href=\"/services/local-seo\">Local SEO page</a>, browse <a href=\"/locations\">Texas city pages</a>, or read guides on the <a href=\"/blog\">blog</a>.",
+    "Local SEO gets your business in front of people searching on Google and Google Maps. I handle on-page fixes, citations, review strategy, competitor research, and tracking so you rank in the cities you serve.",
+    "This is long-term lead generation. Rankings take time, but the payoff compounds. When you own map pack spots for high-intent searches in your town, you stop renting every click from ads.",
+    "Learn more on my <a href=\"/services/local-seo\">Local SEO page</a>, browse <a href=\"/locations\">North Texas city pages</a>, or read guides on the <a href=\"/blog\">blog</a>.",
   ])}
           <p class="section-cta">
             <a href="/services/local-seo" class="btn btn-primary">Local SEO details</a>
@@ -521,14 +553,14 @@ ${paras([
       <section class="section section-dark">
         <div class="container">
           <span class="eyebrow">02</span>
-          <h2>Web Design</h2>
+          <h2>Google Business Profile Optimization</h2>
 ${paras([
-    "Your website should load fast on phones, explain what you do clearly, and make calling or requesting a quote easy. We build and refresh sites with that job in mind, not for design awards.",
-    "Structure supports SEO. Speed supports conversion. Copy supports trust. We handle all three so your site works as a sales tool, not a digital brochure that sits idle.",
-    "See the full breakdown on <a href=\"/services/web-design\">Web Design</a> and compare packages on <a href=\"/pricing\">Pricing</a>.",
+    "Your Google listing is often the first impression a customer gets. I tune categories, services, photos, posts, Q&amp;A, and reviews so your profile earns clicks and calls.",
+    "A strong profile can produce results fast. Wrong categories, missing photos, and stale hours cost you calls every day. I fix the listing and keep it active.",
+    "See the full breakdown on <a href=\"/services/google-business-profile\">Google Business Profile Optimization</a>.",
   ])}
           <p class="section-cta">
-            <a href="/services/web-design" class="btn btn-primary">Web Design details</a>
+            <a href="/services/google-business-profile" class="btn btn-primary">Google Business Profile details</a>
           </p>
         </div>
       </section>
@@ -536,14 +568,14 @@ ${paras([
       <section class="section section-light">
         <div class="container">
           <span class="eyebrow">03</span>
-          <h2>Conversion Optimization</h2>
+          <h2>SEO Content</h2>
 ${paras([
-    "If traffic is coming in but leads are flat, something on the site is broken. We find friction, weak calls to action, slow pages, and confusing forms, then fix them so more visitors become customers.",
-    "This service pairs well with SEO when rankings are solid but revenue is not keeping pace. It also helps after redesigns when a pretty site accidentally hides the phone number.",
-    "Read more on <a href=\"/conversion-optimization\">Conversion Optimization</a> and see what we track on <a href=\"/results\">Results</a>.",
+    "Google ranks pages, not vague homepages. I write service pages, city pages, and blog guides that match what North Texas homeowners search for.",
+    "Thin sites lose to competitors with depth. If you need pages for each service and each town you cover, this is where I build them. Plain language, local detail, no copy-paste spam.",
+    "Read more on <a href=\"/services/seo-content\">SEO Content</a> and see results on <a href=\"/results\">Results</a>.",
   ])}
           <p class="section-cta">
-            <a href="/conversion-optimization" class="btn btn-primary">Conversion details</a>
+            <a href="/services/seo-content" class="btn btn-primary">SEO Content details</a>
           </p>
         </div>
       </section>
@@ -552,10 +584,10 @@ ${paras([
         <div class="container">
           <h2>How the three services work together</h2>
 ${paras([
-    "SEO brings qualified visitors from Google. Web design gives them a credible, fast place to land. Conversion optimization closes the gap between visits and booked jobs. Most clients need some mix of all three over time, but not always all at once.",
-    "We start with an honest audit. Sometimes a broken Google profile and two new service pages beat a full rebuild. Sometimes the site is the blocker and SEO can wait until structure is fixed. We recommend the sequence that gets you leads fastest for your budget.",
-    "You will never get a pitch for services you do not need. We cap clients at five at a time so each business gets real attention. That limit is intentional. Growth for you matters more than growth for us.",
-    "We are based in Melissa, Texas, and serve businesses across the state remotely. Local SEO is about your service area, not our zip code. What matters is that Google and your customers understand where you work and why they should trust you.",
+    "Local SEO handles rankings, citations, and on-page signals. Google Business Profile optimization makes your listing look sharp and trustworthy. SEO content gives Google the pages it needs to match searches. Most clients need some mix of all three over time, but not always all at once.",
+    "I start with an honest audit. Sometimes a broken profile and two new service pages beat a long wish list. Sometimes you need content before rankings can move. I recommend the sequence that gets you calls fastest for your budget.",
+    "You will never get a pitch for services you do not need. I cap clients at five at a time so each business gets real attention. That limit is intentional.",
+    "I am based in Melissa, Texas, and serve home service businesses across North Texas. Local SEO is about your service area, not my zip code. What matters is that Google and your customers understand where you work and why they should call you.",
   ])}
           <p>Questions? Visit the <a href="/faq">FAQ</a> or read <a href="/how-it-works">How it works</a>.</p>
         </div>
@@ -563,11 +595,11 @@ ${paras([
 
       <section class="section section-light">
         <div class="container">
-          <h2>Who we work with</h2>
+          <h2>Who I work with</h2>
 ${paras([
-    "We specialize in owner-led local businesses: home services, medical and dental practices, legal and financial offices, and other firms where a phone call or booked appointment is the goal. If your customers search on Google before they buy, we can usually help.",
-    "We are not the right fit for national e-commerce brands, venture-backed startups chasing app downloads, or companies that want a 20-person agency roster. We keep the roster small so each client gets senior-level attention.",
-    "Geography is flexible. A roofer in Midland and a med spa in San Antonio both need the same core ingredients: visibility, trust, and a site that converts. We adapt tactics to your market while keeping the process straightforward.",
+    "I specialize in owner-led home service businesses: pest control, HVAC, plumbing, roofing, and electricians. If your customers search on Google before they call, I can usually help.",
+    "I am not the right fit for national e-commerce brands, app startups, or companies that want a big agency roster. I keep the list small so each client gets senior-level attention.",
+    "A pest control crew in Allen and a roofer in Denton both need the same core ingredients: visibility on Google, a strong listing, and pages that match local searches. I adapt tactics to your market while keeping the process simple.",
   ])}
         </div>
       </section>
@@ -576,68 +608,71 @@ ${paras([
         <div class="container">
           <h2>What working together looks like</h2>
 ${paras([
-    "You apply through our contact page. We review your site, listing, and goals, then schedule a short call if it looks like a fit. No high-pressure sales deck. Just a direct conversation about where you are and what would move the needle.",
-    "If we work together, you get one point of contact, plain-English updates, and metrics tied to leads. We handle the technical work. You stay focused on running your business and closing the jobs we help you win.",
-    "Most engagements combine ongoing SEO with periodic site and conversion improvements. We quote clearly up front and adjust scope when your needs change. Texas businesses grow; your marketing should grow with you.",
-    "Every plan starts with your goals, not a pre-packaged bundle. You might need SEO first, a site rebuild first, or conversion fixes on a site that already ranks. We meet you where you are.",
+    "You apply through my contact page. I review your site, listing, and goals, then schedule a short call if it looks like a fit. No high-pressure sales pitch. Just a direct conversation about where you are and what would move the needle.",
+    "If we work together, you get one point of contact, plain updates, and metrics tied to calls. I handle the technical work. You stay focused on running jobs and closing the work I help you win.",
+    "Most engagements combine ongoing local SEO with profile updates and new content over time. I quote clearly up front and adjust scope when your needs change. North Texas markets shift fast. Your marketing should keep up.",
+    "Every plan starts with your goals, not a pre-packaged bundle. You might need local SEO first, profile fixes first, or content before anything else. I meet you where you are.",
   ])}
+          <p class="section-cta">
+            <a href="/contact" class="btn btn-primary">Apply Now</a>
+          </p>
         </div>
       </section>
 
 ${finalCta("Not sure what you need?", [
-    "Apply for a free strategy call. We will figure out the right mix of SEO, web design, and conversion work for your Texas business.",
+    "Apply for a free visibility check. I will figure out the right mix of local SEO, Google Business Profile work, and content for your North Texas business.",
     "Limited spots available. Direct access, plain language, real results.",
   ])}
 
 ${texasLinksSection(
-    "Serving businesses across Texas",
-    "Explore city pages for local SEO and read practical marketing guides on the blog."
+    "Serving home service businesses across North Texas",
+    "Explore city pages for local SEO and read practical guides on the blog."
   )}`;
 }
 
 const PAGES = [
   {
     file: path.join(ROOT, "services", "local-seo.html"),
-    title: "Local SEO Texas | Google Maps & Search for Small Business | Bluebonnet Growth",
+    title: "Local SEO North Texas | Google Maps for Home Services | Bluebonnet Growth",
     description:
-      "Texas local SEO for small businesses. Rank on Google Maps and search in Dallas, Houston, Austin, San Antonio, and cities statewide. Based in Melissa, TX.",
+      "Local SEO for North Texas home service businesses. Rank on Google Maps and search in Dallas-Fort Worth, Collin County, and nearby cities. Based in Melissa, TX.",
     canonical: "/services/local-seo",
-    ogTitle: "Local SEO for Texas Small Businesses | Bluebonnet Growth",
+    ogTitle: "Local SEO for North Texas Home Services | Bluebonnet Growth",
     ogDescription:
-      "Operator-led local SEO for Texas businesses. Map Pack visibility, GBP cleanup, and pages that earn calls.",
+      "Operator-led local SEO for pest control, HVAC, plumbing, roofing, and electricians. Map pack visibility and pages that earn calls.",
     main: localSeoMain(),
   },
   {
-    file: path.join(ROOT, "services", "web-design.html"),
-    title: "Web Design Texas | Lead-Ready Sites for Small Business | Bluebonnet",
+    file: path.join(ROOT, "services", "google-business-profile.html"),
+    title: "Google Business Profile Optimization North Texas | Bluebonnet Growth",
     description:
-      "Web design for Texas small businesses: fast, mobile-first sites built to rank locally and turn visitors into calls. Based in Melissa, serving statewide.",
-    canonical: "/services/web-design",
-    ogTitle: "Web Design for Texas Small Businesses | Bluebonnet Growth",
+      "Google Business Profile optimization for North Texas home service businesses. Categories, photos, posts, reviews, and listings that earn calls.",
+    canonical: "/services/google-business-profile",
+    ogTitle: "Google Business Profile Optimization | Bluebonnet Growth",
     ogDescription:
-      "Conversion-focused web design for Texas small businesses. Speed, clarity, and local SEO structure built in.",
-    main: webDesignMain(),
+      "Profile cleanup and optimization for pest control, HVAC, plumbing, roofing, and electrical companies across North Texas.",
+    main: gbpMain(),
   },
   {
-    file: path.join(ROOT, "conversion-optimization.html"),
-    title: "Conversion Optimization Texas | Turn Traffic Into Leads | Bluebonnet Growth",
+    file: path.join(ROOT, "services", "seo-content.html"),
+    title: "SEO Content North Texas | Service & City Pages | Bluebonnet Growth",
     description:
-      "Conversion optimization for Texas small businesses. Turn more website visitors into calls, form submissions, and customers with clear, tested improvements.",
-    canonical: "/conversion-optimization",
-    ogTitle: "Conversion Optimization for Texas Small Businesses | Bluebonnet Growth",
+      "SEO content for North Texas home service businesses. Service pages, city pages, and blog guides that rank on Google and earn calls.",
+    canonical: "/services/seo-content",
+    ogTitle: "SEO Content for North Texas Home Services | Bluebonnet Growth",
     ogDescription:
-      "Fix the leaks between Google visits and booked jobs. CTA, form, and page layout improvements that increase leads.",
-    main: conversionOptimizationMain(),
+      "Service pages, city pages, and blog guides written for pest control, HVAC, plumbing, roofing, and electricians.",
+    main: seoContentMain(),
   },
   {
     file: path.join(ROOT, "services.html"),
-    title: "Services | Local SEO, Web Design & Conversion | Bluebonnet Growth",
+    title: "Services | Local SEO, GBP & Content | Bluebonnet Growth",
     description:
-      "Local SEO, web design, and conversion optimization for Texas small businesses. Three focused services from a Melissa-based operator serving statewide.",
+      "Local SEO, Google Business Profile optimization, and SEO content for North Texas home service businesses. Three focused services from a Melissa-based operator.",
     canonical: "/services",
-    ogTitle: "Services for Texas Small Businesses | Bluebonnet Growth",
+    ogTitle: "Services for North Texas Home Services | Bluebonnet Growth",
     ogDescription:
-      "Local SEO, web design, and conversion optimization done right for owner-led Texas businesses.",
+      "Local SEO, Google Business Profile optimization, and SEO content for owner-led home service businesses in North Texas.",
     main: servicesOverviewMain(),
   },
 ];

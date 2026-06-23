@@ -59,8 +59,8 @@ function extraSections(city, { getPath, getBySlug, guidesByCity = {} }) {
           <ol>
             <li><strong>Google Business Profile cleanup:</strong> Categories, hours, phone, photos, services list, and service area aligned with ${name}.</li>
             <li><strong>Review flow:</strong> A simple way to ask happy customers for Google reviews. See <a href="/blog/how-to-get-more-google-reviews">how to ask for reviews</a>.</li>
-            <li><strong>Website clarity:</strong> Service pages, location language, tap-to-call on mobile. Pair with <a href="/services/web-design">web design</a> when needed.</li>
-            <li><strong>Conversion fixes:</strong> Tighter calls to action when traffic exists but the phone is quiet. See <a href="/conversion-optimization">conversion optimization</a>.</li>
+            <li><strong>Website clarity:</strong> Service pages, location language, and content that supports rankings. See <a href="/services/seo-content">SEO content</a> when needed.</li>
+            <li><strong>Profile and review fixes:</strong> Google Business Profile cleanup and a simple review flow. See <a href="/services/google-business-profile">profile optimization</a>.</li>
             <li><strong>Ongoing tuning:</strong> Rankings, calls, and form fills tracked over time.</li>
           </ol>
           <p>I keep the scope focused. No bloated retainers, no jargon reports.${guidesNote}</p>

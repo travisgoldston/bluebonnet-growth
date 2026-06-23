@@ -170,9 +170,9 @@ ${extra.beforeWhatIDo}
           <h2>What I do for ${city.name} businesses</h2>
           <p>I focus on the work that moves someone from searching to calling you, without a pile of jargon in between.</p>
           <ul>
-            <li><strong>Local SEO:</strong> I tune your Google Business Profile and website so you show up for ${city.name} searches that lead to real jobs. <a href="/services/local-seo">Learn more about SEO</a>.</li>
-            <li><strong>Web Design:</strong> I build or refresh a clear, fast site that works on phones. <a href="/services/web-design">See Web Design details</a>.</li>
-            <li><strong>Conversion fixes:</strong> If you get traffic but few leads, I improve calls to action and page layout. <a href="/conversion-optimization">Read about Conversion Optimization</a>.</li>
+            <li><strong>Local SEO:</strong> I tune your Google Business Profile and website so you show up for ${city.name} searches that lead to real jobs. <a href="/services/local-seo">Learn more about local SEO</a>.</li>
+            <li><strong>Google Business Profile:</strong> I fix categories, photos, services, and reviews so Google trusts your listing. <a href="/services/google-business-profile">See profile optimization</a>.</li>
+            <li><strong>SEO content:</strong> I build service and city pages that match what customers search. <a href="/services/seo-content">See SEO content</a>.</li>
             <li><strong>Ongoing tuning:</strong> I watch rankings, calls, and form fills, then make steady changes.</li>
           </ul>
           <p>Related reading: <a href="/blog/what-is-local-seo">What is local SEO?</a> and <a href="/blog/how-to-get-more-google-reviews">how to get more Google reviews</a>.</p>
@@ -473,7 +473,7 @@ function updateLocationsPage() {
   let html = fs.readFileSync(path.join(ROOT, "locations.html"), "utf8");
   html = html.replace(
     /<h1>[\s\S]*?<\/h1>/,
-    "<h1>Local SEO and web design across Texas</h1>"
+    "<h1>Local SEO across Texas</h1>"
   );
   html = html.replace(
     /<p class="lead">[\s\S]*?<\/p>/,
@@ -540,14 +540,14 @@ function updateSitemap() {
     "/",
     "/services",
     "/services/local-seo",
-    "/services/web-design",
+    "/services/google-business-profile",
+    "/services/seo-content",
     "/results",
     "/how-it-works",
     "/about",
     "/contact",
     "/locations",
     "/blog",
-    "/conversion-optimization",
     "/pricing",
     "/faq",
     "/proof",
@@ -590,7 +590,7 @@ function updateIndexSchema() {
       "name": "Bluebonnet Growth",
       "url": "https://bluebonnetgrowth.com",
       "email": "hello@bluebonnetgrowth.com",
-      "description": "Local SEO and web design for Texas small businesses. Google Maps, websites, and lead generation statewide.",
+      "description": "Local SEO for Texas home service businesses. Google Maps, profile optimization, and SEO content.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Melissa",
@@ -600,7 +600,7 @@ function updateIndexSchema() {
       "areaServed": [
 ${areaServed}
       ],
-      "serviceType": ["Local SEO", "Google Business Profile Optimization", "Web Design"]
+      "serviceType": ["Local SEO", "Google Business Profile Optimization", "SEO Content"]
     }
     </script>`;
 
@@ -635,9 +635,8 @@ if (!patchOnly) {
 
 const stripTargets = [
   "services/local-seo.html",
-  "services/web-design.html",
-  "web-design.html",
-  "conversion-optimization.html",
+  "services/google-business-profile.html",
+  "services/seo-content.html",
 ].map((f) => path.join(ROOT, f));
 
 for (const f of stripTargets) {

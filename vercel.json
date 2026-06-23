@@ -25,12 +25,32 @@
     },
     {
       "source": "/web-design",
-      "destination": "/services/web-design",
+      "destination": "/services/google-business-profile",
       "permanent": true
     },
     {
       "source": "/web-design.html",
-      "destination": "/services/web-design",
+      "destination": "/services/google-business-profile",
+      "permanent": true
+    },
+    {
+      "source": "/services/web-design",
+      "destination": "/services/google-business-profile",
+      "permanent": true
+    },
+    {
+      "source": "/services/web-design.html",
+      "destination": "/services/google-business-profile",
+      "permanent": true
+    },
+    {
+      "source": "/conversion-optimization",
+      "destination": "/services/seo-content",
+      "permanent": true
+    },
+    {
+      "source": "/conversion-optimization.html",
+      "destination": "/services/seo-content",
       "permanent": true
     },
     {
