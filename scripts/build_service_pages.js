@@ -141,7 +141,7 @@ function localSeoMain() {
         <div class="container">
           <span class="eyebrow">North Texas local SEO</span>
           <h1>Local SEO for Home Service Businesses in North Texas</h1>
-          <p class="lead">I help pest control, HVAC, plumbing, roofing, and electrical companies show up on Google when people in North Texas search for help. Based in Melissa, I work with owner-led crews across Dallas-Fort Worth, Collin County, and nearby cities. More map pack visibility. More calls from the ZIP codes you want.</p>
+          <p class="lead">I help HVAC, plumbing, roofing, and electrical companies show up on Google when people in North Texas search for help. Based in Melissa, I work with owner-led crews across Dallas-Fort Worth, Collin County, and nearby cities. More map pack visibility. More calls from the ZIP codes you want.</p>
           <p class="section-cta">
             <a href="/contact" class="btn btn-primary">Apply Now</a>
           </p>
@@ -195,8 +195,8 @@ function localSeoMain() {
         <div class="container">
           <span class="eyebrow">Who it helps</span>
           <h2>Local SEO fits when people already search for your trade</h2>
-          <p>If your customers search things like "pest control Allen TX," "roof repair McKinney," or "electrician near me," local SEO is usually worth it. The goal is to show up for those searches in the cities you serve, then turn visits into phone calls.</p>
-          <p>I work mainly with home service owners: pest control, HVAC, plumbing, roofing, and electricians. If your business lives and dies by the phone ringing, this is built for you.</p>
+          <p>If your customers search things like "HVAC repair Allen TX," "roof repair McKinney," or "electrician near me," local SEO is usually worth it. The goal is to show up for those searches in the cities you serve, then turn visits into phone calls.</p>
+          <p>I work mainly with home service owners: HVAC, plumbing, roofing, and electricians. If your business lives and dies by the phone ringing, this is built for you.</p>
           <p class="section-cta">
             <a href="/contact" class="btn btn-primary">Apply Now</a>
           </p>
@@ -207,7 +207,7 @@ function localSeoMain() {
         <div class="container">
           <h2>Why North Texas home service owners invest in local SEO</h2>
 ${paras([
-    "North Texas keeps growing. New neighborhoods go up every month in Frisco, Prosper, Celina, and across Collin and Denton counties. More homes mean more demand for HVAC, plumbing, roofing, and pest control. It also means more companies fighting for the same spots on Google.",
+    "North Texas keeps growing. New neighborhoods go up every month in Frisco, Prosper, Celina, and across Collin and Denton counties. More homes mean more demand for HVAC, plumbing, and roofing. It also means more companies fighting for the same spots on Google.",
     "Most owners I talk to are great at their trade but tired of marketing that does not show results. They have a website, maybe a Google listing, and a folder of reports from vendors who never explained what changed. Local SEO should be simple to track: more profile views, more direction requests, more calls from the areas you actually serve.",
     "I focus on searches that pay bills. That means phrases tied to your services and your towns, not blog traffic from people three states away. I align your on-page content, reviews, citations, and listing signals so Google trusts you as the right answer in your market.",
     "You do not need to meet me in person. I am based in Melissa and work with North Texas owners every week. What matters is that your listing and site clearly show where you work and what jobs you take.",
@@ -237,16 +237,16 @@ ${paras([
     "Honest answer: it depends on your city, your trade, and how much cleanup your listing and site need. A broken profile fixed the right way can produce more calls within weeks. Competing for crowded terms in Plano or Frisco often takes several months of steady work.",
     "I set expectations up front. Before you commit, I tell you who ranks today, what they did to get there, and what I would tackle first. You should never pay for SEO without a clear picture of the path ahead.",
     "North Texas is big, but local SEO still works town by town. A roofer in Sherman and an HVAC crew in Carrollton face different competition. I build plans around your actual service area, not a generic checklist.",
-    "Seasons matter too. AC companies see a rush in summer. Pest control spikes in spring. I adjust focus when search patterns shift so you are ready when demand hits.",
+    "Seasons matter too. AC companies see a rush in summer. Roofing demand spikes after storms. I adjust focus when search patterns shift so you are ready when demand hits.",
   ])}
         </div>
       </section>
 
       <section class="section section-dark">
         <div class="container">
-          <h2>Local SEO for pest control, HVAC, plumbing, roofing, and electrical</h2>
+          <h2>Local SEO for HVAC, plumbing, roofing, and electrical</h2>
 ${paras([
-    "Each trade has its own search patterns. Pest control owners need visibility for emergency and seasonal terms. HVAC crews compete hard on repair and install phrases. Plumbers fight for drain, leak, and water heater searches. Roofers need storm and inspection traffic. Electricians win on panel upgrades and emergency calls.",
+    "Each trade has its own search patterns. HVAC crews compete hard on repair and install phrases. Plumbers fight for drain, leak, and water heater searches. Roofers need storm and inspection traffic. Electricians win on panel upgrades and emergency calls.",
     "I learn your trade before I touch your account. I look at what your best customers typed before they called you. Then I map those searches to pages, listings, and reviews you already have or still need.",
     "You get one operator, not a rotating team. I cap my client list at five businesses so your account gets real attention. When you have a question, you talk to me directly.",
   ])}
@@ -272,7 +272,7 @@ function gbpMain() {
         <div class="container">
           <span class="eyebrow">Google Business Profile</span>
           <h1>Google Business Profile Optimization for North Texas Home Services</h1>
-          <p class="lead">Your Google Business Profile is often the first thing a customer sees. I optimize profiles for pest control, HVAC, plumbing, roofing, and electrical companies across North Texas. Better categories, better photos, better posts, and a listing that matches what people search.</p>
+          <p class="lead">Your Google Business Profile is often the first thing a customer sees. I optimize profiles for HVAC, plumbing, roofing, and electrical companies across North Texas. Better categories, better photos, better posts, and a listing that matches what people search.</p>
           <p class="section-cta">
             <a href="/contact" class="btn btn-primary">Apply Now</a>
           </p>
@@ -318,7 +318,7 @@ function gbpMain() {
         <div class="container">
           <span class="eyebrow">Who it helps</span>
           <h2>Profile optimization fits most home service owners</h2>
-          <p>If you run a pest control, HVAC, plumbing, roofing, or electrical company in North Texas, your Google listing matters. Maybe you never claimed it. Maybe a past vendor set wrong categories. Maybe you have no photos or stale hours. These problems show up every week when I audit new accounts.</p>
+          <p>If you run a HVAC, plumbing, roofing, or electrical company in North Texas, your Google listing matters. Maybe you never claimed it. Maybe a past vendor set wrong categories. Maybe you have no photos or stale hours. These problems show up every week when I audit new accounts.</p>
           <p>A strong profile does not replace good work. It makes sure people who find you online actually call.</p>
         </div>
       </section>
@@ -396,7 +396,7 @@ function seoContentMain() {
         <div class="container">
           <span class="eyebrow">SEO content</span>
           <h1>SEO Content for North Texas Home Service Businesses</h1>
-          <p class="lead">Google needs pages that match what people search. I write service pages, city pages, and blog guides for pest control, HVAC, plumbing, roofing, and electrical companies across North Texas. Plain language. Real local detail. Built to rank and earn calls.</p>
+          <p class="lead">Google needs pages that match what people search. I write service pages, city pages, and blog guides for HVAC, plumbing, roofing, and electrical companies across North Texas. Plain language. Real local detail. Built to rank and earn calls.</p>
           <p class="section-cta">
             <a href="/contact" class="btn btn-primary">Apply Now</a>
           </p>
@@ -441,7 +441,7 @@ function seoContentMain() {
         <div class="container">
           <span class="eyebrow">Who it helps</span>
           <h2>SEO content fits when your site is thin</h2>
-          <p>Maybe you rank for your company name but not for "roof repair Plano" or "pest control Frisco." Maybe you serve ten cities but only mention one on your site. Maybe competitors have dozens of pages and you have five. Content fixes those gaps.</p>
+          <p>Maybe you rank for your company name but not for "roof repair Plano" or "plumber Frisco." Maybe you serve ten cities but only mention one on your site. Maybe competitors have dozens of pages and you have five. Content fixes those gaps.</p>
           <p>I focus on home service trades in North Texas where search volume is real and calls matter.</p>
         </div>
       </section>
@@ -478,9 +478,9 @@ ${paras([
 
       <section class="section section-light">
         <div class="container">
-          <h2>How I write for pest control, HVAC, plumbing, roofing, and electrical</h2>
+          <h2>How I write for HVAC, plumbing, roofing, and electrical</h2>
 ${paras([
-    "Each trade has different customer questions. Pest control callers want fast help and clear pricing signals. HVAC searches spike with weather. Plumbing emergencies need trust fast. Roofing leads often follow storms. Electrical work needs safety language people understand.",
+    "Each trade has different customer questions. HVAC searches spike with weather. Plumbing emergencies need trust fast. Roofing leads often follow storms. Electrical work needs safety language people understand.",
     "I learn your services before I write. I talk to you about which jobs pay best, which towns you want more of, and what customers ask on the phone. That input shapes every page.",
     "I write at a seventh or eighth grade reading level. No jargon walls. A homeowner should understand the page in seconds and know how to call you.",
   ])}
@@ -517,7 +517,7 @@ function servicesOverviewMain() {
         <div class="container">
           <span class="eyebrow">Services for North Texas home services</span>
           <h1>Three Services. One Goal: More Calls from Google.</h1>
-          <p class="lead">I help pest control, HVAC, plumbing, roofing, and electrical companies get found on Google across North Texas. Local SEO, Google Business Profile optimization, and SEO content. No bloated packages. No services you do not need. Based in Melissa. Limited to five clients at a time.</p>
+          <p class="lead">I help HVAC, plumbing, roofing, and electrical companies get found on Google across North Texas. Local SEO, Google Business Profile optimization, and SEO content. No bloated packages. No services you do not need. Based in Melissa. Limited to five clients at a time.</p>
           <p class="section-cta">
             <a href="/contact" class="btn btn-primary">Apply Now</a>
           </p>
@@ -597,9 +597,9 @@ ${paras([
         <div class="container">
           <h2>Who I work with</h2>
 ${paras([
-    "I specialize in owner-led home service businesses: pest control, HVAC, plumbing, roofing, and electricians. If your customers search on Google before they call, I can usually help.",
+    "I specialize in owner-led home service businesses: HVAC, plumbing, roofing, and electricians. If your customers search on Google before they call, I can usually help.",
     "I am not the right fit for national e-commerce brands, app startups, or companies that want a big agency roster. I keep the list small so each client gets senior-level attention.",
-    "A pest control crew in Allen and a roofer in Denton both need the same core ingredients: visibility on Google, a strong listing, and pages that match local searches. I adapt tactics to your market while keeping the process simple.",
+    "An HVAC crew in Allen and a roofer in Denton both need the same core ingredients: visibility on Google, a strong listing, and pages that match local searches. I adapt tactics to your market while keeping the process simple.",
   ])}
         </div>
       </section>
@@ -639,7 +639,7 @@ const PAGES = [
     canonical: "/services/local-seo",
     ogTitle: "Local SEO for North Texas Home Services | Bluebonnet Growth",
     ogDescription:
-      "Operator-led local SEO for pest control, HVAC, plumbing, roofing, and electricians. Map pack visibility and pages that earn calls.",
+      "Operator-led local SEO for HVAC, plumbing, roofing, and electricians. Map pack visibility and pages that earn calls.",
     main: localSeoMain(),
   },
   {
@@ -650,7 +650,7 @@ const PAGES = [
     canonical: "/services/google-business-profile",
     ogTitle: "Google Business Profile Optimization | Bluebonnet Growth",
     ogDescription:
-      "Profile cleanup and optimization for pest control, HVAC, plumbing, roofing, and electrical companies across North Texas.",
+      "Profile cleanup and optimization for HVAC, plumbing, roofing, and electrical companies across North Texas.",
     main: gbpMain(),
   },
   {
@@ -661,7 +661,7 @@ const PAGES = [
     canonical: "/services/seo-content",
     ogTitle: "SEO Content for North Texas Home Services | Bluebonnet Growth",
     ogDescription:
-      "Service pages, city pages, and blog guides written for pest control, HVAC, plumbing, roofing, and electricians.",
+      "Service pages, city pages, and blog guides written for HVAC, plumbing, roofing, and electricians.",
     main: seoContentMain(),
   },
   {
