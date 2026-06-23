@@ -264,6 +264,20 @@ body.nav-open { overflow: hidden; }
   margin-right: auto;
 }
 
+.about-photo {
+  margin: 0 auto 1.75rem;
+  max-width: min(380px, 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(10, 15, 26, 0.12);
+}
+
+.about-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* LOGO BAR */
 .logo-bar {
   border-bottom: 1px solid var(--border);
