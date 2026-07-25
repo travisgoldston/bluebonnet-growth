@@ -1,4 +1,8 @@
 User-agent: *
-Disallow:
+Disallow: /preview/
+Disallow: /resources/
+Disallow: /incoming/
+Disallow: /master-template
+Disallow: /city-lander-template
 
 Sitemap: https://bluebonnetgrowth.com/sitemap.xml

@@ -1,10 +1,14 @@
 const fs = require("fs");
 const path = require("path");
 const cities = require("./data/texas_cities");
+const consolidation = require("./data/seo_consolidation");
 const { extraSections } = require("./lib/city_page_extra");
 
 const ROOT = path.resolve(__dirname, "..");
 const BASE = "https://bluebonnetgrowth.com";
+const keepCitySlugs = new Set(consolidation.keepCitySlugs);
+const keepCities = cities.filter((c) => keepCitySlugs.has(c.slug));
+
 
 const FOOTER_SOCIAL = `        <div class="footer-social" aria-label="Social media">
           <a href="https://facebook.com/bluebonnetdotco" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="footer-social-link"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
@@ -34,8 +38,8 @@ function nearbyLinks(city) {
 }
 
 function locationStripHtml() {
-  const sorted = [...cities].sort((a, b) => a.name.localeCompare(b.name));
-  return sorted
+  return [...keepCities]
+    .sort((a, b) => a.name.localeCompare(b.name))
     .map((c) => `            <a class="location-tag" href="${cityPath(c)}">${c.name}</a>`)
     .join("\n");
 }
@@ -43,12 +47,12 @@ function locationStripHtml() {
 function texasInterlinkSection() {
   return `      <section class="section section-light">
         <div class="container">
-          <h2>Local SEO in cities across Texas</h2>
-          <p>I help small businesses get found on Google statewide. Explore local SEO by city:</p>
-          <nav class="location-strip" aria-label="Texas cities">
+          <h2>Local SEO across North Texas</h2>
+          <p>I focus on DFW growth markets where I know how people actually search. Explore local SEO by city:</p>
+          <nav class="location-strip" aria-label="North Texas cities">
 ${locationStripHtml()}
           </nav>
-          <p class="text-links"><a href="/locations">View all Texas cities we serve</a> · <a href="/services/local-seo">Local SEO services</a> · <a href="/contact">Apply now</a></p>
+          <p class="text-links"><a href="/locations">View locations</a> · <a href="/services/local-seo">Local SEO services</a> · <a href="/contact">Apply now</a></p>
         </div>
       </section>`;
 }
@@ -316,21 +320,14 @@ ${links}
 }
 
 function homepageRegionsSection() {
-  const cards = REGION_ORDER.map(
-    (r) => `            <a href="/locations#${regionSlug(r)}" class="region-card">
-              <span class="region-card-title">${r}</span>
-              <span class="region-card-desc">${REGION_BLURBS[r]}</span>
-            </a>`
-  ).join("\n");
-
   return `      <section class="section section-light">
         <div class="container">
-          <h2>Serving businesses across Texas</h2>
-          <p>Local SEO for owner-led businesses statewide. Pick a region to browse cities and local guides.</p>
-          <nav class="regions-hub" aria-label="Texas regions">
-${cards}
+          <h2>Local SEO across North Texas</h2>
+          <p>Based in Melissa. I work deepest with home service businesses in DFW growth corridors — McKinney, Frisco, Plano, Allen, Prosper, Celina, Dallas, Fort Worth, and nearby towns.</p>
+          <nav class="location-strip" aria-label="North Texas cities">
+${locationStripHtml()}
           </nav>
-          <p class="text-links"><a href="/locations">Browse all Texas cities</a> · <a href="/blog?category=city-guide">City guides</a> · <a href="/services/local-seo">Local SEO services</a></p>
+          <p class="text-links"><a href="/locations">Browse locations</a> · <a href="/blog?category=industry-guide">Trade guides</a> · <a href="/services/local-seo">Local SEO services</a></p>
         </div>
       </section>`;
 }
@@ -339,17 +336,15 @@ function patchHomepage() {
   const file = path.join(ROOT, "index.html");
   let html = fs.readFileSync(file, "utf8");
   const section = homepageRegionsSection();
-  if (/<section class="section section-light">\s*<div class="container">\s*<h2>(?:Local SEO in cities across Texas|Serving businesses across Texas)<\/h2>[\s\S]*?<\/section>/.test(html)) {
-    html = html.replace(
-      /<section class="section section-light">\s*<div class="container">\s*<h2>(?:Local SEO in cities across Texas|Serving businesses across Texas)<\/h2>[\s\S]*?<\/section>/,
-      section.trim()
-    );
-  } else {
-    html = html.replace("</main>", `${section}\n\n    </main>`).replace(
-      /(<section class="final-cta"[\s\S]*?<\/section>)\s*(<footer>)/,
-      `$1\n\n    ${section.trim()}\n\n    $2`
-    );
-  }
+  // Remove every regions hub variant (fixes historic duplicate sections)
+  html = html.replace(
+    /<section class="section section-light">\s*<div class="container">\s*<h2>(?:Local SEO in cities across Texas|Serving businesses across Texas|Serving North Texas and beyond|Local SEO across North Texas)<\/h2>[\s\S]*?<\/section>/g,
+    ""
+  );
+  html = html.replace(
+    /(<section class="final-cta"[\s\S]*?<\/section>)/,
+    `$1\n\n    ${section.trim()}\n`
+  );
   fs.writeFileSync(file, html, "utf8");
   console.log("Homepage: regions hub");
 }
@@ -420,13 +415,22 @@ function patchSiteWideLinks() {
 
 function patchBlogPosts() {
   const blogDir = path.join(ROOT, "blog");
-  const marker = "Local SEO in cities across Texas";
+  const marker = "Local SEO across North Texas";
   const section = texasInterlinkSection();
   for (const name of fs.readdirSync(blogDir)) {
     if (!name.endsWith(".html")) continue;
     const file = path.join(blogDir, name);
     let html = fs.readFileSync(file, "utf8");
-    if (html.includes(marker)) continue;
+    if (html.includes(marker) || html.includes('aria-label="North Texas cities"')) continue;
+    // Replace legacy strip section if present
+    if (/Local SEO in cities across Texas/.test(html)) {
+      html = html.replace(
+        /<section class="section section-light">\s*<div class="container">\s*<h2>Local SEO in cities across Texas<\/h2>[\s\S]*?<\/section>/,
+        section.trim()
+      );
+      fs.writeFileSync(file, html, "utf8");
+      continue;
+    }
     if (html.includes("</main>")) {
       html = html.replace("</main>", `${section}\n    </main>`);
     } else if (html.includes("<footer>")) {
@@ -446,50 +450,76 @@ function patchCorePages() {
     "services.html",
     "pricing.html",
     "faq.html",
-    "proof.html",
   ];
   const section = texasInterlinkSection();
-  const marker = "Local SEO in cities across Texas";
+  const marker = "Local SEO across North Texas";
 
   for (const rel of coreFiles) {
     const file = path.join(ROOT, rel);
     if (!fs.existsSync(file)) continue;
     let html = fs.readFileSync(file, "utf8");
-    if (html.includes(marker)) continue;
-    if (html.includes("</main>")) {
+    if (html.includes(marker) || html.includes('aria-label="North Texas cities"')) {
+      // still refresh strip contents
+      html = html.replace(
+        /<(?:nav|div) class="location-strip"[\s\S]*?<\/(?:nav|div)>/,
+        `          <nav class="location-strip" aria-label="North Texas cities">\n${locationStripHtml()}\n          </nav>`
+      );
+      fs.writeFileSync(file, html, "utf8");
+      continue;
+    }
+    if (/Local SEO in cities across Texas/.test(html)) {
+      html = html.replace(
+        /<section class="section section-light">\s*<div class="container">\s*<h2>Local SEO in cities across Texas<\/h2>[\s\S]*?<\/section>/,
+        section.trim()
+      );
+    } else if (html.includes("</main>")) {
       html = html.replace("</main>", `${section}\n    </main>`);
     } else if (html.includes("<footer>")) {
       html = html.replace("<footer>", `${section}\n\n    <footer>`);
     } else {
       continue;
     }
-    html = html.replace(/Based in Melissa, TX · Serving North Texas/g, "Based in Melissa, TX · Serving Texas");
+    html = html.replace(/Based in Melissa, TX · Serving (?:North )?Texas/g, "Based in Melissa, TX · Local SEO for Texas home service businesses");
     fs.writeFileSync(file, html, "utf8");
     console.log("core interlink:", rel);
   }
+}
+
+function renderKeepCitiesGrid() {
+  return `          <h3 class="locations-region" id="dallas-fort-worth">Dallas-Fort Worth</h3>
+          <div class="locations-grid">
+${[...keepCities]
+  .sort((a, b) => a.name.localeCompare(b.name))
+  .map(
+    (c) => `            <article class="card">
+              <h3><a href="${cityPath(c)}">${c.name}</a></h3>
+              <p>${c.cardBlurb}</p>
+            </article>`
+  )
+  .join("\n")}
+          </div>`;
 }
 
 function updateLocationsPage() {
   let html = fs.readFileSync(path.join(ROOT, "locations.html"), "utf8");
   html = html.replace(
     /<h1>[\s\S]*?<\/h1>/,
-    "<h1>Local SEO across Texas</h1>"
+    "<h1>Local SEO across North Texas</h1>"
   );
   html = html.replace(
     /<p class="lead">[\s\S]*?<\/p>/,
     `<p class="lead">
-            I work with small businesses across Texas, from Dallas-Fort Worth to Houston, Austin, San Antonio, West Texas, and the Gulf Coast.
-            If your customers search on Google, I can help you show up and win more calls.
+            I am based in Melissa and work with home service businesses across DFW — the markets where I know how people search and buy.
+            If your customers find you on Google, I can help you show up and win more calls.
           </p>`
   );
   html = html.replace(
     /<h2>Cities across Texas<\/h2>[\s\S]*?<section class="section">/,
-    `<h2>Cities across Texas</h2>
+    `<h2>Cities we publish for</h2>
           <p>
-            These are dedicated local SEO pages for cities I work in. Most clients serve several areas. That is normal.
+            These pages cover the North Texas markets I focus on. Most clients serve several of them. That is normal.
           </p>
-${renderRegionNav()}
-${renderLocationsGrid()}
+${renderKeepCitiesGrid()}
         </div>
       </section>
 
@@ -503,12 +533,32 @@ function updateVercelRedirects() {
   const config = JSON.parse(fs.readFileSync(vercelPath, "utf8"));
   const existing = new Set(config.redirects.map((r) => r.source));
 
-  for (const city of cities) {
+  for (const city of keepCities) {
     const dest = cityPath(city);
     for (const src of [`/seo-${city.slug}`, `/seo-${city.slug}.html`]) {
       if (!existing.has(src)) {
         config.redirects.push({ source: src, destination: dest, permanent: true });
         existing.add(src);
+      } else {
+        const row = config.redirects.find((r) => r.source === src);
+        if (row) row.destination = dest;
+      }
+    }
+  }
+
+  for (const city of cities) {
+    if (keepCitySlugs.has(city.slug)) continue;
+    const dest =
+      consolidation.cityRedirectOverrides[city.slug] || consolidation.cityRedirectFallback;
+    for (const src of [`/seo-${city.slug}`, `/seo-${city.slug}.html`, `/${city.slug}`, `/${city.slug}.html`]) {
+      if (!existing.has(src)) {
+        config.redirects.push({ source: src, destination: dest, permanent: true });
+        existing.add(src);
+      } else {
+        const row = config.redirects.find((r) => r.source === src);
+        if (row && (row.destination === `/${city.slug}` || row.destination === cityPath(city))) {
+          row.destination = dest;
+        }
       }
     }
   }
@@ -521,21 +571,8 @@ function updateSitemap() {
   const industrySlugs = fs.existsSync(path.join(ROOT, "scripts", "data", "industry_blog_slugs.json"))
     ? JSON.parse(fs.readFileSync(path.join(ROOT, "scripts", "data", "industry_blog_slugs.json"), "utf8"))
     : [];
-  const BLOG_SLUGS = [
-    ...industrySlugs,
-    "what-to-do-when-phone-stops-ringing",
-    "how-to-get-more-google-reviews",
-    "why-competitor-ranks-higher",
-    "how-long-does-local-seo-take",
-    "do-you-need-a-website-for-local-seo",
-    "google-maps-not-showing-up",
-    "what-is-local-seo",
-    "website-traffic-no-calls",
-    "is-your-seo-company-working",
-    "google-business-profile-checklist",
-  ];
-
-  const cityUrls = cities.map((c) => cityPath(c));
+  const BLOG_SLUGS = [...new Set([...industrySlugs, ...consolidation.generalBlogSlugs])];
+  const cityUrls = keepCities.map((c) => cityPath(c));
   const core = [
     "/",
     "/services",
@@ -550,20 +587,18 @@ function updateSitemap() {
     "/blog",
     "/pricing",
     "/faq",
-    "/proof",
   ];
-
+  const today = new Date().toISOString().slice(0, 10);
   const urls = [...new Set([...core, ...cityUrls, ...BLOG_SLUGS.map((s) => `/blog/${s}`)])].sort();
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls
   .map((url) => {
-    const pri = url === "/" ? "1.0" : url.startsWith("/blog/") ? "0.5" : cityUrls.includes(url) ? "0.7" : "0.8";
-    const freq = url === "/" || url === "/blog" ? "weekly" : url.startsWith("/blog/") ? "yearly" : "monthly";
+    const pri = url === "/" ? "1.0" : url.startsWith("/blog/") ? "0.6" : cityUrls.includes(url) ? "0.7" : "0.8";
     return `  <url>
     <loc>${BASE}${url}</loc>
-    <changefreq>${freq}</changefreq>
+    <lastmod>${today}</lastmod>
     <priority>${pri}</priority>
   </url>`;
   })
@@ -577,7 +612,7 @@ ${urls
 function updateIndexSchema() {
   const file = path.join(ROOT, "index.html");
   let html = fs.readFileSync(file, "utf8");
-  const areaServed = cities
+  const areaServed = keepCities
     .slice()
     .sort((a, b) => a.name.localeCompare(b.name))
     .map((c) => `        "${c.name}, TX"`)
@@ -590,7 +625,7 @@ function updateIndexSchema() {
       "name": "Bluebonnet Growth",
       "url": "https://bluebonnetgrowth.com",
       "email": "hello@bluebonnetgrowth.com",
-      "description": "Local SEO for Texas home service businesses. Google Maps, profile optimization, and SEO content.",
+      "description": "Local SEO for Texas home service businesses. Google Maps, profile optimization, and SEO content focused on North Texas.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Melissa",
@@ -607,11 +642,11 @@ ${areaServed}
   html = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, schema);
   html = html.replace(
     /<p class="final-cta-note">[\s\S]*?<\/p>/,
-    `<p class="final-cta-note">Dallas · Houston · Austin · San Antonio · Fort Worth · McKinney · Lubbock · and <a href="/locations">cities across Texas</a></p>`
+    `<p class="final-cta-note">Melissa · McKinney · Frisco · Plano · Allen · Dallas · Fort Worth · and <a href="/locations">North Texas</a></p>`
   );
   html = html.replace(
-    "Based in Melissa, TX · Serving North Texas",
-    "Based in Melissa, TX · Serving Texas"
+    /Based in Melissa, TX · Serving Texas/g,
+    "Based in Melissa, TX · Local SEO for Texas home service businesses"
   );
   fs.writeFileSync(file, html, "utf8");
 }
@@ -621,7 +656,7 @@ const patchOnly = process.env.PATCH_ONLY === "1";
 
 if (!patchOnly) {
   let wrote = 0;
-  for (const city of cities) {
+  for (const city of keepCities) {
     const file = cityFile(city);
     fs.mkdirSync(path.dirname(file), { recursive: true });
     fs.writeFileSync(file, renderCityPage(city), "utf8");
@@ -630,7 +665,7 @@ if (!patchOnly) {
   }
   updateLocationsPage();
   console.log("Updated locations.html");
-  console.log(`Generated ${wrote} city pages.`);
+  console.log(`Generated ${wrote} city pages (keepers only).`);
 }
 
 const stripTargets = [

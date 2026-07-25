@@ -3,6 +3,7 @@ const path = require("path");
 const cities = require("./data/texas_cities");
 const industries = require("./data/industry_templates");
 const guideCities = require("./data/industry_guide_cities");
+const consolidation = require("./data/seo_consolidation");
 const { blogMetaHtml } = require("./lib/blog_meta");
 
 const ROOT = path.resolve(__dirname, "..");
@@ -12,6 +13,8 @@ const FOOTER_SOCIAL = fs
   .readFileSync(path.join(ROOT, "blog", "what-is-local-seo.html"), "utf8")
   .match(/<div class="footer-social"[\s\S]*?<\/div>\s*<\/div>/)[0]
   .replace(/^ {6}/gm, "        ");
+
+const keepSet = new Set(consolidation.keepTradeCity.map((k) => `${k.industry}::${k.city}`));
 
 function cityPath(slug) {
   const city = cities.getBySlug(slug);
@@ -33,28 +36,142 @@ function fill(template, vars) {
   return template.replace(/\{(\w+)\}/g, (_, key) => vars[key] ?? "");
 }
 
-function locationStripHtml() {
-  return [...cities]
+function dfwStripHtml() {
+  return consolidation.keepCitySlugs
+    .map((slug) => cities.getBySlug(slug))
+    .filter(Boolean)
     .sort((a, b) => a.name.localeCompare(b.name))
-    .map((c) => {
-      const href = cities.getPath(c);
-      return `            <a class="location-tag" href="${href}">${c.name}</a>`;
-    })
+    .map((c) => `            <a class="location-tag" href="${cities.getPath(c)}">${c.name}</a>`)
     .join("\n");
 }
 
-const texasInterlink = `      <section class="section section-light">
-        <div class="container">
-          <h2>Local SEO in cities across Texas</h2>
-          <p>I help small businesses get found on Google statewide. Explore local SEO by city:</p>
-          <nav class="location-strip" aria-label="Texas cities">
-${locationStripHtml()}
-          </nav>
-          <p class="text-links"><a href="/locations">View all Texas cities we serve</a> · <a href="/services/local-seo">Local SEO services</a> · <a href="/contact">Apply now</a></p>
-        </div>
-      </section>`;
+function relatedGuidesHtml(citySlug, currentKey) {
+  const others = consolidation.keepTradeCity
+    .filter((k) => k.city === citySlug && k.industry !== currentKey)
+    .map((k) => industries.find((i) => i.key === k.industry))
+    .filter(Boolean);
+  const cityLinks = others
+    .map((i) => `<a href="/blog/local-seo-for-${i.key}-${citySlug}-tx">${i.servicePlural}</a>`)
+    .join(", ");
+  const pillar = `<a href="/blog/local-seo-for-${currentKey}-texas">Texas ${industries.find((i) => i.key === currentKey).servicePlural} guide</a>`;
+  if (!cityLinks) return pillar;
+  return `${cityLinks}, and the statewide ${pillar}`;
+}
 
-function shell({ slug, title, description, eyebrow, lead, sections, blogMeta }) {
+function formatSearchPhraseAlt(searchKey, city) {
+  if (searchKey === "hvac") return `HVAC ${city} TX`;
+  const titled = searchKey
+    .split(" ")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+  return `${titled} ${city} TX`;
+}
+
+function industryPost(cityCfg, industry) {
+  const cityMeta = cities.getBySlug(cityCfg.slug);
+  const city = cityMeta.name;
+  const citySlug = cityCfg.slug;
+  const searchPhrase = `${industry.searchKey} ${city.toLowerCase()} tx`;
+  const searchPhraseAlt = formatSearchPhraseAlt(industry.searchKey, city);
+  const slug = `local-seo-for-${industry.key}-${citySlug}-tx`;
+  const vars = { city, citySlug, searchPhrase };
+
+  const serviceLabel =
+    industry.servicePlural.charAt(0).toUpperCase() + industry.servicePlural.slice(1);
+  const title = `Local SEO for ${serviceLabel} in ${city}, TX`;
+  const description = `Practical Google Maps and local search advice for ${industry.servicePlural} in ${city}, TX — what actually moves calls in this market.`;
+  const eyebrow = `${city} local SEO · ${industry.servicePlural}`;
+  const lead = `When someone searches "${searchPhrase}" they are ready to hire. Here is how ${city} ${industry.servicePlural} win those searches without agency fluff.`;
+
+  const marketNote = cityCfg.marketNote || `${city} has its own map pack, but Google still mixes in ${nearbyLinksHtml(citySlug) || "nearby cities"}.`;
+  const extraParagraph =
+    (cityCfg.extraNote && cityCfg.extraNote[industry.key]) ||
+    `Say clearly on your profile and website that you serve ${city} and the towns you actually cover.`;
+
+  const tipList = industry.tips
+    .map((t) => fill(t, vars))
+    .map((t) => `<li>${t}</li>`)
+    .join("\n            ");
+
+  const sections = [
+    `      <section class="section section-light">
+        <div class="container">
+          <h2>How "${searchPhrase}" searches play out in ${city}</h2>
+          <p>${marketNote}</p>
+          <p>${extraParagraph}</p>
+          <p>Most people never scroll past the map. If you are not on it, you are invisible for that search. Broader context: <a href="/blog/what-is-local-seo">what local SEO means</a> and <a href="${cityPath(citySlug)}">local SEO in ${city}</a>.</p>
+        </div>
+      </section>`,
+    `      <section class="section">
+        <div class="container">
+          <h2>Google profile priorities for ${city} ${industry.servicePlural}</h2>
+          <p>For high-intent local searches, your Google Business Profile usually matters more than a long website. Do this first:</p>
+          <ul>
+            <li><strong>Primary category:</strong> ${industry.categoryExample}.</li>
+            <li><strong>Service area:</strong> ${city} plus towns you actually serve${nearbyLinksHtml(citySlug) ? ` (often overlaps ${nearbyLinksHtml(citySlug)})` : ""}.</li>
+            <li><strong>Hours and phone:</strong> Must be correct — especially evenings and weekends if you take those calls.</li>
+            <li><strong>Photos:</strong> Real work, team, and trucks. Not stock.</li>
+            <li><strong>Services:</strong> The plain words ${industry.customerLabel} type.</li>
+          </ul>
+          <p>Full walkthrough: <a href="/blog/google-business-profile-checklist">Google Business Profile checklist</a>. Statewide playbook: <a href="/blog/local-seo-for-${industry.key}-texas">${industry.servicePlural} across Texas</a>.</p>
+        </div>
+      </section>`,
+    `      <section class="section section-light">
+        <div class="container">
+          <h2>Reviews and website clarity</h2>
+          <p>Ask happy ${industry.customerLabel} right after a good job. Specific reviews that mention ${city} beat generic “great job” five-stars.</p>
+          <p>On your site: say you serve ${city}, put tap-to-call at the top on mobile, and keep service language plain. If traffic does not call, read <a href="/blog/website-traffic-no-calls">why websites get traffic but no calls</a>.</p>
+          <div class="blog-cta-box">
+            <h3>Want a straight look at how you rank for "${searchPhrase}"?</h3>
+            <p>I will check your listing, reviews, and who sits above you in ${city}. Plain English. Limited roster.</p>
+            <a href="/contact" class="btn btn-primary">Apply Now</a>
+          </div>
+        </div>
+      </section>`,
+    `      <section class="section">
+        <div class="container">
+          <h2>Tips for ${industry.servicePlural} in ${city}</h2>
+          <ul>
+            ${tipList}
+          </ul>
+          <h2>Do this week</h2>
+          <ol>
+            <li>Search "${searchPhrase}" on your phone in private mode. Note the map pack.</li>
+            <li>Fix category, services, photos, and hours on your profile today.</li>
+            <li>Ask three happy ${industry.customerLabel} for a Google review with a direct link.</li>
+            <li>Confirm your site says ${city} and has an obvious call button on mobile.</li>
+          </ol>
+          <p>More for ${city}: ${relatedGuidesHtml(citySlug, industry.key)}.</p>
+          <p class="text-links"><a href="/services/local-seo">Local SEO services</a> · <a href="/how-it-works">How it works</a> · <a href="/contact">Apply now</a></p>
+        </div>
+      </section>`,
+  ];
+
+  const tags = [industry.key, citySlug, "local-seo"];
+  const cardBlurb = fill(industry.cardBlurb, vars);
+
+  return {
+    slug,
+    title,
+    description,
+    eyebrow,
+    lead,
+    sections,
+    guideTitle: searchPhraseAlt,
+    cardBlurb,
+    city,
+    citySlug,
+    region: cityMeta.region,
+    category: "city-guide",
+    tags,
+    excerpt: cardBlurb,
+    cityName: city,
+    blogMeta: blogMetaHtml({ category: "city-guide", tags }),
+  };
+}
+
+function shell(post) {
+  const body = post.sections.join("\n");
   return `<!DOCTYPE html>
 <html lang="en">
   <head>
@@ -67,9 +184,20 @@ function shell({ slug, title, description, eyebrow, lead, sections, blogMeta }) 
       gtag('js', new Date());
       gtag('config', 'G-QG3FTP7PC3');
     </script>
-    <title>${title}</title>
-    <meta name="description" content="${description}" />
-    <link rel="canonical" href="https://bluebonnetgrowth.com/blog/${slug}" />
+    <title>${post.title}</title>
+    <meta name="description" content="${post.description.replace(/"/g, "&quot;")}" />
+    <link rel="canonical" href="https://bluebonnetgrowth.com/blog/${post.slug}" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": ${JSON.stringify(post.title)},
+      "description": ${JSON.stringify(post.description)},
+      "author": { "@type": "Person", "name": "Travis", "url": "https://bluebonnetgrowth.com/about" },
+      "publisher": { "@type": "Organization", "name": "Bluebonnet Growth", "url": "https://bluebonnetgrowth.com" },
+      "mainEntityOfPage": "https://bluebonnetgrowth.com/blog/${post.slug}"
+    }
+    </script>
     <link rel="icon" href="/assets/favicon-32x32.png" type="image/png" />
     <link rel="apple-touch-icon" href="/assets/favicon-32x32.png" />
     <link rel="stylesheet" href="/styles.css" />
@@ -103,16 +231,23 @@ function shell({ slug, title, description, eyebrow, lead, sections, blogMeta }) 
     <main>
       <section class="page-hero">
         <div class="container">
-          <span class="eyebrow">${eyebrow}</span>
-          <h1>${title}</h1>
-          <p class="lead">${lead}</p>
-${blogMeta}
+          <span class="eyebrow">${post.eyebrow}</span>
+          <h1>${post.title}</h1>
+          <p class="lead">${post.lead}</p>
+          ${post.blogMeta}
         </div>
       </section>
-
-${sections.join("\n\n")}
-
-${texasInterlink}
+${body}
+      <section class="section section-light">
+        <div class="container">
+          <h2>North Texas focus</h2>
+          <p>I help small home service businesses get found on Google across DFW growth markets.</p>
+          <nav class="location-strip" aria-label="North Texas cities">
+${dfwStripHtml()}
+          </nav>
+          <p class="text-links"><a href="/locations">View locations</a> · <a href="/services/local-seo">Local SEO services</a> · <a href="/contact">Apply now</a></p>
+        </div>
+      </section>
     </main>
     <footer>
       <div>
@@ -120,219 +255,66 @@ ${texasInterlink}
           <img src="/assets/bluebonnet-icon.png" alt="Bluebonnet Growth" width="28" height="28" />
           <div class="footer-brand">Bluebonnet Growth</div>
         </div>
-        <div class="footer-tagline">Ranking Texas local businesses on Google. One operator. Direct access. Real results.</div>
-${FOOTER_SOCIAL}
+        <div class="footer-meta">Based in Melissa, TX · Local SEO for Texas home service businesses</div>
+        ${FOOTER_SOCIAL}
       </div>
-      <div>
-        <div class="footer-col-title">Pages</div>
-        <ul class="footer-links">
-          <li><a href="/results">Results</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/how-it-works">How it works</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/locations">Locations</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Ready to rank?</div>
-        <div class="footer-cta-text">Limited to 5 clients at a time. Apply to see if there is a spot open for your business.</div>
-        <a href="/contact" class="footer-btn">Apply Now</a>
+      <div class="footer-links">
+        <a href="/results">Results</a>
+        <a href="/services">Services</a>
+        <a href="/how-it-works">How it works</a>
+        <a href="/about">About</a>
+        <a href="/blog">Blog</a>
+        <a href="/locations">Locations</a>
+        <a href="/contact">Apply Now</a>
       </div>
     </footer>
-    <div class="copyright">
-      <span>© 2026 Bluebonnet Growth. All rights reserved.</span>
-      <span>Based in Melissa, TX · Serving Texas</span>
-    </div>
     <script src="/script.js" defer></script>
   </body>
 </html>
 `;
 }
 
-function relatedGuidesHtml(citySlug, currentKey) {
-  const others = industries.filter((i) => i.key !== currentKey).slice(0, 3);
-  return others
-    .map((i) => {
-      const slug = `local-seo-for-${i.key}-${citySlug}-tx`;
-      return `<a href="/blog/${slug}">${i.servicePlural}</a>`;
-    })
-    .join(", ");
-}
-
-function defaultMarketNote(cityName, citySlug) {
-  const nearby = nearbyLinksHtml(citySlug);
-  if (nearby) {
-    return `${cityName} has its own search market on Google. Your customers often see results from ${nearby} too.`;
-  }
-  return `${cityName} has its own search market on Google. Nearby towns often show up in the same results.`;
-}
-
-function formatSearchPhraseAlt(searchKey, city) {
-  if (searchKey === "hvac") return `HVAC ${city} TX`;
-  const titled = searchKey
-    .split(" ")
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
-  return `${titled} ${city} TX`;
-}
-
-function industryPost(cityCfg, industry) {
-  const cityMeta = cities.getBySlug(cityCfg.slug);
-  const city = cityMeta.name;
-  const citySlug = cityCfg.slug;
-  const cityLower = city.toLowerCase();
-  const searchPhrase = `${industry.searchKey} ${cityLower} tx`;
-  const searchPhraseAlt = formatSearchPhraseAlt(industry.searchKey, city);
-  const slug = `local-seo-for-${industry.key}-${citySlug}-tx`;
-  const vars = { city, citySlug, searchPhrase };
-
-  const title = `How to Rank for "${searchPhraseAlt}" on Google`;
-  const description = `Want more ${industry.customerLabel} from Google? A plain guide for ${industry.servicePlural} in ${city}, TX to show up when people search ${searchPhrase} and call you first.`;
-  const eyebrow = `${city} local SEO · ${industry.servicePlural}`;
-  const lead = `When someone types "${searchPhrase}" into Google, they are not browsing. They need a ${industry.service} and they want one nearby. This guide explains, in plain English, how ${city} ${industry.servicePlural} can show up in those searches and turn them into ${industry.customerLabel}.`;
-
-  const marketNote = cityCfg.marketNote || defaultMarketNote(city, citySlug);
-  const extraParagraph =
-    (cityCfg.extraNote && cityCfg.extraNote[industry.key]) ||
-    `Your Google profile and website need to say clearly that you serve ${city} and the areas around it.`;
-
-  const tipList = industry.tips
-    .map((t) => fill(t, vars))
-    .map((t) => `<li>${t}</li>`)
-    .join("\n            ");
-
-  const sections = [
-    `      <section class="section section-light">
-        <div class="container">
-          <h2>What happens when someone searches "${searchPhrase}"</h2>
-          <p>They see a map with a few ${industry.servicePlural} listed underneath. Below that, they see websites. Most people tap the map or call one of the first three names they trust.</p>
-          <p>If your practice or business is not there, you do not get a second chance on that search. They call someone else.</p>
-          <p>That is why local SEO matters for ${industry.servicePlural} in ${city}. You are not trying to rank nationwide. You are trying to win the searches your neighbors actually type.</p>
-          <blockquote class="blog-pullquote">
-            <p>Most people never scroll past the map. If you are not on it, you are invisible for that search.</p>
-          </blockquote>
-        </div>
-      </section>`,
-    `      <section class="section">
-        <div class="container">
-          <h2>Why ${city} is its own market</h2>
-          <p>${marketNote}</p>
-          <p>That means you are not only competing with other ${industry.servicePlural} in town. You are competing with businesses from nearby cities that show up in the same search.</p>
-          <p>${extraParagraph}</p>
-          <p>We cover the broader picture in <a href="/blog/what-is-local-seo">what local SEO means</a> and on our <a href="${cityPath(citySlug)}">local SEO in ${city}</a> page.</p>
-        </div>
-      </section>`,
-    `      <section class="section section-light">
-        <div class="container">
-          <h2>Step 1: Fix your Google Business Profile</h2>
-          <p>For "${searchPhrase}" searches, your Google Business Profile is often more important than your website. Google pulls map results from profiles first.</p>
-          <ul>
-            <li><strong>Primary category:</strong> Pick the category that closest matches what you do (for example, ${industry.categoryExample}).</li>
-            <li><strong>Service area:</strong> Include ${city} and nearby areas you actually serve.</li>
-            <li><strong>Hours and phone:</strong> Must be correct. A wrong number costs you calls.</li>
-            <li><strong>Photos:</strong> Real photos of your office, team, and work. Not stock images.</li>
-            <li><strong>Services list:</strong> Add the services people search for in plain language.</li>
-          </ul>
-          <p>Walk through our <a href="/blog/google-business-profile-checklist">Google Business Profile checklist</a> if you want a step-by-step list.</p>
-        </div>
-      </section>`,
-    `      <section class="section">
-        <div class="container">
-          <h2>Step 2: Earn reviews that mention ${city}</h2>
-          <p>Reviews help Google trust you. They also help real people feel safe calling.</p>
-          <p>For ${industry.servicePlural}, the best reviews are specific: "Great experience at their ${city} office" or "They fixed our issue the same week." Generic "five stars" helps less.</p>
-          <p>Ask happy ${industry.customerLabel} right after a good visit. Send a direct review link. One simple ask is enough.</p>
-          <blockquote class="blog-pullquote">
-            <p>A steady trickle of recent reviews beats a big burst from three years ago.</p>
-          </blockquote>
-          <p>See <a href="/blog/how-to-get-more-google-reviews">how to ask for Google reviews without feeling awkward</a>.</p>
-          <div class="blog-cta-box">
-            <h3>Want to know how you rank for "${searchPhrase}" today?</h3>
-            <p>I will check your Google listing, your reviews, and who shows up above you in ${city}. Plain English, no pressure.</p>
-            <a href="/contact" class="btn btn-primary">Apply Now</a>
-          </div>
-        </div>
-      </section>`,
-    `      <section class="section section-light">
-        <div class="container">
-          <h2>Step 3: Make your website match what people search</h2>
-          <p>Your site does not need to be huge. It needs to be clear.</p>
-          <ul>
-            <li>Say on your homepage that you serve ${city}, TX and nearby areas.</li>
-            <li>Have a page or section that talks about your main services in plain language.</li>
-            <li>Put your phone number at the top on mobile. Make it tap to call.</li>
-            <li>Load fast on a phone. Most "${searchPhrase}" searches happen on mobile.</li>
-          </ul>
-          <p>If people visit but do not call, read <a href="/blog/website-traffic-no-calls">why websites get traffic but no calls</a>.</p>
-        </div>
-      </section>`,
-    `      <section class="section">
-        <div class="container">
-          <h2>Tips specific to ${industry.servicePlural} in ${city}</h2>
-          <ul>
-            ${tipList}
-          </ul>
-          <p>These are the levers that move the needle for "${searchPhrase}" and similar searches in ${city}.</p>
-        </div>
-      </section>`,
-    `      <section class="section section-light">
-        <div class="container">
-          <h2>What to do this week</h2>
-          <ol>
-            <li>Search "${searchPhrase}" on your phone in private mode. Write down who shows on the map.</li>
-            <li>Compare their profiles to yours. Photos, reviews, categories, hours.</li>
-            <li>Fix anything wrong on your profile today.</li>
-            <li>Ask three happy ${industry.customerLabel} for a Google review with a direct link.</li>
-            <li>Make sure your website says ${city} and has a clear call button on mobile.</li>
-          </ol>
-          <p>If you want help, I work with ${industry.servicePlural} in ${city} and across Texas. See <a href="/services/local-seo">local SEO services</a>, <a href="/how-it-works">how it works</a>, or <a href="/contact">apply now</a>.</p>
-          <p>More guides for ${city} businesses: ${relatedGuidesHtml(citySlug, industry.key)}.</p>
-        </div>
-      </section>`,
-  ];
-
-  const tags = [industry.key, citySlug, "local-seo"];
-  const cardBlurb = fill(industry.cardBlurb, vars);
-
-  return {
-    slug,
-    title,
-    description,
-    eyebrow,
-    lead,
-    sections,
-    guideTitle: searchPhraseAlt,
-    cardBlurb,
-    city,
-    citySlug,
-    region: cityMeta.region,
-    category: "city-guide",
-    tags,
-    excerpt: cardBlurb,
-    cityName: city,
-    blogMeta: blogMetaHtml({ category: "city-guide", tags }),
-  };
-}
-
 const posts = [];
 const guidesByCity = {};
 
 for (const cityCfg of guideCities) {
-  const cityPosts = industries.map((industry) => industryPost(cityCfg, industry));
-  posts.push(...cityPosts);
-  guidesByCity[cityCfg.slug] = cityPosts.map((p) => ({
-    slug: p.slug,
-    title: p.guideTitle,
-  }));
+  for (const industry of industries) {
+    if (!keepSet.has(`${industry.key}::${cityCfg.slug}`)) continue;
+    if (!cityCfg.extraNote || !cityCfg.extraNote[industry.key]) {
+      // Allow keepers that only have marketNote (still unique enough at city level)
+      const allowedWithoutExtra = consolidation.keepTradeCity.some(
+        (k) => k.industry === industry.key && k.city === cityCfg.slug
+      );
+      if (!allowedWithoutExtra) continue;
+    }
+    const post = industryPost(cityCfg, industry);
+    posts.push(post);
+    if (!guidesByCity[cityCfg.slug]) guidesByCity[cityCfg.slug] = [];
+    guidesByCity[cityCfg.slug].push({ slug: post.slug, title: post.guideTitle });
+  }
 }
 
 for (const post of posts) {
-  const file = path.join(BLOG, `${post.slug}.html`);
-  fs.writeFileSync(file, shell(post), "utf8");
+  fs.writeFileSync(path.join(BLOG, `${post.slug}.html`), shell(post), "utf8");
 }
 
-const manifest = posts.map((p) => ({
+const pillarSlugs = industries.map((i) => `local-seo-for-${i.key}-texas`);
+const tradePillarCopy = require("./data/trade_pillar_copy");
+const generalPosts = require("./data/general_blog_posts");
+
+const pillarManifest = industries.map((i) => {
+  const copy = tradePillarCopy[i.key];
+  return {
+    slug: `local-seo-for-${i.key}-texas`,
+    title: copy.title.replace(/\{servicePlural\}/g, i.servicePlural),
+    excerpt: copy.description.replace(/\{servicePlural\}/g, i.servicePlural),
+    category: "industry-guide",
+    tags: [i.key, "texas", "local-seo"],
+    cityName: null,
+  };
+});
+
+const cityManifest = posts.map((p) => ({
   slug: p.slug,
   title: p.title,
   excerpt: p.excerpt,
@@ -341,19 +323,28 @@ const manifest = posts.map((p) => ({
   cityName: p.cityName,
 }));
 
-fs.writeFileSync(path.join(ROOT, "scripts", "data", "blog_manifest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8");
+const generalEntries = generalPosts.map((p) => ({
+  slug: p.slug,
+  title: p.title,
+  excerpt: p.excerpt || "",
+  category: p.category || "general",
+  tags: p.tags || ["local-seo"],
+  cityName: null,
+}));
 
+const manifest = [...pillarManifest, ...cityManifest, ...generalEntries];
+
+fs.writeFileSync(path.join(ROOT, "scripts", "data", "blog_manifest.json"), JSON.stringify(manifest, null, 2) + "\n", "utf8");
 fs.writeFileSync(
   path.join(ROOT, "scripts", "data", "industry_blog_slugs.json"),
-  JSON.stringify(posts.map((p) => p.slug), null, 2) + "\n",
+  JSON.stringify([...pillarSlugs, ...posts.map((p) => p.slug)], null, 2) + "\n",
   "utf8"
 );
-
 fs.writeFileSync(
   path.join(ROOT, "scripts", "data", "industry_guides_by_city.json"),
   JSON.stringify(guidesByCity, null, 2) + "\n",
   "utf8"
 );
 
-console.log(`Done. ${posts.length} industry guides across ${guideCities.length} Texas cities.`);
+console.log(`Done. ${posts.length} city guides + ${pillarSlugs.length} pillars in manifest.`);
 require("./build_blog_index.js");

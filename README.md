@@ -28,16 +28,11 @@ bluebonnet-growth/
 
 ### Contact Form (Required)
 
-The contact form uses [Formspree](https://formspree.io/) to send submissions to your email.
+The contact form uses [FormSubmit](https://formsubmit.co/) to email submissions to `hello@bluebonnetgrowth.com`.
 
-1. Sign up at [formspree.io](https://formspree.io/) (free tier available)
-2. Create a new form and use your email (e.g. `hello@bluebonnetgrowth.com`)
-3. Copy your form ID from the Formspree dashboard
-4. Open `contact.html` and replace `YOUR_FORMSPREE_FORM_ID` in the form `action` attribute:
+The first submission may require a one-click confirmation email from FormSubmit. After that, applications arrive in your inbox.
 
-```html
-<form action="https://formspree.io/f/YOUR_FORMSPREE_FORM_ID" method="POST">
-```
+To use Formspree instead, create a form at [formspree.io](https://formspree.io/) and replace the form `action` in `contact.html`.
 
 ## Updating Content
 

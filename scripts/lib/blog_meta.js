@@ -6,6 +6,7 @@ const cities = require("../data/texas_cities");
 
 const TAG_LABELS = {
   ...generalPosts.TAG_LABELS,
+  texas: "Texas",
   dentists: "Dentists",
   plumbers: "Plumbers",
   hvac: "HVAC",
@@ -22,6 +23,7 @@ const TAG_LABELS = {
 
 const CATEGORY_LABELS = {
   "city-guide": "City guide",
+  "industry-guide": "Trade guide",
   general: "General advice",
 };
 
@@ -29,6 +31,7 @@ const CITY_SLUGS = new Set(guideCities.map((c) => c.slug));
 const INDUSTRY_KEYS = new Set(industries.map((i) => i.key));
 
 function tagHref(tag) {
+  if (tag === "texas") return `/blog?category=industry-guide`;
   if (CITY_SLUGS.has(tag)) return `/blog?category=city-guide&city=${tag}`;
   if (INDUSTRY_KEYS.has(tag)) return `/blog?category=city-guide&industry=${tag}`;
   return `/blog?topic=${tag}`;
@@ -46,7 +49,11 @@ function categoryLabel(category) {
 
 function blogMetaHtml({ category, tags }) {
   const categoryHref =
-    category === "city-guide" ? "/blog?category=city-guide" : "/blog?category=general";
+    category === "city-guide"
+      ? "/blog?category=city-guide"
+      : category === "industry-guide"
+        ? "/blog?category=industry-guide"
+        : "/blog?category=general";
   const tagItems = tags
     .map((t) => `            <li><a href="${tagHref(t)}" class="blog-tag">${tagLabel(t)}</a></li>`)
     .join("\n");

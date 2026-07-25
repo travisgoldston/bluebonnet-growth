@@ -53,7 +53,12 @@ function blogCard(post) {
   const tagHtml = post.tags
     .map((t) => `<a href="${tagHref(t)}" class="blog-tag">${tagLabel(t)}</a>`)
     .join("\n              ");
-  const catClass = post.category === "city-guide" ? "city-guide" : "general";
+  const catClass =
+    post.category === "city-guide"
+      ? "city-guide"
+      : post.category === "industry-guide"
+        ? "city-guide"
+        : "general";
   return `            <article class="blog-card blog-card-index" data-category="${post.category}" data-tags="${post.tags.join(",")}">
               <a href="/blog?category=${post.category}" class="blog-card-category blog-card-category--${catClass}">${categoryLabel(post.category)}</a>
               <h3><a href="/blog/${post.slug}">${post.title}</a></h3>
@@ -69,6 +74,7 @@ function buildIndexSection(posts) {
 
   const categoryPills = [
     filterPill("category", "all", "All"),
+    filterPill("category", "industry-guide", "Trade guides"),
     filterPill("category", "city-guide", "City guides"),
     filterPill("category", "general", "General advice"),
   ].join("\n");
@@ -89,10 +95,11 @@ function buildIndexSection(posts) {
   ].join("\n");
 
   const sorted = [
+    ...posts.filter((p) => p.category === "industry-guide").sort((a, b) => a.title.localeCompare(b.title)),
     ...posts.filter((p) => p.category === "general"),
     ...posts
       .filter((p) => p.category === "city-guide")
-      .sort((a, b) => a.cityName.localeCompare(b.cityName) || a.title.localeCompare(b.title)),
+      .sort((a, b) => (a.cityName || "").localeCompare(b.cityName || "") || a.title.localeCompare(b.title)),
   ];
 
   const cards = sorted.map(blogCard).join("\n");
@@ -156,17 +163,11 @@ function patchGeneralPostTags() {
 }
 
 function buildBlogHtml() {
-  const industryPosts = loadManifest();
-  const general = generalPosts.map((p) => ({
-    slug: p.slug,
-    title: p.title,
-    excerpt: p.excerpt,
-    category: p.category,
-    tags: p.tags,
-    cityName: "",
-  }));
+  const allPosts = loadManifest();
+  const general = allPosts.filter((p) => p.category === "general");
+  const industryGuides = allPosts.filter((p) => p.category === "industry-guide");
+  const cityGuides = allPosts.filter((p) => p.category === "city-guide");
 
-  const allPosts = [...general, ...industryPosts];
   const blogPath = path.join(ROOT, "blog.html");
   let html = fs.readFileSync(blogPath, "utf8");
 
@@ -197,7 +198,9 @@ function buildBlogHtml() {
   );
 
   fs.writeFileSync(blogPath, html, "utf8");
-  console.log(`Blog index: ${allPosts.length} articles (${general.length} general, ${industryPosts.length} city guides)`);
+  console.log(
+    `Blog index: ${allPosts.length} articles (${industryGuides.length} trade pillars, ${cityGuides.length} city guides, ${general.length} general)`
+  );
 }
 
 patchGeneralPostTags();
