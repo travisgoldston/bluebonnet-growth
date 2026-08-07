@@ -106,6 +106,47 @@ function renderCityPage(city) {
     guidesByCity,
   });
 
+  const pageTitle =
+    city.title ||
+    `Local SEO ${city.name}, TX | More Calls from Google Maps | Bluebonnet Growth`;
+  const metaDescription =
+    city.metaDescription ||
+    `Local SEO for ${city.name}, TX home service businesses. Rank on Google Maps for HVAC, plumbing, roofing, and trades. Free visibility check. Limited to 5 clients.`;
+  const h1 = city.h1 || `Local SEO for ${city.name} Home Service Businesses`;
+
+  const schema = `    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Local SEO in ${city.name}, TX",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Bluebonnet Growth",
+        "url": "https://bluebonnetgrowth.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Melissa",
+          "addressRegion": "TX",
+          "addressCountry": "US"
+        }
+      },
+      "areaServed": { "@type": "City", "name": "${city.name}", "containedInPlace": { "@type": "State", "name": "Texas" } },
+      "url": "${canonical}",
+      "description": "${metaDescription.replace(/"/g, '\\"')}"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "${BASE}/" },
+        { "@type": "ListItem", "position": 2, "name": "Locations", "item": "${BASE}/locations" },
+        { "@type": "ListItem", "position": 3, "name": "${city.name}", "item": "${canonical}" }
+      ]
+    }
+    </script>`;
+
   return `<!DOCTYPE html>
 <html lang="en">
   <head>
@@ -118,9 +159,16 @@ function renderCityPage(city) {
       gtag('js', new Date());
       gtag('config', 'G-QG3FTP7PC3');
     </script>
-    <title>Local SEO ${city.name}, TX | Google Maps &amp; Search for Small Business | Bluebonnet Growth</title>
-    <meta name="description" content="Local SEO for ${city.name}, TX small businesses. Rank on Google Maps and search for high-intent local queries. Texas-based. Clear reporting, no long-term contracts." />
+    <title>${pageTitle}</title>
+    <meta name="description" content="${metaDescription}" />
     <link rel="canonical" href="${canonical}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="${pageTitle}" />
+    <meta property="og:description" content="${metaDescription}" />
+    <meta property="og:url" content="${canonical}" />
+    <meta property="og:image" content="${BASE}/assets/bluebonnet-icon.png" />
+    <meta name="twitter:card" content="summary" />
+${schema}
     <link rel="icon" href="/assets/favicon-32x32.png" type="image/png" />
     <link rel="apple-touch-icon" href="/assets/favicon-32x32.png" />
     <link rel="stylesheet" href="/styles.css" />
@@ -154,9 +202,12 @@ function renderCityPage(city) {
     <main>
       <section class="page-hero">
         <div class="container">
-          <span class="eyebrow">For ${city.name} business owners</span>
-          <h1>Local SEO for ${city.name} Small Businesses</h1>
+          <span class="eyebrow">For ${city.name} home service businesses</span>
+          <h1>${h1}</h1>
           <p class="lead">${city.lead}</p>
+          <p class="section-cta">
+            <a href="/contact" class="btn btn-primary">Get a Free Local Search Audit</a>
+          </p>
         </div>
       </section>
 
@@ -177,6 +228,7 @@ ${extra.beforeWhatIDo}
             <li><strong>Local SEO:</strong> I tune your Google Business Profile and website so you show up for ${city.name} searches that lead to real jobs. <a href="/services/local-seo">Learn more about local SEO</a>.</li>
             <li><strong>Google Business Profile:</strong> I fix categories, photos, services, and reviews so Google trusts your listing. <a href="/services/google-business-profile">See profile optimization</a>.</li>
             <li><strong>SEO content:</strong> I build service and city pages that match what customers search. <a href="/services/seo-content">See SEO content</a>.</li>
+            <li><strong>Trade-specific SEO:</strong> <a href="/industries/hvac-seo">HVAC</a>, <a href="/industries/plumber-seo">plumbing</a>, <a href="/industries/roofer-seo">roofing</a>, <a href="/industries/electrician-seo">electrical</a>, and <a href="/industries/landscaping-seo">landscaping</a>.</li>
             <li><strong>Ongoing tuning:</strong> I watch rankings, calls, and form fills, then make steady changes.</li>
           </ul>
           <p>Related reading: <a href="/blog/what-is-local-seo">What is local SEO?</a> and <a href="/blog/how-to-get-more-google-reviews">how to get more Google reviews</a>.</p>
@@ -237,14 +289,14 @@ ${texasInterlinkSection()}
         <div class="container final-cta-grid">
           <div class="final-cta-copy">
             <span class="eyebrow">Next step</span>
-            <h2>Let us see where you stand in ${city.name}</h2>
+            <h2>See where you are losing Google leads in ${city.name}</h2>
             <p>I will look at how you show up on Google today, who ranks above you, and what I would change first.</p>
-            <p>You can use that insight on your own, with your current provider, or with me if it feels like the right fit.</p>
-            <p><strong>Serving small businesses in ${city.name} and across Texas.</strong></p>
+            <p>You can use that insight on your own, with your current provider, or with me if it feels like the right fit. I take on 5 clients at a time.</p>
+            <p><strong>Serving home service businesses in ${city.name} and across Texas.</strong></p>
           </div>
           <div class="final-cta-actions">
-            <a href="/contact" class="btn btn-primary">Apply Now</a>
-            <a href="/contact" class="btn btn-outline">Request a free visibility check</a>
+            <a href="/contact" class="btn btn-primary">Get a Free Local Search Audit</a>
+            <a href="/contact" class="btn btn-outline">Apply Now</a>
           </div>
         </div>
       </section>
@@ -263,6 +315,7 @@ ${FOOTER_SOCIAL}
         <ul class="footer-links">
           <li><a href="/results">Results</a></li>
           <li><a href="/services">Services</a></li>
+          <li><a href="/industries">Industries</a></li>
           <li><a href="/how-it-works">How it works</a></li>
           <li><a href="/about">About</a></li>
           <li><a href="/blog">Blog</a></li>
@@ -270,9 +323,9 @@ ${FOOTER_SOCIAL}
         </ul>
       </div>
       <div>
-        <div class="footer-col-title">Ready to rank?</div>
-        <div class="footer-cta-text">Limited to 5 clients at a time. Apply to see if there is a spot open for your business.</div>
-        <a href="/contact" class="footer-btn">Apply Now</a>
+        <div class="footer-col-title">Ready for more calls?</div>
+        <div class="footer-cta-text">I take on 5 clients at a time. Apply to see if there is a spot open for your business.</div>
+        <a href="/contact" class="footer-btn">Get a Free Local Search Audit</a>
       </div>
     </footer>
     <div class="copyright">
@@ -503,21 +556,28 @@ ${[...keepCities]
 function updateLocationsPage() {
   let html = fs.readFileSync(path.join(ROOT, "locations.html"), "utf8");
   html = html.replace(
+    /<title>[\s\S]*?<\/title>/,
+    "<title>Local SEO Locations Texas | North Texas, Boerne &amp; Georgetown | Bluebonnet Growth</title>"
+  );
+  html = html.replace(
+    /<meta name="description" content="[^"]*" \/>/,
+    `<meta name="description" content="Local SEO for home service businesses across North Texas, plus Boerne and Georgetown where search demand supports real pages. Not a thin statewide city farm." />`
+  );
+  html = html.replace(
     /<h1>[\s\S]*?<\/h1>/,
-    "<h1>Local SEO across North Texas</h1>"
+    "<h1>Local SEO across Texas — quality over page count</h1>"
   );
   html = html.replace(
     /<p class="lead">[\s\S]*?<\/p>/,
     `<p class="lead">
-            I am based in Melissa and work with home service businesses across DFW — the markets where I know how people search and buy.
-            If your customers find you on Google, I can help you show up and win more calls.
+            I am based in Melissa and work deepest with home service businesses across DFW. I also publish dedicated pages for Boerne and Georgetown where Search Console shows real demand. Every city page has to earn its place.
           </p>`
   );
   html = html.replace(
     /<h2>Cities across Texas<\/h2>[\s\S]*?<section class="section">/,
     `<h2>Cities we publish for</h2>
           <p>
-            These pages cover the North Texas markets I focus on. Most clients serve several of them. That is normal.
+            These pages cover markets I focus on — plus Texas cities with clear commercial search demand. Most clients serve several of them. That is normal.
           </p>
 ${renderKeepCitiesGrid()}
         </div>
@@ -525,6 +585,18 @@ ${renderKeepCitiesGrid()}
 
       <section class="section">`
   );
+  if (!html.includes("/industries")) {
+    html = html.replace(
+      "</main>",
+      `      <section class="section section-light">
+        <div class="container">
+          <h2>Also explore by trade</h2>
+          <p class="text-links"><a href="/industries">Industry SEO pages</a> · <a href="/services/local-seo">Local SEO services</a> · <a href="/contact">Get a free local search audit</a></p>
+        </div>
+      </section>
+    </main>`
+    );
+  }
   fs.writeFileSync(path.join(ROOT, "locations.html"), html, "utf8");
 }
 
@@ -573,6 +645,14 @@ function updateSitemap() {
     : [];
   const BLOG_SLUGS = [...new Set([...industrySlugs, ...consolidation.generalBlogSlugs])];
   const cityUrls = keepCities.map((c) => cityPath(c));
+  const industryUrls = [
+    "/industries",
+    "/industries/hvac-seo",
+    "/industries/plumber-seo",
+    "/industries/roofer-seo",
+    "/industries/electrician-seo",
+    "/industries/landscaping-seo",
+  ];
   const core = [
     "/",
     "/services",
@@ -587,6 +667,7 @@ function updateSitemap() {
     "/blog",
     "/pricing",
     "/faq",
+    ...industryUrls,
   ];
   const today = new Date().toISOString().slice(0, 10);
   const urls = [...new Set([...core, ...cityUrls, ...BLOG_SLUGS.map((s) => `/blog/${s}`)])].sort();
@@ -595,7 +676,16 @@ function updateSitemap() {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls
   .map((url) => {
-    const pri = url === "/" ? "1.0" : url.startsWith("/blog/") ? "0.6" : cityUrls.includes(url) ? "0.7" : "0.8";
+    const pri =
+      url === "/"
+        ? "1.0"
+        : url.startsWith("/industries")
+          ? "0.85"
+          : url.startsWith("/blog/")
+            ? "0.6"
+            : cityUrls.includes(url)
+              ? "0.7"
+              : "0.8";
     return `  <url>
     <loc>${BASE}${url}</loc>
     <lastmod>${today}</lastmod>

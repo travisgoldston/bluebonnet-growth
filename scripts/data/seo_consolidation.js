@@ -20,6 +20,9 @@ module.exports = {
     "van-alstyne",
     "wylie",
     "arlington",
+    // GSC demand + Texas expansion (genuine pages only — not mass production)
+    "boerne",
+    "georgetown",
   ],
 
   /**
@@ -102,5 +105,8 @@ module.exports = {
     "website-traffic-no-calls",
     "is-your-seo-company-working",
     "google-business-profile-checklist",
+    "ranking-number-one-nobody-calls",
+    "missed-calls-destroy-local-seo-roi",
+    "local-seo-vs-traditional-seo",
   ],
 };

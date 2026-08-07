@@ -1,26 +1,49 @@
-# Internal Linking (Bluebonnet Growth)
+# Internal linking policy
 
-## Primary goal
-Move qualified visitors to **Contact** (`/contact`) for a strategy call or visibility check.
+**Updated:** 2026-08-07
 
-## Core SEO pages (canonical URLs)
-| Page | Path |
-|------|------|
-| Homepage | `/` |
-| Local SEO service | `/services/local-seo` |
-| Web design service | `/services/web-design` |
-| About | `/about` |
+## Goal
+Drive qualified traffic to `/contact` (free local search audit / apply). Secondary: commercial money pages.
+
+## Primary CTAs
+- Nav: **Apply Now** → `/contact`
+- Money pages: **Get a Free Local Search Audit** → `/contact`
+- Keep truthful scarcity: **I take on 5 clients at a time**
+
+## Canonical commercial URLs (link to these)
+| Intent | URL |
+|--------|-----|
+| Local SEO | `/services/local-seo` |
+| GBP | `/services/google-business-profile` |
+| SEO content | `/services/seo-content` |
+| Industries hub | `/industries` |
+| HVAC SEO | `/industries/hvac-seo` |
+| Plumber SEO | `/industries/plumber-seo` |
+| Roofing SEO | `/industries/roofer-seo` |
+| Electrician SEO | `/industries/electrician-seo` |
+| Landscaping SEO | `/industries/landscaping-seo` |
+| About / not an agency | `/about` |
 | Contact | `/contact` |
-| Frisco location | `/locations/frisco-tx` |
-| Allen location | `/locations/allen-tx` |
 
-## Linking guidelines
-- Use final URLs in HTML (no links to `/seo`, `/frisco`, `/allen`, or `/final-cta`—those 301 redirect).
-- Homepage links to both service pages, both primary location pages, about, and contact.
-- Service pages link to all location pages (at minimum Frisco and Allen canonical URLs).
-- Location pages link back to `/` and `/services/local-seo`.
-- CTAs: **Book a Strategy Call** → `/contact`
+## Location URLs
+- Prefer keeper paths from `scripts/data/texas_cities.js` (`getPath`)
+- Frisco: `/locations/frisco-tx`
+- Allen: `/locations/allen-tx`
+- Boerne: `/locations/boerne-tx`
+- Georgetown: `/locations/georgetown-tx`
+- Most NTX cities: root `/{slug}` e.g. `/mckinney`
 
-## Legacy / redirect-only (do not link internally)
-- `/seo`, `/web-design`, `/frisco`, `/allen`, `/final-cta`
-- `/seo-mckinney`, `/seo-frisco`, `/seo-allen`, and other `seo-*` landers
+## Do not link (redirected / legacy)
+- `/seo`, `/web-design`, `/conversion-optimization`, `/final-cta`, `/proof`
+- `/frisco`, `/allen` (use locations paths)
+- `/seo-*` landers
+- Non-keeper city roots (they 301 to `/locations#region`)
+
+## Link patterns
+- Homepage → services, industries, locations, about (not-agency)
+- Industry pages → local SEO, GBP, related cities, related blog
+- City pages → services, industries, nearby cities, contact
+- Blog → nearest money page + contact
+
+## Anchor text
+Natural and descriptive. Avoid stuffing “best local SEO McKinney TX” repeatedly.

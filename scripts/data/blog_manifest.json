@@ -452,8 +452,7 @@
       "local-seo",
       "conversion",
       "leads"
-    ],
-    "cityName": null
+    ]
   },
   {
     "slug": "how-to-get-more-google-reviews",
@@ -464,8 +463,7 @@
       "reviews",
       "google-business-profile",
       "local-seo"
-    ],
-    "cityName": null
+    ]
   },
   {
     "slug": "why-competitor-ranks-higher",
@@ -476,8 +474,7 @@
       "local-seo",
       "google-maps",
       "competition"
-    ],
-    "cityName": null
+    ]
   },
   {
     "slug": "how-long-does-local-seo-take",
@@ -487,8 +484,7 @@
     "tags": [
       "local-seo",
       "timelines"
-    ],
-    "cityName": null
+    ]
   },
   {
     "slug": "do-you-need-a-website-for-local-seo",
@@ -498,8 +494,7 @@
     "tags": [
       "websites",
       "local-seo"
-    ],
-    "cityName": null
+    ]
   },
   {
     "slug": "google-maps-not-showing-up",
@@ -510,8 +505,7 @@
       "google-maps",
       "google-business-profile",
       "local-seo"
-    ],
-    "cityName": null
+    ]
   },
   {
     "slug": "what-is-local-seo",
@@ -520,8 +514,7 @@
     "category": "general",
     "tags": [
       "local-seo"
-    ],
-    "cityName": null
+    ]
   },
   {
     "slug": "website-traffic-no-calls",
@@ -532,8 +525,7 @@
       "websites",
       "conversion",
       "leads"
-    ],
-    "cityName": null
+    ]
   },
   {
     "slug": "is-your-seo-company-working",
@@ -543,8 +535,7 @@
     "tags": [
       "local-seo",
       "agencies"
-    ],
-    "cityName": null
+    ]
   },
   {
     "slug": "google-business-profile-checklist",
@@ -555,7 +546,38 @@
       "google-business-profile",
       "google-maps",
       "local-seo"
-    ],
-    "cityName": null
+    ]
+  },
+  {
+    "slug": "ranking-number-one-nobody-calls",
+    "title": "Why Ranking #1 Does Not Matter If Nobody Calls",
+    "excerpt": "Rankings are not the product. Calls, estimates, and booked jobs are. How Texas home service businesses should measure local SEO.",
+    "category": "general",
+    "tags": [
+      "local-seo",
+      "conversion",
+      "leads"
+    ]
+  },
+  {
+    "slug": "missed-calls-destroy-local-seo-roi",
+    "title": "How Missed Calls Destroy Local SEO ROI",
+    "excerpt": "You can win Google Maps and still lose money if nobody answers. How missed calls kill local SEO ROI for home service businesses.",
+    "category": "general",
+    "tags": [
+      "local-seo",
+      "conversion",
+      "leads"
+    ]
+  },
+  {
+    "slug": "local-seo-vs-traditional-seo",
+    "title": "Local SEO vs Traditional SEO for Service Businesses",
+    "excerpt": "Plain-English difference between local SEO and traditional SEO for Texas HVAC, plumbing, roofing, and other trades.",
+    "category": "general",
+    "tags": [
+      "local-seo",
+      "google-maps"
+    ]
   }
 ]

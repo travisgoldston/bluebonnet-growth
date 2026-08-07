@@ -82,6 +82,30 @@ module.exports = [
     category: "general",
     tags: ["google-business-profile", "google-maps", "local-seo"],
   },
+  {
+    slug: "ranking-number-one-nobody-calls",
+    title: "Why Ranking #1 Does Not Matter If Nobody Calls",
+    excerpt:
+      "Rankings are not the product. Calls, estimates, and booked jobs are. How Texas home service businesses should measure local SEO.",
+    category: "general",
+    tags: ["local-seo", "conversion", "leads"],
+  },
+  {
+    slug: "missed-calls-destroy-local-seo-roi",
+    title: "How Missed Calls Destroy Local SEO ROI",
+    excerpt:
+      "You can win Google Maps and still lose money if nobody answers. How missed calls kill local SEO ROI for home service businesses.",
+    category: "general",
+    tags: ["local-seo", "conversion", "leads"],
+  },
+  {
+    slug: "local-seo-vs-traditional-seo",
+    title: "Local SEO vs Traditional SEO for Service Businesses",
+    excerpt:
+      "Plain-English difference between local SEO and traditional SEO for Texas HVAC, plumbing, roofing, and other trades.",
+    category: "general",
+    tags: ["local-seo", "google-maps"],
+  },
 ];
 
 module.exports.TAG_LABELS = {

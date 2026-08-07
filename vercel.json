@@ -85,12 +85,12 @@
     },
     {
       "source": "/seo-mckinney",
-      "destination": "/services/local-seo",
+      "destination": "/mckinney",
       "permanent": true
     },
     {
       "source": "/seo-mckinney.html",
-      "destination": "/services/local-seo",
+      "destination": "/mckinney",
       "permanent": true
     },
     {
@@ -155,12 +155,12 @@
     },
     {
       "source": "/seo-company-:city",
-      "destination": "/",
+      "destination": "/services/local-seo",
       "permanent": true
     },
     {
       "source": "/seo-company-:city.html",
-      "destination": "/",
+      "destination": "/services/local-seo",
       "permanent": true
     },
     {
@@ -2641,6 +2641,26 @@
     {
       "source": "/blog/local-seo-for-financial-advisors-van-alstyne-tx.html",
       "destination": "/blog/local-seo-for-financial-advisors-texas",
+      "permanent": true
+    },
+    {
+      "source": "/seo-boerne",
+      "destination": "/locations/boerne-tx",
+      "permanent": true
+    },
+    {
+      "source": "/seo-boerne.html",
+      "destination": "/locations/boerne-tx",
+      "permanent": true
+    },
+    {
+      "source": "/seo-georgetown",
+      "destination": "/locations/georgetown-tx",
+      "permanent": true
+    },
+    {
+      "source": "/seo-georgetown.html",
+      "destination": "/locations/georgetown-tx",
       "permanent": true
     }
   ]

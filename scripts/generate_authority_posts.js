@@ -1,0 +1,219 @@
+/**
+ * Supporting topical authority posts that feed commercial pages.
+ * Run: node scripts/generate_authority_posts.js
+ */
+const fs = require("fs");
+const path = require("path");
+
+const ROOT = path.resolve(__dirname, "..");
+const BLOG = path.join(ROOT, "blog");
+
+const FOOTER_SOCIAL = `        <div class="footer-social" aria-label="Social media">
+          <a href="https://facebook.com/bluebonnetdotco" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="footer-social-link"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://x.com/bluebonnetgr" target="_blank" rel="noopener noreferrer" aria-label="X" class="footer-social-link"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://www.instagram.com/bluebonnetgrowth/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="footer-social-link"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="https://youtube.com/@bluebonnetdotco" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="footer-social-link"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        </div>`;
+
+function shell(post) {
+  return `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QG3FTP7PC3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QG3FTP7PC3');
+    </script>
+    <title>${post.title} | Bluebonnet Growth</title>
+    <meta name="description" content="${post.description}" />
+    <link rel="canonical" href="https://bluebonnetgrowth.com/blog/${post.slug}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="${post.title}" />
+    <meta property="og:description" content="${post.description}" />
+    <meta property="og:url" content="https://bluebonnetgrowth.com/blog/${post.slug}" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "${post.title}",
+      "description": "${post.description}",
+      "author": { "@type": "Person", "name": "Travis", "url": "https://bluebonnetgrowth.com/about" },
+      "publisher": { "@type": "Organization", "name": "Bluebonnet Growth", "url": "https://bluebonnetgrowth.com" },
+      "mainEntityOfPage": "https://bluebonnetgrowth.com/blog/${post.slug}"
+    }
+    </script>
+    <link rel="icon" href="/assets/favicon-32x32.png" type="image/png" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="blog-post">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="nav-logo" href="/"><img src="/assets/bluebonnet-icon.png" alt="Bluebonnet Growth" width="34" height="34" /><span class="nav-logo-text">Bluebonnet Growth</span></a>
+      <div class="nav-links">
+        <a href="/results">Results</a><a href="/services">Services</a><a href="/how-it-works">How it works</a><a href="/about">About</a><a href="/blog" class="is-active">Blog</a>
+      </div>
+      <a href="/contact" class="nav-cta">Apply Now</a>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle><span></span><span></span><span></span></button>
+    </nav>
+    <div class="nav-drawer" data-nav-drawer>
+      <a href="/results">Results</a><a href="/services">Services</a><a href="/how-it-works">How it works</a><a href="/about">About</a><a href="/blog">Blog</a><a href="/contact">Apply Now</a>
+    </div>
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <span class="eyebrow">${post.eyebrow}</span>
+          <h1>${post.title}</h1>
+          <p class="lead">${post.lead}</p>
+        </div>
+      </section>
+${post.body}
+      <section class="section section-dark final-cta">
+        <div class="container final-cta-grid">
+          <div class="final-cta-copy">
+            <h2>See where you are losing Google leads</h2>
+            <p>I take on 5 clients at a time. Apply for a free local search audit.</p>
+          </div>
+          <div class="final-cta-actions">
+            <a href="/contact" class="btn btn-primary">Get a Free Local Search Audit</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div>
+        <div class="footer-brand-row">
+          <img src="/assets/bluebonnet-icon.png" alt="Bluebonnet Growth" width="28" height="28" />
+          <div class="footer-brand">Bluebonnet Growth</div>
+        </div>
+        <div class="footer-tagline">Local SEO for North Texas service businesses. One operator. Direct access. More calls from Google.</div>
+${FOOTER_SOCIAL}
+      </div>
+      <div>
+        <div class="footer-col-title">Pages</div>
+        <ul class="footer-links">
+          <li><a href="/services">Services</a></li>
+          <li><a href="/industries">Industries</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/locations">Locations</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Ready for more calls?</div>
+        <div class="footer-cta-text">I take on 5 clients at a time.</div>
+        <a href="/contact" class="footer-btn">Get a Free Local Search Audit</a>
+      </div>
+    </footer>
+    <div class="copyright"><span>© 2026 Bluebonnet Growth. All rights reserved.</span><span>Based in Melissa, TX</span></div>
+    <script src="/script.js" defer></script>
+  </body>
+</html>
+`;
+}
+
+const posts = [
+  {
+    slug: "ranking-number-one-nobody-calls",
+    title: "Why Ranking #1 Does Not Matter If Nobody Calls",
+    description:
+      "Rankings are not the product. Calls, estimates, and booked jobs are. How Texas home service businesses should measure local SEO.",
+    eyebrow: "Local SEO · Conversion",
+    lead: "Agencies love ranking screenshots. Owners care whether the phone rings. Here is why position one without calls is a false win — and what to fix instead.",
+    body: `      <section class="section section-light">
+        <div class="container">
+          <h2>Rankings are a means, not the outcome</h2>
+          <p>If you run HVAC, plumbing, roofing, or another home service trade in Texas, you do not get paid for ranking reports. You get paid when someone calls, books an estimate, and signs the job.</p>
+          <p>I have watched businesses celebrate page-one screenshots while the call log stayed quiet. The gap is usually conversion: wrong phone number on the listing, slow mobile site, no tap-to-call, thin reviews, or ranking for searches that never hire.</p>
+          <p>That is why Bluebonnet Growth measures visibility against calls. See <a href="/services/local-seo">local SEO</a> and <a href="/results">how I prove results</a>.</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <h2>Common reasons #1 still fails</h2>
+          <ul>
+            <li><strong>Wrong keyword:</strong> Ranking for a soft phrase nobody uses when they need a truck today.</li>
+            <li><strong>Broken handoff:</strong> Missed calls, full voicemail, or a form that never arrives.</li>
+            <li><strong>Weak listing:</strong> You rank, but a competitor with better photos and fresher reviews wins the click.</li>
+            <li><strong>Website friction:</strong> Traffic arrives, then leaves. Read <a href="/blog/website-traffic-no-calls">website traffic but no calls</a>.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="section section-light">
+        <div class="container">
+          <h2>What to track instead</h2>
+          <p>Map pack presence for money searches. Calls and form fills from organic. Estimate requests. Booked jobs attributed to Google. If those are flat, rankings alone are not success.</p>
+          <p>Trade-specific playbooks: <a href="/industries/hvac-seo">HVAC SEO</a>, <a href="/industries/plumber-seo">plumber SEO</a>, <a href="/industries/roofer-seo">roofing SEO</a>.</p>
+        </div>
+      </section>`,
+  },
+  {
+    slug: "missed-calls-destroy-local-seo-roi",
+    title: "How Missed Calls Destroy Local SEO ROI",
+    description:
+      "You can win Google Maps and still lose money if nobody answers. How missed calls kill local SEO ROI for Texas home service businesses.",
+    eyebrow: "Operations · Local SEO",
+    lead: "Local SEO only pays when the phone gets answered. Missed calls turn expensive visibility into wasted demand — especially for emergency trades.",
+    body: `      <section class="section section-light">
+        <div class="container">
+          <h2>SEO puts demand on the line. Operations close it.</h2>
+          <p>Before I focused on local SEO, I spent years inside home service operations — how phones get answered, how estimates get booked, how crews get scheduled. That is why I refuse to treat rankings as the whole product.</p>
+          <p>When a homeowner taps Call on Google Maps for an emergency plumber or AC repair, they often dial the next listing if you miss. You paid (in time or money) to earn that click. A missed call burns it.</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <h2>Fix the handoff before you buy more traffic</h2>
+          <ul>
+            <li>Answer rate during peak search hours</li>
+            <li>After-hours voicemail that actually callbacks</li>
+            <li>Call tracking that does not route to a dead number</li>
+            <li>Speed-to-lead on form fills</li>
+          </ul>
+          <p>Then improve <a href="/services/google-business-profile">Google Business Profile</a> and <a href="/services/local-seo">local SEO</a> so more of the right people call. Visibility without answer rate is a leaky bucket.</p>
+        </div>
+      </section>
+      <section class="section section-light">
+        <div class="container">
+          <h2>How I talk about ROI with owners</h2>
+          <p>We look at calls generated, opportunities booked, and jobs closed — not just impressions. If answer rate is the bottleneck, I will say so before I sell you more content. That is the not-an-agency promise on the <a href="/about">about page</a>.</p>
+        </div>
+      </section>`,
+  },
+  {
+    slug: "local-seo-vs-traditional-seo",
+    title: "Local SEO vs Traditional SEO for Service Businesses",
+    description:
+      "Plain-English difference between local SEO and traditional SEO for Texas HVAC, plumbing, roofing, and other home service companies.",
+    eyebrow: "Local SEO · Education",
+    lead: "Traditional SEO chases broad rankings. Local SEO wins the map pack and nearby searches that turn into jobs. Service businesses usually need the second.",
+    body: `      <section class="section section-light">
+        <div class="container">
+          <h2>Different games</h2>
+          <p><strong>Traditional SEO</strong> often targets informational articles and national or statewide phrases. Useful for some brands. Rarely how a McKinney plumber gets a same-day call.</p>
+          <p><strong>Local SEO</strong> targets Google Maps, the local pack, and city + service searches: “AC repair Frisco,” “roofer Fort Worth,” “electrician Prosper.” That is the demand that books trucks.</p>
+          <p>Read <a href="/blog/what-is-local-seo">what local SEO means</a> and the commercial page for <a href="/services/local-seo">North Texas local SEO</a>.</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <h2>What local SEO prioritizes</h2>
+          <ul>
+            <li>Google Business Profile strength</li>
+            <li>Reviews and photos</li>
+            <li>Service and city pages that match intent</li>
+            <li>NAP consistency and citations</li>
+            <li>Calls and booked jobs as the scoreboard</li>
+          </ul>
+          <p>City pages that deserve to exist: <a href="/locations/frisco-tx">Frisco</a>, <a href="/mckinney">McKinney</a>, <a href="/locations/boerne-tx">Boerne</a>, <a href="/locations/georgetown-tx">Georgetown</a>. Industry pages: <a href="/industries">all trades</a>.</p>
+        </div>
+      </section>`,
+  },
+];
+
+for (const post of posts) {
+  fs.writeFileSync(path.join(BLOG, `${post.slug}.html`), shell(post), "utf8");
+  console.log("wrote", post.slug);
+}
