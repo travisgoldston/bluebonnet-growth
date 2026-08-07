@@ -229,20 +229,18 @@ body.nav-open { overflow: hidden; }
 }
 
 .contact-hero-mark {
-  width: 64px;
-  height: 96px;
+  width: 72px;
+  height: auto;
   margin: 0 auto 1.25rem;
-  border-radius: 14px;
-  background: #000;
-  overflow: hidden;
-  box-shadow: 0 8px 28px rgba(10, 15, 26, 0.18);
+  background: transparent;
+  overflow: visible;
 }
 
 .contact-hero-mark img {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
 }
 
